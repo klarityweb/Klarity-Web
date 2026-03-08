@@ -1,39 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klarity Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klarity Web - Landing Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Klarity</h1>
-        <nav>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#feedback">Feedback</a></li>
-                <li><a href="#cta">Get Started</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="services">
-            <h2>Our Services</h2>
-            <p>Details about services...</p>
-        </section>
-        <section id="feedback">
-            <h2>Feedback</h2>
-            <p>Users share their experiences...</p>
-        </section>
-        <section id="cta">
-            <h2>Get Started</h2>
-            <button>Join Us</button>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Klarity. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+
+<header style="text-align:center;">
+  <div class="header-content" style="display:flex; flex-direction:column; align-items:center;">
+    <div class="logo">
+      <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="image" style="width:420px; margin-bottom:5px;">
+    </div>
+
+    <p class="header-text" style="margin:0; text-align:center;">
+      Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.
+    </p>
+
+    <a class="cta-header" href="https://api.whatsapp.com/send?phone=+436604831451&text=Hallo%20Klarity%20Web,%20ich%20möchte%20die%20Demo%20sehen!" target="_blank" style="margin-top:15px;">
+      Demo anfordern
+    </a>
+  </div>
+</header>
+
+<section class="services-section">
+  <h2>Unsere Dienstleistungen</h2>
+  <div class="services">
+    <div class="service" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&h=600&w=800');">
+      <div class="service-content">
+        <h3>Modernes Design</h3>
+        <p>Elegantes und funktionales Webdesign, maßgeschneidert für Ihr Unternehmen.</p>
+        <button onclick="openWhatsApp('Modernes Design')">Demo anfordern</button>
+      </div>
+    </div>
+    <div class="service" style="background-image:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?crop=entropy&cs=tinysrgb&fit=max&h=600&w=800');">
+      <div class="service-content">
+        <h3>SEO Optimierung</h3>
+        <p>Verbessern Sie Ihre Online-Sichtbarkeit mit professioneller SEO-Strategie.</p>
+        <button onclick="openWhatsApp('SEO Optimierung')">Demo anfordern</button>
+      </div>
+    </div>
+    <div class="service" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=max&h=600&w=800');">
+      <div class="service-content">
+        <h3>E-Commerce Lösungen</h3>
+        <p>Professionelle E-Commerce-Plattformen für Ihren Online-Verkauf.</p>
+        <button onclick="openWhatsApp('E-Commerce Lösungen')">Demo anfordern</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feedback-section">
+  <h2>Was unsere Kunden sagen</h2>
+  <div class="feedbacks">
+    <div class="feedback">
+      <p>"Klarity Web hat unseren Online-Auftritt komplett transformiert!"</p>
+      <p><strong>- Max Mustermann</strong></p>
+    </div>
+    <div class="feedback">
+      <p>"Professionelle Arbeit und schnelle Umsetzung. Sehr empfehlenswert!"</p>
+      <p><strong>- Anna Schmidt</strong></p>
+    </div>
+    <div class="feedback">
+      <p>"Das beste Investment für mein Unternehmen. Danke Klarity Web!"</p>
+      <p><strong>- Peter Weber</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Bereit für Ihren Online-Erfolg?</h2>
+  <p>Kontaktieren Sie uns noch heute für eine kostenlose Beratung</p>
+  <a class="cta-btn" href="https://api.whatsapp.com/send?phone=+436604831451&text=Hallo%20Klarity%20Web,%20ich%20möchte%20die%20Demo%20sehen!" target="_blank">Demo anfordern</a>
+  <a class="cta-btn" href="mailto:info@klarity-web.com">Email senden</a>
+</section>
+
+<footer>
+  <p>&copy; 2026 Klarity Web. Alle Rechte vorbehalten.</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
