@@ -10,27 +10,30 @@ body {
   background:#000;
   color:#fff;
   line-height:1.6;
+  overflow-x:hidden;
 }
 
 /* HEADER */
 header {
   text-align:center;
   padding:70px 20px;
-  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
               url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
 }
 
+/* LOGO FIX */
 .logo img {
-  width:320px;
-  max-width:90%;
+  width:420px;
+  max-width:95%;
   margin-bottom:10px;
-  transition:0.3s;
+  transition:0.4s ease;
 }
 
 .logo img:hover {
   transform:scale(1.05);
 }
 
+/* TEXT */
 .header-text {
   margin-top:10px;
   color:#ccc;
@@ -47,7 +50,7 @@ header {
   color:#bbb;
 }
 
-/* CTA BUTTONS */
+/* CTA BUTTONS PREMIUM */
 .cta-header, .cta-btn {
   display:inline-block;
   margin-top:15px;
@@ -59,13 +62,31 @@ header {
   text-decoration:none;
   border:2px solid #fff;
   transition:all 0.3s ease;
+  position:relative;
+  overflow:hidden;
 }
 
+/* HOVER PREMIUM */
 .cta-header:hover, .cta-btn:hover {
   background:transparent;
   color:#fff;
-  border:2px solid #fff;
   transform:scale(1.05);
+}
+
+/* SHINE EFFECT */
+.cta-header::after, .cta-btn::after {
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+  transition:0.5s;
+}
+
+.cta-header:hover::after, .cta-btn:hover::after {
+  left:100%;
 }
 
 /* SERVICES */
@@ -81,6 +102,7 @@ header {
   gap:20px;
 }
 
+/* CARD FIX */
 .service {
   position:relative;
   flex:1 1 300px;
@@ -88,25 +110,25 @@ header {
   border-radius:12px;
   overflow:hidden;
   background-size:cover;
-  background-position:center;
-  transition:0.4s;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  background-position:center center;
+  background-repeat:no-repeat;
+  transition:all 0.4s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
 
-/* OVERLAY SCURO MIGLIORATO */
+/* DARK OVERLAY FIX DEFINITIVO */
 .service::before {
   content:'';
   position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.7);
+  inset:0;
+  background:rgba(0,0,0,0.75);
+  z-index:0;
 }
 
-/* HOVER */
+/* HOVER EFFETTO */
 .service:hover {
-  transform:scale(1.03);
+  transform:scale(1.04);
+  box-shadow:0 15px 40px rgba(0,0,0,0.8);
 }
 
 /* CONTENT */
@@ -118,7 +140,7 @@ header {
 
 .service-content h3,
 .service-content p {
-  text-shadow:0 2px 10px rgba(0,0,0,0.9);
+  text-shadow:0 3px 12px rgba(0,0,0,0.9);
 }
 
 .service-content h3 {
@@ -172,7 +194,7 @@ header {
 }
 
 .feedback:hover {
-  transform:translateY(-5px);
+  transform:translateY(-6px);
 }
 
 /* FORM */
@@ -218,7 +240,7 @@ header {
   color:#fff;
 }
 
-/* CTA SECTION */
+/* CTA */
 .cta-section {
   padding:60px 20px;
   background:#111;
@@ -251,6 +273,24 @@ footer {
   text-align:center;
 }
 
+/* ANIMAZIONE ENTRATA (smooth) */
+.service, .feedback, .cta-btn {
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.8s ease forwards;
+}
+
+.service:nth-child(1){animation-delay:0.2s;}
+.service:nth-child(2){animation-delay:0.4s;}
+.service:nth-child(3){animation-delay:0.6s;}
+
+@keyframes fadeUp {
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 /* MOBILE */
 @media(max-width:768px){
   .services, .feedbacks {
@@ -258,7 +298,7 @@ footer {
   }
 
   .logo img {
-    width:220px;
+    width:300px;
   }
 
   header {
