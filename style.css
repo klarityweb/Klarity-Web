@@ -1,8 +1,27 @@
+/* RESET */
 body {
   margin:0;
   font-family:'Roboto', sans-serif;
   background:#000;
   color:#fff;
+}
+
+/* HEADER */
+header {
+  text-align:center;
+  padding:100px 20px;
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+              url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d') center/cover no-repeat;
+  position:relative;
+}
+
+header::after {
+  content:'';
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:120px;
+  background:linear-gradient(transparent,#000);
 }
 
 .header-content {
@@ -13,8 +32,6 @@ body {
 
 .logo img {
   width:420px;
-  display:block;
-  margin-bottom:5px;
   transition: transform 0.3s;
 }
 
@@ -22,57 +39,55 @@ body {
   transform: scale(1.05);
 }
 
+h1 {
+  font-size:2.5em;
+  margin:15px 0;
+}
+
 .header-text {
-  margin:0;
-  padding:0;
-  text-align:center;
-}
-
-.cta-header {
-  margin-top:15px;
-  padding:15px 30px;
-  background:#fff;
-  color:#000;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:5px;
-  transition:0.3s;
-}
-
-.cta-header:hover {
-  background:#ddd;
-}
-
-header {
-  text-align:center;
-  padding:80px 20px;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-              url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&h=900&w=1600') center/cover no-repeat;
-}
-
-header h1 {
-  font-size:3em;
-  margin:20px 0 10px;
-  color:#f5f5f5;
-  letter-spacing:1px;
-}
-
-header p {
-  font-size:1.2em;
-  margin-bottom:30px;
   color:#ccc;
+  font-size:1.1em;
 }
 
+.sub-text {
+  max-width:600px;
+  margin:10px auto;
+  color:#aaa;
+}
+
+.trust-line {
+  margin-top:10px;
+  color:#bbb;
+  font-size:0.9em;
+}
+
+/* CTA */
+.cta-header, .cta-btn {
+  margin-top:20px;
+  padding:14px 30px;
+  background: linear-gradient(135deg,#ffffff,#cccccc);
+  color:#000;
+  font-weight:bold;
+  border-radius:6px;
+  text-decoration:none;
+  transition:0.3s;
+  box-shadow:0 5px 20px rgba(255,255,255,0.2);
+}
+
+.cta-header:hover, .cta-btn:hover {
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 10px 30px rgba(255,255,255,0.3);
+}
+
+/* SERVICES */
 .services-section {
-  padding:60px 20px;
+  padding:80px 20px;
   text-align:center;
 }
 
 .services-section h2 {
-  font-size:2.5em;
+  font-size:2.2em;
   margin-bottom:50px;
-  color:#f5f5f5;
-  letter-spacing:0.5px;
 }
 
 .services {
@@ -85,77 +100,66 @@ header p {
 .service {
   position:relative;
   flex:1 1 300px;
+  height:350px;
   border-radius:12px;
   overflow:hidden;
-  height:350px;
   display:flex;
   align-items:center;
   justify-content:center;
   background-size:cover;
   background-position:center;
-  transition:transform 0.4s, box-shadow 0.4s;
+  transition:0.4s;
 }
 
 .service:hover {
-  transform:scale(1.03);
-  box-shadow:0 10px 25px rgba(255,255,255,0.2);
+  transform:scale(1.05);
+  box-shadow:0 15px 40px rgba(255,255,255,0.2);
 }
 
 .service::before {
   content:'';
   position:absolute;
-  top:0;
-  left:0;
   width:100%;
   height:100%;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.5);
 }
 
 .service-content {
   position:relative;
   z-index:1;
-  text-align:center;
-  color:#fff;
   padding:20px;
-  transition:transform 0.3s;
 }
 
 .service-content h3 {
-  margin-bottom:15px;
-  font-size:1.6em;
+  font-size:1.5em;
+  margin-bottom:10px;
 }
 
 .service-content p {
-  margin-bottom:15px;
   color:#ddd;
+  margin-bottom:15px;
 }
 
 .service-content button {
-  padding:12px 25px;
+  padding:10px 20px;
   border:none;
   background:#fff;
   color:#000;
+  border-radius:5px;
   font-weight:bold;
   cursor:pointer;
-  border-radius:5px;
   transition:0.3s;
 }
 
 .service-content button:hover {
   background:#ddd;
-  transform:scale(1.05);
 }
 
+/* FEEDBACK */
 .feedback-section {
-  padding:60px 20px;
+  padding:80px 20px;
   background:#111;
   text-align:center;
-}
-
-.feedback-section h2 {
-  font-size:2em;
-  margin-bottom:40px;
-  color:#f5f5f5;
 }
 
 .feedbacks {
@@ -166,61 +170,110 @@ header p {
 }
 
 .feedback {
-  background:#222;
+  width:260px;
   padding:20px;
   border-radius:10px;
-  width:250px;
-  text-align:center;
-  transition:transform 0.3s;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.3s;
 }
 
 .feedback:hover {
   transform:translateY(-5px);
 }
 
-.feedback p:first-child {
-  font-size:1.2em;
-  margin-bottom:10px;
+/* FORM PREMIUM */
+.form-section {
+  padding:80px 20px;
+  text-align:center;
+  background:linear-gradient(180deg,#000,#111);
 }
 
+.form-sub {
+  color:#aaa;
+  max-width:500px;
+  margin:10px auto;
+}
+
+.premium-form {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top:30px;
+}
+
+.form-group {
+  position:relative;
+  width:280px;
+  margin:15px 0;
+}
+
+.form-group input,
+.form-group textarea {
+  width:100%;
+  padding:12px;
+  background:#111;
+  border:1px solid #333;
+  color:#fff;
+  border-radius:6px;
+  outline:none;
+}
+
+.form-group label {
+  position:absolute;
+  left:12px;
+  top:12px;
+  color:#777;
+  font-size:0.85em;
+  transition:0.3s;
+}
+
+.form-group input:focus + label,
+.form-group input:valid + label,
+.form-group textarea:focus + label,
+.form-group textarea:valid + label {
+  top:-8px;
+  font-size:0.7em;
+  color:#fff;
+}
+
+/* CTA SECTION */
 .cta-section {
-  padding:60px 20px;
+  padding:80px 20px;
   text-align:center;
   background:#111;
 }
 
-.cta-btn {
-  padding:15px 30px;
-  margin:5px;
-  background:#fff;
-  color:#000;
-  font-weight:bold;
-  text-decoration:none;
-  border-radius:5px;
-  display:inline-block;
-  transition:0.3s;
-}
-
-.cta-btn:hover {
-  background:#ddd;
-  transform:scale(1.05);
-}
-
-footer {
+/* CONTACT */
+.contact-section {
+  padding:80px 20px;
   text-align:center;
+}
+
+/* FOOTER */
+footer {
   padding:20px;
+  text-align:center;
   color:#888;
   background:#111;
 }
 
+/* IMPRESSUM */
+.impressum {
+  padding:40px 20px;
+  background:#000;
+  font-size:0.9em;
+  color:#aaa;
+}
+
+/* MOBILE */
 @media(max-width:768px) {
   .services, .feedbacks {
     flex-direction:column;
   }
-  header h1 {
-    font-size:2em;
-  }
-  .services-section h2 {
+
+  h1 {
     font-size:2em;
   }
 }
