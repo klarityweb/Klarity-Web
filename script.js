@@ -1,4 +1,4 @@
-/**
+/**/**
  * KLARITY WEB - OFFICIAL SITE SCRIPT 2026
  * Core Logic: Navigation, Search, WhatsApp, and Contact Form
  */
