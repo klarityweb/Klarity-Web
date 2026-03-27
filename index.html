@@ -1,157 +1,121 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Webdesign & Landing Pages in Graz | Klarity Web Österreich</title>
+    <title>Webdesign & Landing Pages in Graz | Klarity Web Österreich</title>
 
-<meta name="description" content="Professionelle Websites & Landing Pages in Graz. Mehr Kunden durch modernes Design, SEO & Marketing. Jetzt kostenlose Analyse sichern!">
-<meta name="keywords" content="Webdesign Graz, Website erstellen Österreich, Landing Page Agentur, SEO Graz">
-<meta name="robots" content="index, follow">
+    <meta name="description" content="Professionelle Websites & Landing Pages in Graz. Mehr Kunden durch modernes Design, SEO & Marketing. Jetzt kostenlose Analyse sichern!">
+    <meta name="keywords" content="Webdesign Graz, Website erstellen Österreich, Landing Page Agentur, SEO Graz">
+    <meta name="robots" content="index, follow">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Klarity Web - Webseiten die Kunden bringen">
-<meta property="og:description" content="Moderne Websites & Landing Pages für Unternehmen in Österreich.">
-<meta property="og:image" content="https://tuosito.com/preview.jpg">
-<meta property="og:url" content="https://tuosito.com">
-<meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-<link rel="icon" type="image/png" href="/favicon.png">
-
-<meta name="geo.region" content="AT-ST">
-<meta name="geo.placename" content="Graz">
-
-<!-- Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Klarity Web",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Flurgasse 21",
-    "addressLocality": "Graz",
-    "postalCode": "8010",
-    "addressCountry": "AT"
-  },
-  "telephone": "+436604831451"
-}
-</script>
-
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <style>
+        /* Stili rapidi per il Pop-up (aggiungili poi nel tuo style.css) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: #111;
+            padding: 30px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            color: #fff;
+        }
+        .close-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
 
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Logo">
+            </a>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="webdesign.html">Webdesign</a></li>
+            <li><a href="seo-marketing.html">SEO & Marketing</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Suchen...">
+            <button onclick="executeSearch()">🔍</button>
+        </div>
+    </div>
+</nav>
+
 <header>
   <div class="header-content">
-    
-    <div class="logo">
-      <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Logo">
-    </div>
-
     <h1>Webdesign & Landing Pages in Graz</h1>
-
-    <p class="header-text">
-      Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.
-    </p>
-
-    <!-- NUOVA SUBLINE (SAFE) -->
-    <p class="sub-text">
-      Mehr Kunden durch moderne Websites, SEO und starke Online-Präsenz.
-    </p>
-
-    <p class="trust-line">
-      ✔ Mehr Anfragen • ✔ Modernes Design • ✔ Ergebnisse garantiert
-    </p>
-
-    <a class="cta-header" href="#" onclick="openWhatsApp('Kostenlose Website Analyse')">
-      🔍 Kostenlose Website Analyse
-    </a>
-
-    <!-- MICRO TRUST -->
-    <p style="font-size:0.8em; color:#aaa; margin-top:10px;">
-      100% kostenlos • keine Verpflichtung
-    </p>
-
+    <p class="header-text">Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.</p>
+    <p class="sub-text">Mehr Kunden durch moderne Websites, SEO und starke Online-Präsenz.</p>
+    <p class="trust-line">✔ Mehr Anfragen • ✔ Modernes Design • ✔ Ergebnisse garantiert</p>
+    <a class="cta-header" href="#" onclick="openWhatsApp('Kostenlose Website Analyse')">🔍 Kostenlose Website Analyse</a>
   </div>
 </header>
 
 <section class="services-section">
   <h2>Unsere Dienstleistungen</h2>
-
   <div class="services">
-
     <div class="service" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');">
       <div class="service-content">
         <h3>Modernes Design</h3>
         <p>Elegantes und funktionales Webdesign, maßgeschneidert für Ihr Unternehmen.</p>
-        <button onclick="openWhatsApp('Modernes Webdesign Anfrage')">
-          🎨 Design Beratung starten
-        </button>
+        <button onclick="location.href='webdesign.html'">🎨 Mehr erfahren</button>
       </div>
     </div>
-
     <div class="service" style="background-image:url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df');">
       <div class="service-content">
         <h3>SEO & Marketing</h3>
         <p>Optimierte Strategien zur Steigerung Ihrer Online-Sichtbarkeit.</p>
-        <button onclick="openWhatsApp('SEO Beratung Anfrage')">
-          📈 Mehr Kunden über Google
-        </button>
+        <button onclick="location.href='seo-marketing.html'">📈 Mehr Kunden</button>
       </div>
     </div>
-
     <div class="service" style="background-image:url('https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg');">
       <div class="service-content">
         <h3>Support & Verwaltung</h3>
         <p>Kontinuierliche Unterstützung und Verwaltung Ihrer Website.</p>
-        <button onclick="openWhatsApp('Website Betreuung Anfrage')">
-          ⚙️ Website optimieren lassen
-        </button>
+        <button onclick="location.href='support.html'">⚙️ Support Details</button>
       </div>
     </div>
-
-  </div>
-</section>
-
-<section class="feedback-section">
-  <h2>Was unsere Kunden sagen</h2>
-
-  <div class="feedbacks">
-
-    <div class="feedback">
-      <p>⭐⭐⭐⭐⭐</p>
-      <p>„Klarity Web hat unsere Website komplett transformiert – super professionell und schnell!“</p>
-      <span>- Anna M.</span>
-    </div>
-
-    <div class="feedback">
-      <p>⭐⭐⭐⭐</p>
-      <p>„Tolles Design, schnelle Kommunikation, sehr empfehlenswert!“</p>
-      <span>- Lukas R.</span>
-    </div>
-
-    <div class="feedback">
-      <p>⭐⭐⭐⭐⭐</p>
-      <p>„Wir haben sofort mehr Anfragen bekommen. Einfach Top!“</p>
-      <span>- Sophie K.</span>
-    </div>
-
   </div>
 </section>
 
 <section class="form-section">
   <h2>Kostenlose Strategie Beratung</h2>
-  <p class="form-sub">
-    Lassen Sie uns gemeinsam herausfinden, wie wir Ihr Business online wachsen lassen können.
-  </p>
+  <p class="form-sub">Lassen Sie uns gemeinsam herausfinden, wie wir Ihr Business online wachsen lassen können.</p>
 
-  <form name="contact" method="POST" data-netlify="true" class="premium-form">
-    <input type="hidden" name="form-name" value="contact">
-
+  <form id="contact-form" action="https://formspree.io/f/info@klarityweb.com" method="POST" class="premium-form">
     <div class="form-group">
       <input type="text" name="name" required>
       <label>Ihr Name</label>
@@ -167,50 +131,79 @@
       <label>Was brauchen Sie genau?</label>
     </div>
 
-    <button type="submit" class="cta-btn">
+    <button type="submit" id="submit-btn" class="cta-btn">
       📩 Gratis Strategie erhalten
     </button>
   </form>
 </section>
 
-<section class="cta-section">
-  <h2>Bereit, Ihr Unternehmen online zu stärken?</h2>
-  <p>Kontaktieren Sie uns noch heute für eine kostenlose Demo!</p>
-
-  <a class="cta-btn" href="#" onclick="openWhatsApp('Demo starten')">
-    🚀 Demo live sehen
-  </a>
-
-  <a class="cta-btn" href="#" onclick="openWhatsApp('Portfolio Anfrage')">
-    💼 Beispiele ansehen
-  </a>
-</section>
+<div id="thankYouModal" class="modal">
+    <div class="modal-content">
+        <h2>Vielen Dank! 🚀</h2>
+        <p>Ihre Nachricht wurde erfolgreich gesendet. Wir werden uns in Kürze bei Ihnen melden.</p>
+        <button class="close-btn" onclick="closeModal()">Schließen</button>
+    </div>
+</div>
 
 <section class="contact-section">
   <h2>Kontakt</h2>
   <p><strong>Telefon:</strong> +43 660 4831451</p>
   <p><strong>Adresse:</strong> Flurgasse 21, 8010 Graz, Österreich</p>
-
-  <a class="cta-btn" href="#" onclick="openWhatsApp('Direkte Kontakt Anfrage')">
-    💬 Direkt auf WhatsApp schreiben
-  </a>
+  <a class="cta-btn" href="#" onclick="openWhatsApp('Direkte Kontakt Anfrage')">💬 Direkt auf WhatsApp</a>
 </section>
 
 <footer>
   &copy; 2026 Klarity Web - Alle Rechte vorbehalten
 </footer>
 
-<section class="impressum">
-  <h2>Impressum</h2>
-  <p>Klarity Web</p>
-  <p>Flurgasse 21</p>
-  <p>8010 Graz</p>
-  <p>Österreich</p>
-  <p>Telefon: +43 660 4831451</p>
-  <p>E-Mail: info@klarityweb.com</p>
-</section>
-
 <script src="script.js"></script>
+
+<script>
+    // GESTIONE INVIO FORM CON POP-UP
+    const form = document.getElementById("contact-form");
+    const modal = document.getElementById("thankYouModal");
+
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const status = document.getElementById("submit-btn");
+      const data = new FormData(event.target);
+      
+      status.innerHTML = "Wird gesendet...";
+      
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          modal.style.display = "flex";
+          form.reset();
+          status.innerHTML = "📩 Gratis Strategie erhalten";
+        } else {
+          alert("Oops! Es gab ein Problem beim Senden.");
+          status.innerHTML = "📩 Gratis Strategie erhalten";
+        }
+      }).catch(error => {
+        alert("Oops! Es gab ein Problem.");
+        status.innerHTML = "📩 Gratis Strategie erhalten";
+      });
+    }
+    
+    form.addEventListener("submit", handleSubmit);
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Chiude il modal se si clicca fuori
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
