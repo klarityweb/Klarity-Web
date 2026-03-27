@@ -12,40 +12,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Fix specifico per rendere i testi sopra le immagini ultra-leggibili */
-        .service-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #fff;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        /* MIGLIORAMENTI LAYOUT & ALLINEAMENTO */
+        .service-content {
+            padding: 40px 25px !important; /* Più spazio dai bordi */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra tutto il contenuto */
+            text-align: center;
         }
-        .service-content p {
-            font-size: 1rem;
-            color: #efefef;
-            margin-bottom: 15px;
-        }
+
         .service-list {
             list-style: none;
             padding: 0;
-            margin: 15px 0;
-            text-align: left;
+            margin: 20px 0;
+            display: inline-block; /* Permette la centratura del blocco */
+            text-align: left; /* Mantiene le spunte allineate tra loro */
         }
+
         .service-list li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-size: 0.95rem;
-            color: #fff;
+            color: #eee;
             display: flex;
             align-items: center;
         }
+
         .service-list li::before {
-            content: '✔';
-            color: #00ff88;
-            margin-right: 10px;
-            font-weight: bold;
+            content: '✅';
+            margin-right: 12px;
+            font-size: 0.9rem;
         }
-        /* Overlay più leggero per mostrare meglio le immagini */
+
+        /* Overlay bilanciato per vedere le immagini e leggere i testi */
         .service::before {
-            background: rgba(0, 0, 0, 0.5) !important;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)) !important;
+        }
+
+        .price-tag {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        /* Effetto hover sulle card migliorato */
+        .service:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
     </style>
 </head>
@@ -74,42 +89,44 @@
 <header style="padding: 140px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;">
   <div class="header-content">
     <h1 style="font-size: 3.2rem; line-height: 1.2;">Webdesign, das Ergebnisse liefert</h1>
-    <p class="header-text" style="max-width: 700px; margin: 20px auto;">Verwandeln Sie Ihre Besucher in treue Kunden mit modernem Design und psychologisch optimierter Benutzerführung.</p>
-    <a class="cta-header" href="#" onclick="openWhatsApp('Strategiegespräch Webdesign')">🚀 Jetzt Projekt anfragen</a>
+    <p class="header-text" style="max-width: 750px; margin: 20px auto;">Wir bauen keine digitalen Visitenkarten, sondern psychologisch optimierte Verkaufsmaschinen für Ihr Business in Graz.</p>
+    <a class="cta-header" href="#" onclick="openWhatsApp('Strategiegespräch Webdesign')">🚀 Projekt anfragen</a>
   </div>
 </header>
 
 <section class="services-section">
-  <h2>Unsere Webdesign Lösungen</h2>
+  <h2>Maßgeschneiderte Webdesign-Pakete</h2>
   <div class="services">
     
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); height: 500px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); height: 520px;">
       <div class="service-content">
         <h3>Landing Pages</h3>
-        <p>Einzelseiter, optimiert für eine einzige Aktion (Verkauf, Lead). Perfekt für Ads.</p>
+        <p>Einzelseiter, optimiert für eine einzige Aktion (Verkauf, Lead). Perfekt für Google/Social Ads.</p>
         <ul class="service-list">
             <li>A/B Testing ready</li>
             <li>Ultra-schnelle Ladezeit</li>
             <li>Starker Call-to-Action</li>
         </ul>
-        <button class="cta-btn" onclick="openWhatsApp('Anfrage Landing Page Paket')">Ab € 490,-</button>
+        <span class="price-tag">Ab € 490,-</span>
+        <button class="cta-btn" style="margin-top: 20px;" onclick="openWhatsApp('Anfrage Landing Page Paket')">Jetzt anfragen</button>
       </div>
     </div>
 
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80'); height: 500px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80'); height: 520px;">
       <div class="service-content">
         <h3>Business Website</h3>
-        <p>Komplette Webpräsenz für KMU. Zeigen Sie Expertise und gewinnen Sie Vertrauen.</p>
+        <p>Komplette Webpräsenz für KMU. Zeigen Sie Ihre Expertise e gewinnen Sie Vertrauen.</p>
         <ul class="service-list">
             <li>Bis zu 10 Unterseiten</li>
             <li>Basis SEO-Optimierung</li>
             <li>Kontaktformular Integration</li>
         </ul>
-        <button class="cta-btn" onclick="openWhatsApp('Anfrage Business Website Paket')">Ab € 1.290,-</button>
+        <span class="price-tag">Ab € 1.290,-</span>
+        <button class="cta-btn" style="margin-top: 20px;" onclick="openWhatsApp('Anfrage Business Website Paket')">Jetzt anfragen</button>
       </div>
     </div>
 
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80'); height: 500px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80'); height: 520px;">
       <div class="service-content">
         <h3>E-Commerce Shop</h3>
         <p>Professioneller Online-Shop. Verkaufen Sie Ihre Produkte 24/7 weltweit.</p>
@@ -118,7 +135,8 @@
             <li>Sichere Zahlungsarten</li>
             <li>Einfache Verwaltung</li>
         </ul>
-        <button class="cta-btn" onclick="openWhatsApp('Anfrage E-Commerce Paket')">Auf Anfrage</button>
+        <span class="price-tag">Individuell</span>
+        <button class="cta-btn" style="margin-top: 20px;" onclick="openWhatsApp('Anfrage E-Commerce Paket')">Auf Anfrage</button>
       </div>
     </div>
 
@@ -126,47 +144,55 @@
 </section>
 
 <section class="feedback-section" style="background: #0a0a0a; padding: 100px 20px;">
-    <h2>Ihr Weg zur neuen Website</h2>
+    <h2>In 4 Schritten zum Erfolg</h2>
     <div class="feedbacks" style="margin-top: 50px;">
-        <div class="feedback" style="border: 1px solid #222;">
-            <span style="font-size: 2.5rem;">01</span>
-            <h4>Analyse</h4>
-            <p>Wir besprechen Ihre Ziele und analysieren den Markt in Graz.</p>
+        <div class="feedback">
+            <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 10px;">01</h4>
+            <h4>Strategie</h4>
+            <p>Analyse Ihrer Zielgruppe e Konkurrenz in Graz.</p>
         </div>
-        <div class="feedback" style="border: 1px solid #222;">
-            <span style="font-size: 2.5rem;">02</span>
+        <div class="feedback">
+            <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 10px;">02</h4>
             <h4>Design</h4>
-            <p>Erstellung eines individuellen Layouts nach Ihren Wünschen.</p>
+            <p>Erstellung eines modernen e responsive Layouts.</p>
         </div>
-        <div class="feedback" style="border: 1px solid #222;">
-            <span style="font-size: 2.5rem;">03</span>
-            <h4>Go-Live</h4>
-            <p>Nach technischer Prüfung bringen wir Ihre Seite sicher online.</p>
+        <div class="feedback">
+            <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 10px;">03</h4>
+            <h4>SEO</h4>
+            <p>Technische Optimierung für Google-Sichtbarkeit.</p>
+        </div>
+        <div class="feedback">
+            <h4 style="color: #fff; font-size: 1.5rem; margin-bottom: 10px;">04</h4>
+            <h4>Launch</h4>
+            <p>Ihre Seite geht live e wir schulen Ihr Team.</p>
         </div>
     </div>
 </section>
 
 <section class="services-section">
-    <h2>Warum Klarity Web?</h2>
+    <h2>Mehr als nur "schön".</h2>
     <div class="feedbacks">
         <div class="feedback" style="background: transparent; border: none;">
-            <h4 style="color: #00ff88;">⚡ Speed</h4>
-            <p>Ladezeiten unter 1 Sekunde für glückliche Nutzer und Google.</p>
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">⚡</div>
+            <h4>Ladezeit</h4>
+            <p>Websites unter 1 Sekunde für besseres Ranking.</p>
         </div>
         <div class="feedback" style="background: transparent; border: none;">
-            <h4 style="color: #00ff88;">📱 Responsive</h4>
-            <p>Perfektes Design auf Smartphones, Tablets und Desktop-PCs.</p>
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">📱</div>
+            <h4>Mobile First</h4>
+            <p>Perfekte Darstellung auf jedem Smartphone.</p>
         </div>
         <div class="feedback" style="background: transparent; border: none;">
-            <h4 style="color: #00ff88;">🎯 Conversion</h4>
-            <p>Wir bauen Seiten, die aus Besuchern echte Anfragen generieren.</p>
+            <div style="font-size: 2.5rem; margin-bottom: 15px;">🎯</div>
+            <h4>Conversion</h4>
+            <p>Elemente platziert für maximale Anfragen.</p>
         </div>
     </div>
 </section>
 
-<section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80') center/cover;">
-  <h2>Bereit für den digitalen Durchbruch?</h2>
-  <p>Lassen Sie uns gemeinsam etwas Großartiges erschaffen.</p>
+<section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80') center/cover;">
+  <h2>Lust auf ein neues Design?</h2>
+  <p>Lassen Sie uns unverbindlich über Ihre Vision sprechen.</p>
   <a class="cta-btn" href="#" onclick="openWhatsApp('Kostenlose Beratung Webdesign')">💬 Kostenlose Beratung anfordern</a>
 </section>
 
