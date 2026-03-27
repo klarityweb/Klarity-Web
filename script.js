@@ -1,314 +1,150 @@
-/* =========================================
-   RESET & BASE
-   ========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/**
+ * KLARITY WEB - OFFICIAL SITE SCRIPT 2026
+ * Core Logic: Navigation, Search, WhatsApp, and Contact Form
+ */
+
+document.addEventListener("DOMContentLoaded", () => {
+    initScrollAnimations();
+    initNavbarEffect();
+    initFormHandler();
+});
+
+// ===============================================
+// 1. WHATSAPP ENGINE (CONVERSION OPTIMIZED)
+// ===============================================
+function openWhatsApp(serviceName) {
+    const phone = "+436604831451";
+    const text = `Hallo Klarity Web, ich habe Ihre Website gesehen e vorrei informazioni su: ${serviceName}. Können wir eine kostenlose Demo starten?`;
+    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background: #000;
-    color: #fff;
-    line-height: 1.6;
-    overflow-x: hidden;
+// ===============================================
+// 2. SEARCH BAR LOGIC (SMART REDIRECT)
+// ===============================================
+function executeSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const query = searchInput.value.toLowerCase().trim();
+    
+    if (!query) return;
+
+    // Mappatura parole chiave -> Pagine
+    const routes = {
+        "design": "webdesign.html",
+        "web": "webdesign.html",
+        "landing": "webdesign.html",
+        "seo": "seo-marketing.html",
+        "marketing": "seo-marketing.html",
+        "google": "seo-marketing.html",
+        "leads": "seo-marketing.html",
+        "support": "support.html",
+        "hilfe": "support.html",
+        "kontakt": "index.html#contact-form"
+    };
+
+    // Controllo se la query corrisponde a una rotta
+    let target = "index.html"; // Default
+    for (let key in routes) {
+        if (query.includes(key)) {
+            target = routes[key];
+            break;
+        }
+    }
+
+    if (target !== "index.html" || query === "home") {
+        window.location.href = target;
+    } else {
+        // Feedback visivo se non trova nulla
+        searchInput.style.border = "1px solid red";
+        setTimeout(() => searchInput.style.border = "none", 2000);
+        console.log("No specific page found for: " + query);
+    }
 }
 
-/* =========================================
-   NAVBAR & SEARCH BAR (NEW)
-   ========================================= */
-.navbar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(15px); /* Effetto vetro */
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px 0;
+// Listener per il tasto "Enter" nella barra di ricerca
+document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') executeSearch();
+});
+
+// ===============================================
+// 3. CONTACT FORM & POP-UP (AJAX)
+// ===============================================
+function initFormHandler() {
+    const contactForm = document.getElementById("contact-form");
+    const modal = document.getElementById("thankYouModal");
+
+    if (!contactForm) return;
+
+    contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById("submit-btn");
+        const originalText = btn.innerHTML;
+        
+        btn.innerHTML = "Wird gesendet... ⏳";
+        btn.disabled = true;
+
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                modal.style.display = "flex";
+                contactForm.reset();
+            } else {
+                throw new Error("Server Error");
+            }
+        } catch (error) {
+            alert("Fehler! Bitte versuchen Sie es später erneut oder kontaktieren Sie uns per WhatsApp.");
+        } finally {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+    });
 }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+function closeModal() {
+    document.getElementById("thankYouModal").style.display = "none";
 }
 
-.nav-logo img {
-    height: 45px;
-    transition: transform 0.3s ease;
+// ===============================================
+// 4. ANIMATIONS & UI EFFECTS
+// ===============================================
+function initScrollAnimations() {
+    const observerOptions = { threshold: 0.1 };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible'); // Assicurati di avere .visible nel CSS se vuoi animazioni extra
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, observerOptions);
+
+    // Seleziona elementi da animare (Service Cards, Feedback, Titoli)
+    document.querySelectorAll('.service, .feedback, .form-section, h2').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "all 0.8s cubic-bezier(0.2, 1, 0.3, 1)";
+        observer.observe(el);
+    });
 }
 
-.nav-logo img:hover {
-    transform: scale(1.05);
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #ccc;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #fff;
-}
-
-/* SEARCH BOX DESIGN */
-.search-box {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50px;
-    padding: 5px 15px;
-    transition: all 0.3s ease;
-}
-
-.search-box:focus-within {
-    border-color: #fff;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.search-box input {
-    background: transparent;
-    border: none;
-    color: #fff;
-    outline: none;
-    width: 100px;
-    font-size: 0.9rem;
-    transition: width 0.4s ease;
-}
-
-.search-box input:focus {
-    width: 180px;
-}
-
-.search-box button {
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-left: 5px;
-}
-
-/* =========================================
-   HEADER
-   ========================================= */
-header {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-                url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
-}
-
-header h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.header-text { color: #ccc; font-size: 1.2rem; }
-.sub-text { color: #888; margin-bottom: 15px; }
-.trust-line { color: #aaa; font-weight: bold; margin: 20px 0; }
-
-/* =========================================
-   PREMIUM BUTTONS (CTA)
-   ========================================= */
-.cta-header, .cta-btn {
-    display: inline-block;
-    padding: 14px 30px;
-    background: #fff;
-    color: #000;
-    border-radius: 8px;
-    font-weight: bold;
-    text-decoration: none;
-    border: 2px solid #fff;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-}
-
-.cta-header:hover, .cta-btn:hover {
-    background: transparent;
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(255,255,255,0.1);
-}
-
-/* =========================================
-   SERVICES SECTION
-   ========================================= */
-.services-section { padding: 80px 20px; text-align: center; }
-
-.services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.service {
-    position: relative;
-    flex: 1 1 300px;
-    max-width: 350px;
-    height: 400px;
-    border-radius: 15px;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: flex-end;
-    transition: transform 0.4s ease;
-}
-
-.service::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.9));
-}
-
-.service:hover { transform: translateY(-10px); }
-
-.service-content {
-    position: relative;
-    padding: 30px;
-    z-index: 1;
-}
-
-.service-content button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* =========================================
-   POP-UP MODAL (TOCCo DI CLASSE)
-   ========================================= */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.9);
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(10px);
-    animation: fadeIn 0.3s ease;
-}
-
-.modal-content {
-    background: #111;
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.2);
-    text-align: center;
-    max-width: 450px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-    transform: scale(0.9);
-    animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-}
-
-.modal-content h2 {
-    color: #fff;
-    margin-bottom: 15px;
-    font-size: 2rem;
-}
-
-.modal-content p {
-    color: #aaa;
-    margin-bottom: 25px;
-}
-
-.close-btn {
-    width: 100%;
-    padding: 12px;
-    background: #fff;
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.close-btn:hover {
-    background: #ddd;
-}
-
-/* =========================================
-   FORM STYLES
-   ========================================= */
-.form-section { padding: 80px 20px; text-align: center; }
-.premium-form { max-width: 500px; margin: 0 auto; }
-
-.form-group {
-    position: relative;
-    margin-bottom: 25px;
-}
-
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 15px;
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 8px;
-    color: #fff;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    border-color: #fff;
-}
-
-.form-group label {
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    color: #666;
-    transition: 0.3s;
-    pointer-events: none;
-}
-
-.form-group input:focus + label, 
-.form-group input:valid + label,
-.form-group textarea:focus + label,
-.form-group textarea:valid + label {
-    top: -10px;
-    left: 10px;
-    font-size: 0.75rem;
-    color: #fff;
-    background: #000;
-    padding: 0 5px;
-}
-
-/* =========================================
-   ANIMATIONS
-   ========================================= */
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes popUp { to { transform: scale(1); opacity: 1; } }
-
-/* =========================================
-   RESPONSIVE
-   ========================================= */
-@media (max-width: 768px) {
-    .nav-links { display: none; } /* Semplificato per mobile */
-    header h1 { font-size: 2.2rem; }
-    .nav-container { justify-content: center; gap: 20px; flex-direction: column; padding: 10px; }
+function initNavbarEffect() {
+    window.addEventListener("scroll", () => {
+        const nav = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+            nav.style.padding = "5px 0";
+            nav.style.background = "rgba(0, 0, 0, 0.95)";
+        } else {
+            nav.style.padding = "15px 0";
+            nav.style.background = "rgba(0, 0, 0, 0.85)";
+        }
+    });
 }
