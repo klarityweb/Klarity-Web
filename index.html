@@ -23,30 +23,57 @@
             height: 100%;
         }
 
-        .service-list {
-            list-style: none;
-            padding: 0;
-            margin: 25px 0;
-            display: inline-block;
-            text-align: left; 
+        .service::before {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)) !important;
         }
 
-        .service-list li {
-            margin-bottom: 12px;
-            font-size: 1rem;
-            color: #eee;
+        /* NUOVA SEZIONE ATTRATTIVA: SOLUTION GRID */
+        .solution-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            background: #000;
+        }
+
+        .solution-box {
+            flex: 1 1 50%;
+            min-height: 400px;
+            position: relative;
             display: flex;
             align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
         }
 
-        .service-list li::before {
-            content: '⭐'; 
-            margin-right: 12px;
-            font-size: 0.9rem;
+        .solution-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            transition: 0.4s;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        .service::before {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)) !important;
+        .solution-box:hover .solution-overlay {
+            background: rgba(0,0,0,0.4);
+        }
+
+        .solution-overlay h3 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .solution-overlay p {
+            color: #ccc;
+            font-size: 1.1rem;
+            max-width: 450px;
         }
 
         /* SEZIONE FEEDBACK IN COLONNE */
@@ -126,98 +153,87 @@
     </div>
 </nav>
 
-<header style="padding: 180px 20px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80') center/cover;">
+<header style="padding: 150px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;">
   <div class="header-content">
-    <h1 style="font-size: 4rem; line-height: 1.1; margin-bottom: 10px;">Digitale Exzellenz</h1>
-    <h2 style="font-weight: 400; color: #ccc; margin-bottom: 30px;">Webdesign, SEO & Support in Graz</h2>
-    <a class="cta-header" href="https://wa.me/436604831451?text=Hallo! Ich möchte ein neues Projekt starten." target="_blank">🚀 Jetzt Projekt starten</a>
+    <h1 style="font-size: 3.5rem; line-height: 1.2;">Digitale Exzellenz für Graz</h1>
+    <p class="header-text" style="max-width: 800px; margin: 20px auto;">Wir bauen keine digitalen Visitenkarten, sondern psychologisch optimierte Verkaufsmaschinen for Ihr Business.</p>
+    <a class="cta-header" href="https://wa.me/436604831451?text=Hallo! Ich möchte ein neues Projekt starten." target="_blank">🚀 Jetzt Projekt anfragen</a>
   </div>
 </header>
 
+<section style="background: #000; padding-top: 80px;">
+    <h2 style="text-align: center; margin-bottom: 50px;">Wie wir Ihr Business transformieren</h2>
+    <div class="solution-section">
+        <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80');">
+            <div class="solution-overlay">
+                <h3>Vom Unsichtbaren zum Marktführer</h3>
+                <p>Haben Sie eine tolle Dienstleistung, aber niemand findet Sie bei Google? Wir platzieren Sie genau dort, wo Ihre Kunden suchen.</p>
+            </div>
+        </div>
+        <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1553484771-3bc1aeb81763?auto=format&fit=crop&w=1000&q=80');">
+            <div class="solution-overlay">
+                <h3>Von Besuchern zu treuen Kunden</h3>
+                <p>Traffic allein reicht nicht. Wir optimieren das Nutzererlebnis so, dass aus einfachen Klicks echte Anfragen und Käufe werden.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="services-section">
-  <h2>Unsere Kernkompetenzen</h2>
+  <h2>Unsere Fachgebiete</h2>
   <div class="services">
-    
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80'); height: 500px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); height: 450px;">
       <div class="service-content">
         <h3>Webdesign</h3>
-        <p>Moderne, verkaufsstarke Websites.</p>
-        <a href="webdesign.html" class="cta-btn" style="margin-top: 20px; text-decoration: none; display: inline-block;">Details ansehen</a>
+        <p>Moderne Websites, die verkaufen.</p>
+        <a href="webdesign.html" class="cta-btn" style="margin-top: 20px; text-decoration: none;">Details ansehen</a>
       </div>
     </div>
 
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); height: 500px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'); height: 450px;">
       <div class="service-content">
         <h3>SEO & Marketing</h3>
-        <p>Platz 1 Ergebnisse bei Google.</p>
-        <a href="seo-marketing.html" class="cta-btn" style="margin-top: 20px; text-decoration: none; display: inline-block;">Details ansehen</a>
+        <p>Ganz oben bei Google gefunden werden.</p>
+        <a href="seo-marketing.html" class="cta-btn" style="margin-top: 20px; text-decoration: none;">Details ansehen</a>
       </div>
     </div>
 
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80'); height: 500px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80'); height: 450px;">
       <div class="service-content">
         <h3>Support</h3>
-        <p>Wartung & Hilfe rund um die Uhr.</p>
-        <a href="support.html" class="cta-btn" style="margin-top: 20px; text-decoration: none; display: inline-block;">Details ansehen</a>
+        <p>Ihre Technik in sicheren Händen.</p>
+        <a href="support.html" class="cta-btn" style="margin-top: 20px; text-decoration: none;">Details ansehen</a>
       </div>
     </div>
-
   </div>
 </section>
 
-<section class="feedback-section" style="background: #050505; padding: 100px 20px;">
-    <h2 style="margin-bottom: 10px;">Was unsere Kunden sagen</h2>
-    <p style="text-align: center; color: #777;">Erfolg ist das Ergebnis von Vertrauen.</p>
-    
+<section class="feedback-section" style="background: #0a0a0a; padding: 100px 20px;">
+    <h2 style="margin-bottom: 10px;">Stimmen unserer Kunden</h2>
     <div class="feedback-grid">
-        
         <div class="feedback-column">
             <div class="stars">★★★★★</div>
-            <p class="feedback-text">"Klarity Web hat unsere Erwartungen übertroffen. Die neue Landing Page konvertiert doppelt so viele Kunden wie die alte!"</p>
+            <p class="feedback-text">"Klarity Web hat unsere Landing Page komplett neu gestaltet. Die Anfragen sind seit dem Launch um 40% gestiegen!"</p>
             <p class="client-name">Markus S. | Graz</p>
         </div>
-
         <div class="feedback-column">
             <div class="stars">★★★★★</div>
-            <p class="feedback-text">"Endlich eine Agentur, die SEO versteht. Nach 3 Monaten sind wir für unsere wichtigsten Keywords auf Seite 1."</p>
-            <p class="client-name">Julia W. | Steiermark</p>
+            <p class="feedback-text">"Hervorragende SEO-Arbeit. Wir sind endlich unter den Top 3 für unsere wichtigsten Suchbegriffe in der Steiermark."</p>
+            <p class="client-name">Julia W. | Business Coaching</p>
         </div>
-
         <div class="feedback-column">
             <div class="stars">★★★★★</div>
-            <p class="feedback-text">"Der Support ist unglaublich schnell. Technische Probleme werden oft innerhalb einer Stunde gelöst. Sehr zu empfehlen!"</p>
-            <p class="client-name">Andreas L. | KMU Inhaber</p>
-        </div>
-
-    </div>
-</section>
-
-<section class="services-section">
-    <h2>Warum Klarity Web?</h2>
-    <div class="feedbacks">
-        <div class="feedback" style="background: transparent; border: none;">
-            <div style="font-size: 3rem; margin-bottom: 15px;">💎</div>
-            <h4>Premium Design</h4>
-            <p>Einzigartige Layouts statt langweiliger Vorlagen.</p>
-        </div>
-        <div class="feedback" style="background: transparent; border: none;">
-            <div style="font-size: 3rem; margin-bottom: 15px;">📈</div>
-            <h4>Wachstum</h4>
-            <p>Fokus auf ROI und messbare Ergebnisse.</p>
-        </div>
-        <div class="feedback" style="background: transparent; border: none;">
-            <div style="font-size: 3rem; margin-bottom: 15px;">🇦🇹</div>
-            <h4>Lokal</h4>
-            <p>Ihr Partner direkt in Graz für persönlichen Kontakt.</p>
+            <p class="feedback-text">"Professionell, schnell und zuverlässig. Wer eine Website will, die wirklich funktioniert, ist hier richtig."</p>
+            <p class="client-name">Andreas L. | Gastronomie</p>
         </div>
     </div>
 </section>
 
 <section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80') center/cover;">
   <div class="final-cta-container">
-    <h2>Bereit für den nächsten Schritt?</h2>
-    <p style="margin-bottom: 30px;">Lassen Sie uns gemeinsam etwas Großartiges erschaffen.</p>
-    <a class="cta-btn" href="https://wa.me/436604831451?text=Hallo! Ich möchte eine kostenlose Erstberatung." target="_blank" style="text-decoration: none; display: inline-block;">💬 Kostenloses Erstgespräch</a>
+    <h2>Lust auf Wachstum?</h2>
+    <p style="margin-bottom: 30px;">Lassen Sie uns unverbindlich über Ihre Ziele sprechen.</p>
+    <a class="cta-btn" href="https://wa.me/436604831451?text=Hallo! Ich möchte ein kostenloses Strategiegespräch." target="_blank" style="text-decoration: none; display: inline-block;">💬 Kostenlose Beratung anfordern</a>
   </div>
 </section>
 
