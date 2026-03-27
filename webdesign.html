@@ -14,10 +14,10 @@
     <style>
         /* FIX ALLINEAMENTO E SPAZIATURA PREMIUM */
         .service-content {
-            padding: 45px 30px !important; /* Spazio generoso dai bordi */
+            padding: 45px 30px !important;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centra tutto il contenuto orizzontalmente */
+            align-items: center;
             justify-content: center;
             text-align: center;
             height: 100%;
@@ -27,7 +27,7 @@
             list-style: none;
             padding: 0;
             margin: 25px 0;
-            display: inline-block; /* Centra il blocco lista mantenendo l'allineamento interno a sinistra */
+            display: inline-block;
             text-align: left; 
         }
 
@@ -45,7 +45,6 @@
             font-size: 0.9rem;
         }
 
-        /* Overlay bilanciato per profondità e leggibilità */
         .service::before {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)) !important;
         }
@@ -68,7 +67,7 @@
         .service p {
             font-size: 1.05rem;
             color: #ccc;
-            max-width: 280px; /* Evita righe troppo lunghe */
+            max-width: 280px;
         }
 
         /* STILI SPECIFICI PER SEZIONE PROCESSO */
@@ -84,7 +83,7 @@
             position: relative;
             flex: 1 1 260px;
             max-width: 280px;
-            height: 320px; /* Altezza fissa per le card del processo */
+            height: 320px;
             border-radius: 12px;
             overflow: hidden;
             background-size: cover;
@@ -97,18 +96,17 @@
             transform: translateY(-5px);
         }
 
-        /* Overlay scuro per le card del processo */
         .process-card::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.75); /* Oscuramento deciso */
+            background: rgba(0, 0, 0, 0.75);
             z-index: 1;
         }
 
         .process-content {
             position: relative;
-            z-index: 2; /* Sopra l'overlay */
+            z-index: 2;
             padding: 30px;
             display: flex;
             flex-direction: column;
@@ -136,6 +134,15 @@
             color: #ccc;
             font-size: 0.95rem;
             line-height: 1.5;
+        }
+
+        /* FIX CENTRATURA CTA FINALE */
+        .final-cta-container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
@@ -280,9 +287,11 @@
 </section>
 
 <section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover;">
-  <h2>Lust auf ein neues Design?</h2>
-  <p>Lassen Sie uns unverbindlich über Ihre Vision sprechen.</p>
-  <a class="cta-btn" href="#" onclick="openWhatsApp('Kostenlose Beratung Webdesign')">💬 Kostenlose Beratung anfordern</a>
+  <div class="final-cta-container">
+    <h2>Lust auf ein neues Design?</h2>
+    <p style="margin-bottom: 30px;">Lassen Sie uns unverbindlich über Ihre Vision sprechen.</p>
+    <a class="cta-btn" href="#" onclick="openWhatsApp('Kostenlose Beratung Webdesign')">💬 Kostenlose Beratung anfordern</a>
+  </div>
 </section>
 
 <footer>
