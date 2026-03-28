@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klarity Web | Home - Premium Webdesign & SEO Graz</title>
+    <title>Klarity Web | Webdesign & SEO Agentur – Graz, Steiermark & Wien</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -21,12 +21,12 @@
         .nav-links a { text-decoration: none; color: #aaa; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
         .nav-links a.active-link { color: #fff; font-weight: bold; border-bottom: 2px solid #fff; padding-bottom: 5px; }
 
-        /* HERO HEADER - LOGO MONUMENTALE RITAGLIATO VIA CSS CON MICRO-REGOLAZIONI */
+        /* HERO HEADER */
         .hero-header { 
             text-align: center; 
             padding: 0; 
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
-                        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;
+                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80') center/cover;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -38,38 +38,32 @@
             display: flex;
             justify-content: center;
             overflow: hidden;
-            
-            /* MICRO-REGOLAZIONI */
-            margin-top: 30px; /* Ridotto per far scendere il logo di "un puntino" */
-            margin-left: -6px; /* Aggiunto per spostare il logo di "un puntino" a sinistra */
+            margin-top: 30px; 
+            margin-left: -6px; 
         }
 
         .logo-giant { 
-            /* Forza l'immagine a essere gigante */
             width: 1800px; 
             max-width: 160vw;
-            
-            /* TRUCCO: Altezza fissa ridotta + object-fit: cover 
-               Questo "taglia" i margini vuoti sopra e sotto del file originale */
             height: 280px; 
             object-fit: cover;
             object-position: center; 
-            
             display: block;
             filter: drop-shadow(0 10px 25px rgba(0,0,0,0.7));
-            
-            /* Manteniamo l'incollaggio al titolo */
             margin-bottom: -30px; 
         }
 
+        /* TITOLO COMPATTO SU UNA RIGA */
         .hero-header h1 { 
             color: #fff; 
-            font-size: 3rem; 
-            margin: -20px 0 15px 0; /* Manteniamo il titolo vicino */
+            font-size: clamp(1.8rem, 4.2vw, 3.2rem); 
+            margin: -20px 0 15px 0; 
             text-transform: uppercase; 
             letter-spacing: 2px; 
             position: relative; 
-            z-index: 2; 
+            z-index: 2;
+            font-weight: 700;
+            white-space: nowrap; 
         }
 
         .hero-header p { 
@@ -77,8 +71,8 @@
             text-align: center; 
             color: #fff; 
             font-size: 1.25rem; 
-            max-width: 800px; 
-            opacity: 0.85; 
+            max-width: 900px; 
+            opacity: 0.95; 
             line-height: 1.6;
             position: relative; 
             z-index: 2;
@@ -86,7 +80,7 @@
 
         .cta-btn-white { 
             display: inline-block; 
-            padding: 12px 30px; 
+            padding: 14px 35px; 
             background: #fff; 
             color: #000; 
             text-decoration: none; 
@@ -101,25 +95,23 @@
         .cta-btn-white:hover { background: #ddd; transform: translateY(-3px); }
 
         /* TRUST BAR */
-        .trust-bar { background: #0a0a0a; padding: 25px 20px; text-align: center; border-top: 1px solid #111; border-bottom: 1px solid #111; color: #555; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; }
+        .trust-bar { background: #0a0a0a; padding: 25px 20px; text-align: center; border-top: 1px solid #111; border-bottom: 1px solid #111; color: #666; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; }
 
-        /* SOLUTIONS */
+        /* SEZIONI SOLUZIONI E SERVIZI */
         .solution-section { display: flex; flex-wrap: wrap; background: #000; }
         .solution-box { flex: 1 1 50%; min-height: 450px; position: relative; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; }
         .solution-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.75); padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
 
-        /* SERVICES */
         .services .service { display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; height: 450px; background-size: cover; background-position: center; }
         .service::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)) !important; z-index: 1; }
         .service-content { position: relative; z-index: 2; padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
 
-        /* FEEDBACKS */
+        /* FEEDBACK E CONTATTI */
         .feedback-section { background: #000; padding: 100px 20px; color: #fff; text-align: center; }
         .feedbacks { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px; }
         .feedback { background: #050505; padding: 30px; border: 1px solid #111; border-radius: 8px; flex: 1 1 300px; max-width: 350px; }
         .stars { color: #ffcc00; font-size: 1.2rem; margin-bottom: 15px; }
 
-        /* CONTACT SECTION */
         .contact-section { background: #000; padding: 80px 20px; text-align: center; border-top: 1px solid #111; }
         .contact-section h2 { color: #fff; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 2px; }
         .contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; max-width: 1200px; margin: 0 auto; }
@@ -128,7 +120,6 @@
         .contact-card h4 { text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
         .contact-card a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
 
-        /* CTA FINALE CON SFONDO */
         .final-cta-section { 
             padding: 120px 20px; 
             text-align: center; 
@@ -160,15 +151,15 @@
     <div class="logo-giant-wrapper">
         <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Huge" class="logo-giant">
     </div>
-    <h1>Premium Webdesign & SEO</h1>
-    <p>Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.</p>
-    <a href="https://wa.me/436604831451" class="cta-btn-white">Kostenlose Demo anfordern 🚀</a>
+    <h1>Premium Webdesign & SEO-Wachstum</h1>
+    <p>Wir realisieren verkaufsstarke Websites und datengesteuerte SEO-Erfolge für Unternehmen <br> in Graz, der Steiermark und Wien.</p>
+    <a href="https://wa.me/436604831451" class="cta-btn-white">Kostenlose Strategie-Session 🚀</a>
 </header>
 
 <div class="trust-bar">E-Commerce • Handwerk • Dienstleister • Kanzleien</div>
 
 <section style="background: #000; padding: 100px 20px;">
-    <h2 style="text-align: center; margin-bottom: 60px; color: #fff; font-size: 2.5rem;">Wie wir Ihr Business transformieren</h2>
+    <h2 style="text-align: center; margin-bottom: 60px; color: #fff; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px;">Wie wir Ihr Business transformieren</h2>
     <div class="solution-section">
         <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80');">
             <div class="solution-overlay"><h3>Sichtbarkeit, die verkauft</h3><p style="color:#ccc;">Wir bringen Sie auf Seite 1 bei Google. Nicht nur für Klicks, sondern für echte Kunden.</p></div>
@@ -180,7 +171,7 @@
 </section>
 
 <section class="services-section">
-    <h2 style="text-align: center; color: #fff; padding: 40px 0;">Unsere Performance-Bereiche</h2>
+    <h2 style="text-align: center; color: #fff; padding: 40px 0; text-transform: uppercase; letter-spacing: 2px;">Unsere Performance-Bereiche</h2>
     <div class="services">
         <div class="service" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80');">
             <div class="service-content"><h3>Webdesign</h3><p>Landing Pages & Business Websites.</p><a href="webdesign.html" class="cta-btn-white" style="margin-bottom:0;">Design ansehen ✨</a></div>
@@ -195,7 +186,7 @@
 </section>
 
 <section class="feedback-section">
-    <h2>Kundenfeedback</h2>
+    <h2 style="text-transform: uppercase; letter-spacing: 2px;">Kundenfeedback</h2>
     <div class="feedbacks">
         <div class="feedback">
             <div class="stars">⭐⭐⭐⭐⭐</div>
@@ -216,7 +207,7 @@
 </section>
 
 <section class="contact-section">
-    <h2>Direkter Kontakt</h2>
+    <h2 style="text-transform: uppercase; letter-spacing: 2px;">Direkter Kontakt</h2>
     <div class="contact-grid">
         <div class="contact-card">
             <i class="fab fa-whatsapp"></i>
@@ -231,7 +222,7 @@
         <div class="contact-card">
             <i class="fas fa-location-dot"></i>
             <h4>Standort</h4>
-            <p style="color: #888;">Graz, Österreich</p>
+            <p style="color: #888;">Graz & Wien, Österreich</p>
         </div>
     </div>
 </section>
