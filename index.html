@@ -36,11 +36,15 @@
         .service::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)) !important; z-index: 1; }
         .service-content { position: relative; z-index: 2; padding: 40px !important; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
         
-        /* BOTTONE BIANCO RICHIESTO */
         .cta-btn-white { display: inline-block; margin-top: 25px; padding: 12px 25px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px; }
 
-        /* --- SEZIONI AGGIUNTIVE (Senza toccare il resto) --- */
-        .feedback-section { background: #000; padding: 80px 20px; color: #fff; text-align: center; border-top: 1px solid #111; }
+        /* --- FEEDBACKS (STELLE ORIGINALI) --- */
+        .feedback-section { background: #000; padding: 100px 20px; color: #fff; text-align: center; }
+        .feedbacks { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px; }
+        .feedback { background: #050505; padding: 30px; border: 1px solid #111; border-radius: 8px; flex: 1 1 300px; max-width: 350px; }
+        .stars { color: #ffcc00; font-size: 1.2rem; margin-bottom: 15px; }
+
+        /* --- CONTATTI --- */
         .contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 60px 20px; background: #050505; color: #fff; }
         .contact-card { text-align: center; flex: 1 1 250px; }
         .contact-link { color: #ccc; text-decoration: none; transition: 0.3s; }
@@ -100,8 +104,24 @@
 </section>
 
 <section class="feedback-section">
-    <h2>Cosa dicono i nostri clienti</h2>
-    <p style="color: #888;">Esempi di feedback reali dai nostri partner di Graz.</p>
+    <h2 style="font-size: 2.5rem; text-transform: uppercase;">Kundenfeedback</h2>
+    <div class="feedbacks">
+        <div class="feedback">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Hervorragende Zusammenarbeit und ein Design, das unsere Erwartungen weit übertroffen hat."</p>
+            <h4 style="margin-top:15px; color:#fff;">- Markus S., Graz</h4>
+        </div>
+        <div class="feedback">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Endlich eine Agentur, die SEO wirklich versteht. Unsere Anfragen sind massiv gestiegen."</p>
+            <h4 style="margin-top:15px; color:#fff;">- Julia T., Steiermark</h4>
+        </div>
+        <div class="feedback">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Schnell, zuverlässig und professionell. Die neue Landing Page konvertiert fantastisch."</p>
+            <h4 style="margin-top:15px; color:#fff;">- Andreas W., Wien</h4>
+        </div>
+    </div>
 </section>
 
 <section id="contact" class="contact-grid">
