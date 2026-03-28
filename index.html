@@ -21,10 +21,10 @@
         .nav-links a { text-decoration: none; color: #aaa; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
         .nav-links a.active-link { color: #fff; font-weight: bold; border-bottom: 2px solid #fff; padding-bottom: 5px; }
 
-        /* HERO HEADER - Ottimizzato per logo ritagliato */
+        /* HERO HEADER - LOGO MONUMENTALE E COMPATTO */
         .hero-header { 
             text-align: center; 
-            padding: 20px 0 80px 0; /* Padding ridotto sopra e sotto */
+            padding: 0 0 100px 0; /* Padding superiore azzerato */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
                         url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;
             display: flex;
@@ -36,24 +36,25 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            overflow: hidden; /* Evita scroll orizzontale */
-            margin-bottom: 15px; /* Spazio pulito sotto il logo ritagliato */
+            overflow: hidden;
+            margin-top: -20px; /* Alza ulteriormente il logo verso la navbar */
         }
 
-        /* --- LOGO GIGANTE E RITAGLIATO --- */
+        /* --- IL RITORNO DEL LOGO GIGANTE --- */
         .logo-giant { 
-            /* Uso la nuova immagine ritagliata */
-            width: 6400px; /* Larghezza virtuale esagerata per l'effetto */
-            max-width: 140vw; /* Si espande oltre i bordi */
-            
-            /* Altezza ridotta poiché l'immagine è ritagliata, 
-               permettendole di stare più in alto */
-            height: 250px; 
-            
+            width: 3200px; /* Forza la dimensione reale dell'immagine */
+            max-width: 150vw; /* Lo fa uscire dai bordi per l'effetto cinema */
+            height: auto; 
+            display: block;
             object-fit: contain; 
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+            margin-bottom: -40px; /* Avvicina drasticamente il titolo sotto */
         }
         
+        /* TESTI HERO */
+        .hero-header h1 { color: #fff; font-size: 3rem; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 2px; position: relative; z-index: 2; }
+        .hero-header p { margin: 0 auto; text-align: center; color: #fff; font-size: 1.25rem; max-width: 800px; opacity: 0.85; line-height: 1.6; position: relative; z-index: 2; }
+
         /* TRUST BAR */
         .trust-bar { background: #0a0a0a; padding: 25px 20px; text-align: center; border-top: 1px solid #111; border-bottom: 1px solid #111; color: #555; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; }
 
@@ -68,7 +69,6 @@
         .service-content { position: relative; z-index: 2; padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
         
         .cta-btn-white { display: inline-block; margin-top: 25px; padding: 12px 25px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px; transition: 0.3s; }
-        .cta-btn-white:hover { background: #ddd; transform: translateY(-2px); }
 
         /* FEEDBACKS */
         .feedback-section { background: #000; padding: 100px 20px; color: #fff; text-align: center; }
@@ -115,10 +115,10 @@
 
 <header class="hero-header">
     <div class="logo-giant-wrapper">
-        <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Cropped Huge Logo" class="logo-giant">
+        <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Huge" class="logo-giant">
     </div>
-    <h1 style="color: #fff; font-size: 3rem; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 2px;">Premium Webdesign & SEO</h1>
-    <p style="margin:0 auto; text-align:center; color: #fff; font-size: 1.25rem; max-width: 800px; opacity: 0.85; line-height: 1.6;">Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.</p>
+    <h1>Premium Webdesign & SEO</h1>
+    <p>Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.</p>
     <a href="https://wa.me/436604831451" class="cta-btn-white">Kostenlose Demo anfordern 🚀</a>
 </header>
 
