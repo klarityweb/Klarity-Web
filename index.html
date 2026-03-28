@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klarity Web | Webdesign & SEO Graz</title>
-    <meta name="description" content="Klarity Web Graz – High-End Websites, SEO und Support in der Steiermark.">
+    <title>Klarity Web | Home - Premium Webdesign & SEO Graz</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -22,9 +21,34 @@
         .nav-links a { text-decoration: none; color: #aaa; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
         .nav-links a.active-link { color: #fff; font-weight: bold; border-bottom: 2px solid #fff; padding-bottom: 5px; }
 
-        /* HERO HEADER */
-        .hero-header { text-align: center; padding: 20px 0 80px 0; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover; }
-        .logo-giant { width: 3200px; max-width: 100vw; height: 350px; object-fit: contain; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); }
+        /* HERO HEADER MODIFICATO PER LOGO MONUMENTALE */
+        .hero-header { 
+            text-align: center; 
+            padding: 10px 0 80px 0; /* Ridotto il padding top per alzare il logo */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+                        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-giant-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            overflow: hidden; /* Evita scroll orizzontale */
+            margin-bottom: -15px; /* Avvicina il testo al logo */
+        }
+
+        /* --- LOGO INGRANDITO 2X E RESO MONUMENTALE --- */
+        .logo-giant { 
+            /* Uso l'immagine 2x appena generata */
+            width: 3200px; /* Larghezza reale dell'immagine image_1.png */
+            max-width: 140vw; /* Permette al logo di "uscire" leggermente dai bordi per impatto visivo */
+            height: auto; /* Mantiene le proporzioni */
+            object-fit: contain; 
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); 
+        }
         
         /* TRUST BAR */
         .trust-bar { background: #0a0a0a; padding: 25px 20px; text-align: center; border-top: 1px solid #111; border-bottom: 1px solid #111; color: #555; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; }
@@ -57,7 +81,7 @@
         .contact-card h4 { text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
         .contact-card a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
 
-        /* CTA FINALE CON SFONDO (Uniformata alle altre pagine) */
+        /* CTA FINALE CON SFONDO */
         .final-cta-section { 
             padding: 120px 20px; 
             text-align: center; 
@@ -86,11 +110,11 @@
 </nav>
 
 <header class="hero-header">
-    <div class="logo-container">
-        <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web" class="logo-giant">
+    <div class="logo-giant-wrapper">
+        <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Huge Logo" class="logo-giant">
     </div>
-    <h1 style="color: #fff; font-size: 2.8rem; margin: 15px 0; text-transform: uppercase;">Premium Webdesign & SEO</h1>
-    <p style="margin:0 auto; text-align:center; color: #fff; font-size: 1.25rem; max-width: 800px; opacity: 0.85;">Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.</p>
+    <h1 style="color: #fff; font-size: 3rem; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 2px;">Premium Webdesign & SEO</h1>
+    <p style="margin:0 auto; text-align:center; color: #fff; font-size: 1.25rem; max-width: 800px; opacity: 0.85; line-height: 1.6;">Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.</p>
     <a href="https://wa.me/436604831451" class="cta-btn-white">Kostenlose Demo anfordern 🚀</a>
 </header>
 
