@@ -1,305 +1,86 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/**
+ * Klarity Web - Custom JavaScript
+ * Ottimizzato per performance e UX
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
     
-    <title>Klarity Web | Webdesign & SEO Graz</title>
-    <meta name="description" content="Klarity Web Graz – Wir entwickeln Ihren Online-Erfolg. High-End Websites, SEO und Support in der Steiermark.">
-    <meta name="keywords" content="Webdesign Graz, SEO Graz, Website erstellen Graz, Online Marketing Steiermark, Webagentur Österreich">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:title" content="Klarity Web | Webdesign & SEO Graz">
-    <meta property="og:description" content="Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80">
-    <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    // --- 1. NAVBAR DINAMICA ---
+    const navbar = document.querySelector('.navbar');
     
-    <style>
-        /* --- STILI GENERALI E CORREZIONI MANTENUTI --- */
-        .services .service {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.5)';
+            navbar.style.padding = '10px 0'; // Si restringe leggermente
+        } else {
+            navbar.style.background = 'rgba(0, 0, 0, 0.8)';
+            navbar.style.boxShadow = 'none';
+            navbar.style.padding = '15px 0';
         }
+    });
 
-        .service-content {
-            padding: 30px !important;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 100%;
-        }
+    // --- 2. SMOOTH SCROLL PER LINK INTERNI ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 
-        .service::before {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)) !important;
-        }
-
-        .solution-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0;
-            background: #000;
-        }
-
-        .solution-box {
-            flex: 1 1 50%;
-            min-height: 450px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .solution-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.75);
-            transition: 0.4s;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        /* --- CONTATTI E FAQ --- */
-        .contact-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            padding: 50px 20px;
-            background: #050505;
-        }
-
-        .contact-card {
-            text-align: center;
-            color: #fff;
-            flex: 1 1 250px;
-            max-width: 300px;
-        }
-
-        .contact-link {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
-
-        .contact-link:hover {
-            color: #fff;
-        }
-
-        .faq-section {
-            background: #000;
-            padding: 80px 20px;
-            color: #fff;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 20px;
-        }
-
-        .faq-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .faq-item p {
-            color: #aaa;
-            line-height: 1.6;
-        }
-
-        .trust-bar {
-            background: #0a0a0a;
-            padding: 30px 20px;
-            text-align: center;
-            border-top: 1px solid #111;
-            border-bottom: 1px solid #111;
-        }
-
-        .trust-bar span {
-            color: #555;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.8rem;
-        }
-    </style>
-</head>
-<body>
-
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <a href="index.html">
-                <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Logo">
-            </a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html" style="color: #fff; font-weight: bold; border-bottom: 2px solid #fff;">Home</a></li>
-            <li><a href="webdesign.html">Webdesign</a></li>
-            <li><a href="seo-marketing.html">SEO & Marketing</a></li>
-            <li><a href="support.html">Support</a></li>
-        </ul>
-    </div>
-</nav>
-
-<header style="text-align:center; padding: 20px 20px 80px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;">
-  <div class="header-content" style="display:flex; flex-direction:column; align-items:center;">
+    // --- 3. ANIMAZIONE REVEAL AL SCROLL ---
+    // Fa apparire gli elementi con un fade-in quando entrano nel viewport
+    const revealElements = document.querySelectorAll('.service, .solution-box, .contact-card, .faq-item');
     
-    <div class="logo" style="margin-bottom: 0px;">
-      <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" 
-           alt="Klarity Web" 
-           style="width:1600px; 
-                  max-width: 100%; 
-                  height: 250px; 
-                  object-fit: contain; 
-                  object-position: center;
-                  display: block;">
-    </div>
+    const revealOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.85;
+        
+        revealElements.forEach(el => {
+            const elTop = el.getBoundingClientRect().top;
+            
+            if (elTop < triggerBottom) {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }
+        });
+    };
 
-    <h1 style="color: #fff; font-size: 2.5rem; margin: -20px 0 10px 0; text-transform: uppercase; letter-spacing: 1px;">Premium Webdesign & SEO</h1>
-    
-    <p class="header-text" style="margin:0; text-align:center; color: #fff; font-size: 1.2rem; max-width: 700px; opacity: 0.9;">
-      Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.
-    </p>
-    
-    <a class="cta-header" href="https://wa.me/436604831451" target="_blank" style="margin-top:25px;">Kostenlose Demo anfordern 🚀</a>
-  </div>
-</header>
+    // Set iniziale per l'animazione
+    revealElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease-out';
+    });
 
-<div class="trust-bar">
-    <span>E-Commerce • Handwerk • Dienstleister • Kanzleien</span>
-</div>
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Esegui subito al caricamento
 
-<section style="background: #000; padding: 100px 20px;">
-    <h2 style="text-align: center; margin-bottom: 60px; color: #fff; font-size: 2.5rem;">Ihre Vision, unsere Umsetzung</h2>
-    <div class="solution-section">
-        <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80');">
-            <div class="solution-overlay">
-                <h3>Sichtbarkeit, die verkauft</h3>
-                <p>Wir bringen Sie auf Seite 1 bei Google. Nicht nur für Klicks, sondern für Kunden, die bereit sind zu kaufen.</p>
-            </div>
-        </div>
-        <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80');">
-            <div class="solution-overlay">
-                <h3>Design, das überzeugt</h3>
-                <p>Ihre Website ist Ihr bester Verkäufer. Wir gestalten Erlebnisse, die Vertrauen schaffen und qualifizierte Leads generieren.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    // --- 4. GESTIONE RICERCA (SEARCH BOX) ---
+    window.executeSearch = () => {
+        const query = document.getElementById('searchInput').value.trim();
+        if (query) {
+            // Logica di ricerca base: avvisa l'utente o reindirizza
+            console.log("Ricerca per:", query);
+            alert("Suche nach: " + query + "... (Funktion wird implementiert)");
+        } else {
+            document.getElementById('searchInput').focus();
+        }
+    };
 
-<section class="services-section">
-  <h2>Unsere Performance-Bereiche</h2>
-  <div class="services">
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80'); height: 450px;">
-      <div class="service-content">
-        <h3>High-End Webdesign</h3>
-        <p>Landing Pages & Business Websites, die Neukunden gewinnen.</p>
-        <a href="webdesign.html" class="cta-btn">Design ansehen ✨</a>
-      </div>
-    </div>
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); height: 450px;">
-      <div class="service-content">
-        <h3>SEO & Google Ads</h3>
-        <p>Maximale Sichtbarkeit e messbarer ROI für Ihr Business.</p>
-        <a href="seo-marketing.html" class="cta-btn">Mehr Reichweite 📈</a>
-      </div>
-    </div>
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80'); height: 450px;">
-      <div class="service-content">
-        <h3>Support & Wartung</h3>
-        <p>Sorgenfreie Technik. Wir halten Ihre Website schnell & sicher.</p>
-        <a href="support.html" class="cta-btn">Hilfe anfordern 🛠️</a>
-      </div>
-    </div>
-  </div>
-</section>
+    // Permetti l'invio della ricerca con il tasto "Invio"
+    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            executeSearch();
+        }
+    });
 
-<section class="feedback-section" style="background: #0a0a0a; padding: 100px 20px;">
-    <h2 style="margin-bottom: 15px; font-size: 2.5rem;">Was Kunden über uns sagen</h2>
-    <p style="text-align: center; color: #777; margin-bottom: 10px;">Vertrauen ist der Anfang von jedem Wachstum.</p>
-    <div class="feedback-grid">
-        <div class="feedback-column">
-            <div class="stars">★★★★★</div>
-            <p class="feedback-text">"Klarity Web hat unsere Website komplett transformiert. Die Anfragen sind seit dem Launch um 120% gestiegen. Super professionell e schnell!"</p>
-            <p class="client-name">Markus S. | Graz</p>
-        </div>
-        <div class="feedback-column">
-            <div class="stars">★★★★★</div>
-            <p class="feedback-text">"Hervorragende Beratung e Umsetzung. Endlich eine Agentur, die hält was sie verspricht. SEO-Rankings haben sich verbessert."</p>
-            <p class="client-name">Julia W. | Business Coaching Steiermark</p>
-        </div>
-        <div class="feedback-column">
-            <div class="stars">★★★★★</div>
-            <p class="feedback-text">"Der Support ist erstklassig. Bei Fragen bekommt man sofort eine competente Lösung. Absolut empfehlenswert!"</p>
-            <p class="client-name">Andreas L. | KMU Inhaber</p>
-        </div>
-    </div>
-</section>
+});
 
-<section id="kontakt" class="contact-section">
-    <div class="contact-container">
-        <h2>Bereit für digitales Wachstum?</h2>
-        <p>Kontaktieren Sie uns noch heute für ein unverbindliches Erstgespräch o eine kostenlose Demo!</p>
-        <div class="contact-details">
-            <a href="https://wa.me/436604831451" target="_blank" class="contact-item">
-                <span>💬</span> WhatsApp: +43 660 4831451
-            </a>
-            <a href="mailto:info@klarityweb.at" class="contact-item">
-                <span>✉️</span> Email: info@klarityweb.at
-            </a>
-            <a href="tel:+436604831451" class="contact-item">
-                <span>📞</span> Anruf: +43 660 4831451
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="faq-section">
-    <div class="faq-container">
-        <h2 style="text-align: center; margin-bottom: 40px;">Häufig gestellte Fragen</h2>
-        <div class="faq-item">
-            <h4>Wie lange dauert die Erstellung einer Website?</h4>
-            <p>In der Regel benötigen wir für eine professionelle Business-Website zwischen 2 und 4 Wochen, je nach Umfang.</p>
-        </div>
-        <div class="faq-item">
-            <h4>Ist SEO im Webdesign enthalten?</h4>
-            <p>Ja, jede unserer Websites wird mit einer grundlegenden On-Page-SEO-Struktur ausgeliefert, damit Sie gefunden werden.</p>
-        </div>
-    </div>
-</section>
-
-<section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80') center/cover;">
-  <div class="final-cta-container">
-    <h2>Wollen Sie Ihre Konkurrenz online überholen?</h2>
-    <p style="margin-bottom: 35px; color: #ccc; font-size: 1.1rem; max-width: 650px;">Lassen Sie uns gemeinsam la vostra digitale Präsenz auf das nächste Level heben e nachhaltig Umsatz generieren.</p>
-    <a class="cta-btn" href="https://wa.me/436604831451" target="_blank" style="text-decoration: none; display: inline-block; padding: 15px 35px; font-size: 1.1rem;">💬 Jetzt Erstgespräch sichern</a>
-  </div>
-</section>
-
-<footer>
-  &copy; 2026 Klarity Web Graz - Alle Rechte vorbehalten
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+// --- 5. LOG PER DEBUG (OPZIONALE) ---
+console.log("Klarity Web JS loaded successfully 🚀");
