@@ -1,5 +1,5 @@
 /* =========================================
-   1. RESET & BASE (Desktop & Global)
+   RESET & GLOBAL SAFETY
    ========================================= */
 * {
     margin: 0;
@@ -7,18 +7,22 @@
     box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Blocca lo scroll laterale ovunque */
+    position: relative;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background: #000;
     color: #fff;
     line-height: 1.6;
-    overflow-x: hidden;
-    width: 100%;
-    text-align: center; /* Centratura base per il testo */
+    text-align: center;
 }
 
 /* =========================================
-   2. NAVBAR & SEARCH BAR
+   NAVBAR (Desktop & Base)
    ========================================= */
 .navbar {
     position: sticky;
@@ -40,12 +44,10 @@ body {
     padding: 0 20px;
 }
 
-.nav-logo img { height: 45px; }
-
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 20px;
 }
 
 .nav-links a {
@@ -55,166 +57,98 @@ body {
     font-size: 0.95rem;
 }
 
-.nav-links a:hover, .nav-links a.active-link { color: #fff; }
-
-.search-box {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50px;
-    padding: 5px 15px;
-}
-
-.search-box input {
-    background: transparent;
-    border: none;
-    color: #fff;
-    outline: none;
-    width: 80px;
-}
-
 /* =========================================
-   3. HEADER & HERO (Sempre centrati)
+   HERO & TITOLI (Desktop)
    ========================================= */
 header, .hero-header {
-    text-align: center;
     padding: 100px 20px;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
                 url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 header h1, .hero-header h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-}
-
-.logo-giant-wrapper { width: 100%; display: flex; justify-content: center; overflow: hidden; }
-.logo-giant { width: 1800px; max-width: 160vw; height: auto; filter: drop-shadow(0 10px 25px rgba(0,0,0,0.7)); }
-
-/* =========================================
-   4. SEZIONI CONTENT & FEATURE BOX (FIX CENTRATURA)
-   ========================================= */
-section {
-    padding: 80px 20px;
-    text-align: center; /* Forza la centratura di ogni sezione */
-}
-
-/* Blocchi come "Warum SEO bei uns?" */
-.features-grid, .services, .contact-grid, .feedbacks {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.feature-item, .service, .feedback, .contact-card {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Titoli e paragrafi globali */
-h2, h3, h4, p {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 20px;
 }
 
 /* =========================================
-   5. SEZIONI SOLUZIONI (Desktop)
-   ========================================= */
-.solution-section { display: flex; flex-wrap: wrap; width: 100%; }
-.solution-box { flex: 1 1 50%; min-height: 450px; position: relative; background-size: cover; background-position: center; }
-.solution-overlay {
-    background: rgba(0, 0, 0, 0.75);
-    padding: 40px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* =========================================
-   6. BOTTONI
-   ========================================= */
-.cta-header, .cta-btn, .cta-btn-white {
-    display: inline-block;
-    padding: 14px 30px;
-    background: #fff;
-    color: #000;
-    border-radius: 8px;
-    font-weight: bold;
-    text-decoration: none;
-    border: 2px solid #fff;
-}
-
-/* =========================================
-   7. MEGA FIX MOBILE (Tutto centrato)
+   MEGA FIX RESPONSIVE (Smartphone & Tablet)
    ========================================= */
 @media (max-width: 768px) {
-    
-    /* Navbar */
+
+    /* NAVBAR MOBILE: Evita che "Support" esca dal bordo */
     .nav-logo, .search-box { display: none !important; }
-    .nav-container { justify-content: center; }
-    .nav-links { gap: 12px; justify-content: center; }
-    .nav-links a { font-size: 0.75rem; }
-
-    /* Header & Text Fix */
-    header h1, .hero-header h1 {
-        font-size: 1.8rem !important;
-        white-space: normal !important;
-        text-align: center;
-    }
-
-    /* Soluzioni & Servizi */
-    .solution-section { flex-direction: column; }
-    .solution-box { flex: 1 1 100%; min-height: 350px; height: auto !important; }
     
-    .services { flex-direction: column; align-items: center; }
-    .service {
-        width: 100% !important;
-        max-width: 95% !important;
-        height: auto !important;
-        min-height: 450px;
-        padding-bottom: 30px;
-    }
-
-    .service-content {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* CENTRA ICONE E TESTO NEI PACCHETTI */
-        justify-content: flex-end;
-        padding: 25px !important;
-        text-align: center;
-    }
-
-    /* Fix specifico per le descrizioni dei pacchetti e feature */
-    .service-content p, .feature-item p, section p {
-        text-align: center !important;
+    .nav-container { 
+        justify-content: center !important; 
+        padding: 5px !important;
         width: 100%;
     }
 
-    /* Bottoni */
-    .cta-btn, .cta-btn-white {
-        width: 90% !important;
-        margin: 10px auto !important;
+    .nav-links { 
+        gap: 8px !important; /* Spazio ridotto al minimo */
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-links a { 
+        font-size: 0.7rem !important; /* Font più piccolo per far stare tutto */
+        letter-spacing: 0px;
+        white-space: nowrap; 
+    }
+
+    /* TITOLI: Fix per "Transformieren" e parole lunghe */
+    header h1, .hero-header h1, h2 {
+        font-size: clamp(1.5rem, 8vw, 2rem) !important; /* Si adatta dinamicamente */
+        inline-size: 100%;
+        overflow-wrap: break-word; /* Forza la rottura se la parola è troppo lunga */
+        hyphens: auto; /* Aggiunge il trattino se taglia la parola */
+        padding: 0 10px;
+        white-space: normal !important;
+    }
+
+    /* Logo Giant Mobile */
+    .logo-giant {
+        max-width: 95% !important;
+        height: auto !important;
+    }
+
+    /* Blocchi e Griglie */
+    .services, .solution-section, .contact-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .service, .solution-box {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 350px;
+    }
+
+    /* Assicurati che il testo non tocchi i bordi */
+    p, .header-text {
+        font-size: 1rem !important;
+        padding: 0 15px !important;
     }
 }
 
-footer { padding: 40px; text-align: center; border-top: 1px solid #111; color: #444; }
+/* Fix estremo per schermi molto piccoli (es. iPhone SE) */
+@media (max-width: 380px) {
+    .nav-links { gap: 5px !important; }
+    .nav-links a { font-size: 0.65rem !important; }
+    header h1 { font-size: 1.4rem !important; }
+}
+
+/* =========================================
+   FOOTER & MISC
+   ========================================= */
+footer { padding: 40px 20px; border-top: 1px solid #111; color: #444; font-size: 0.8rem; }
 }
