@@ -305,10 +305,57 @@ header h1 {
 @keyframes popUp { to { transform: scale(1); opacity: 1; } }
 
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE (NUOVA SEZIONE OTTIMIZZATA)
    ========================================= */
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Semplificato per mobile */
-    header h1 { font-size: 2.2rem; }
-    .nav-container { justify-content: center; gap: 20px; flex-direction: column; padding: 10px; }
+    /* Navbar Mobile: Niente Logo, Niente Search, Solo Link */
+    .nav-logo, .search-box { 
+        display: none !important; 
+    }
+    
+    .nav-container {
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 15px; /* Spazio ridotto tra i link */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem; /* Font leggermente più piccolo per stare su una riga */
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Header Mobile */
+    header { padding: 60px 20px; }
+    header h1 { font-size: 1.8rem; }
+    .header-text { font-size: 1rem; }
+
+    /* Griglie Mobile: 1 colonna */
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 100%;
+        max-width: 100%;
+        height: 300px;
+    }
+
+    /* Modal e Form Mobile */
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .cta-header {
+        width: 80%;
+    }
+}
 }
