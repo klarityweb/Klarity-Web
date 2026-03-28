@@ -139,6 +139,47 @@
             align-items: center;
             justify-content: center;
         }
+
+        /* AGGIUNTA STILI LEGALI */
+        .legal-footer {
+            background: #050505;
+            padding: 40px 20px;
+            font-size: 0.85rem;
+            color: #666;
+            border-top: 1px solid #111;
+        }
+        .legal-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        .legal-box h5 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        .legal-box p {
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+        .footer-links {
+            margin-top: 20px;
+            border-top: 1px solid #111;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -290,8 +331,37 @@
   </div>
 </section>
 
-<footer>
-  &copy; 2026 Klarity Web - Alle Rechte vorbehalten
+<footer class="legal-footer">
+    <div class="legal-container">
+        <div class="legal-box">
+            <h5>Impressum</h5>
+            <p><strong>Klarity Web Solutions</strong></p>
+            <p>Hauptplatz 1, 8010 Graz, Österreich</p>
+            <p>Inhaber: [Ihr Name]</p>
+            <p>Email: info@klarityweb.at</p>
+            <p>UID: ATU12345678</p>
+        </div>
+        <div class="legal-box">
+            <h5>Rechtliches</h5>
+            <p>Alle Leistungen unterliegen unseren AGB. Gerichtsstand ist Graz. Die Inhalte dieser Website sind urheberrechtlich geschützt.</p>
+        </div>
+        <div class="legal-box">
+            <h5>Support-Zeiten</h5>
+            <p>Mo - Fr: 09:00 - 18:00 Uhr</p>
+            <p>Wochenende: Nur Notfall-Support</p>
+            <p>Reaktionszeit: &lt; 2 Stunden</p>
+        </div>
+    </div>
+    
+    <div class="footer-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+    </div>
+    
+    <div style="text-align: center; margin-top: 30px; color: #444;">
+        &copy; 2026 Klarity Web - Alle Rechte vorbehalten
+    </div>
 </footer>
 
 <script src="script.js"></script>
