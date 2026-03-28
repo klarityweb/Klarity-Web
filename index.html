@@ -11,40 +11,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- RESET E OTTIMIZZAZIONE LAYOUT (Invariati) --- */
+        /* --- RESET E OTTIMIZZAZIONE LAYOUT --- */
         body { margin: 0; padding: 0; overflow-x: hidden; }
         
-        .services .service {
+        /* --- NAVBAR CENTRATA (STILE PAGINE INTERNE) --- */
+        .navbar {
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom: 1px solid #111;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
+            flex-direction: column; /* Imposta la colonna per centrare tutto */
             align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
+            gap: 15px;
         }
 
-        .service-content {
-            padding: 40px !important;
+        .nav-logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 100%;
-            z-index: 2;
+            justify-content: center; /* Centra i link orizzontalmente */
+            gap: 30px;
         }
 
-        .service::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)) !important;
-            z-index: 1;
+        .nav-links li a {
+            text-decoration: none;
+            color: #aaa;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
 
-        /* --- HEADER ULTRA-LOGO CON RITAGLIO ORIZZONTALE (MODIFICATO) --- */
+        .nav-links li a:hover, .nav-links li a.active-link {
+            color: #fff;
+            font-weight: bold;
+            border-bottom: 2px solid #fff;
+        }
+
+        /* --- HEADER ULTRA-LOGO RITAGLIATO --- */
         .hero-header {
             text-align: center;
-            /* Padding ridotto per avvicinare il logo ritagliato alla navbar */
             padding: 10px 0 80px 0;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
                         url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;
@@ -56,43 +75,82 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: -10px;
             overflow: hidden;
         }
 
         .logo-giant {
-            /* LARGHEZZA MONUMENTALE MANTENUTA */
             width: 6400px; 
             max-width: 140vw; 
-            
-            /* --- RITAGLIO ORIZZONTALE APPLICATO --- */
-            /* Altezza ridotta drasticamente per schiacciare l'immagine */
-            height: 180px; 
-            
-            /* object-fit: cover taglia le parti eccedenti sopra e sotto */
+            height: 180px; /* Ritaglio orizzontale */
             object-fit: cover; 
-            
             object-position: center;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
             display: block;
         }
 
-        /* --- NAVBAR UNIFORMATA (STILE WEBDESIGN.HTML - Invariata) --- */
-        .navbar {
-            background: rgba(0, 0, 0, 0.95);
-            border-bottom: 1px solid #111;
-            padding: 15px 0;
-            position: relative;
-            z-index: 100;
-        }
-        
-        .nav-links li a.active-link {
-            color: #fff;
-            font-weight: bold;
-            border-bottom: 2px solid #fff;
+        /* --- SERVICES SECTION: FIX DISTANZA PULSANTI --- */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
         }
 
-        /* --- ALTRI ELEMENTI (Invariati) --- */
+        .service {
+            flex: 1 1 33.33%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-content {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .service::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85));
+            z-index: 1;
+        }
+
+        .service-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .service-content p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 0; /* Rimuovo margine sotto p per controllo preciso */
+        }
+
+        .cta-btn-service {
+            display: inline-block;
+            margin-top: 30px; /* DISTANZA PULSANTI DALLE SCRITTE */
+            color: #fff;
+            text-decoration: underline;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .cta-btn-service:hover {
+            color: #aaa;
+            transform: translateY(-2px);
+        }
+
+        /* --- ALTRI ELEMENTI --- */
         .solution-section { display: flex; flex-wrap: wrap; background: #000; }
         .solution-box {
             flex: 1 1 50%;
@@ -152,7 +210,7 @@
     <div class="nav-container">
         <div class="nav-logo">
             <a href="index.html">
-                <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Logo" style="height: 40px;">
+                <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Logo">
             </a>
         </div>
         <ul class="nav-links">
@@ -171,13 +229,13 @@
              class="logo-giant">
     </div>
 
-    <h1 style="color: #fff; font-size: 2.8rem; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 2px;">Premium Webdesign & SEO</h1>
+    <h1 style="color: #fff; font-size: 2.8rem; margin: 15px 0 15px 0; text-transform: uppercase; letter-spacing: 2px;">Premium Webdesign & SEO</h1>
     
     <p style="margin:0 auto; text-align:center; color: #fff; font-size: 1.25rem; max-width: 800px; opacity: 0.85; line-height: 1.6;">
         Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.
     </p>
     
-    <a class="cta-header" href="https://wa.me/436604831451" target="_blank" style="margin-top:35px; display:inline-block; padding: 15px 30px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Kostenlose Demo anfordern 🚀</a>
+    <a href="https://wa.me/436604831451" target="_blank" style="margin-top:35px; display:inline-block; padding: 15px 30px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Kostenlose Demo anfordern 🚀</a>
 </header>
 
 <div class="trust-bar">
@@ -203,27 +261,26 @@
 </section>
 
 <section class="services-section">
-  <h2 style="text-align: center; color: #fff; margin-bottom: 40px;">Unsere Performance-Bereiche</h2>
   <div class="services">
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80'); height: 450px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80');">
       <div class="service-content">
         <h3>Webdesign</h3>
         <p>Landing Pages & Business Websites.</p>
-        <a href="webdesign.html" class="cta-btn" style="color: #fff; text-decoration: underline; font-weight: bold;">Design ansehen ✨</a>
+        <a href="webdesign.html" class="cta-btn-service">Design ansehen ✨</a>
       </div>
     </div>
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); height: 450px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');">
       <div class="service-content">
         <h3>SEO & Marketing</h3>
         <p>Suchmaschinenoptimierung & Ads.</p>
-        <a href="seo-marketing.html" class="cta-btn" style="color: #fff; text-decoration: underline; font-weight: bold;">Mehr Reichweite 📈</a>
+        <a href="seo-marketing.html" class="cta-btn-service">Mehr Reichweite 📈</a>
       </div>
     </div>
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80'); height: 450px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80');">
       <div class="service-content">
         <h3>Support</h3>
         <p>Wartung, Security & Hilfe.</p>
-        <a href="support.html" class="cta-btn" style="color: #fff; text-decoration: underline; font-weight: bold;">Hilfe anfordern 🛠️</a>
+        <a href="support.html" class="cta-btn-service">Hilfe anfordern 🛠️</a>
       </div>
     </div>
   </div>
@@ -249,7 +306,7 @@
 
 <section class="faq-section">
     <div class="faq-container">
-        <h2 style="text-align: center; margin-bottom: 40px;">Häufig gestellte Fragen</h2>
+        <h2 style="text-align: center; margin-bottom: 40px; color: #fff;">Häufig gestellte Fragen</h2>
         <div class="faq-item">
             <h4>Wie lange dauert die Erstellung einer Website?</h4>
             <p>In der Regel benötigen wir für eine professionelle Business-Website zwischen 2 und 4 Wochen.</p>
@@ -261,11 +318,11 @@
     </div>
 </section>
 
-<section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80') center/cover;">
+<section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80') center/cover; padding: 80px 20px;">
   <div class="final-cta-container">
     <h2 style="font-size: 2.2rem; text-align: center; color: #fff;">Bereit, Ihr Unternehmen online zu stärken?</h2>
     <div style="text-align: center;">
-        <a class="cta-btn" href="https://wa.me/436604831451" target="_blank" style="margin-top:20px; display:inline-block; padding: 15px 35px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Jetzt Erstgespräch sichern 💬</a>
+        <a href="https://wa.me/436604831451" target="_blank" style="margin-top:20px; display:inline-block; padding: 15px 35px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Jetzt Erstgespräch sichern 💬</a>
     </div>
   </div>
 </section>
