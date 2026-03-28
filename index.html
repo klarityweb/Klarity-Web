@@ -11,10 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- RESET E OTTIMIZZAZIONE --- */
-        body { margin: 0; padding: 0; overflow-x: hidden; }
+        /* --- RESET E LAYOUT BASE --- */
+        body { margin: 0; padding: 0; overflow-x: hidden; font-family: 'Roboto', sans-serif; background: #000; color: #fff; }
         
-        /* --- NAVBAR IDENTICA A WEBDESIGN (Logo SX, Link DX, Search Box) --- */
+        /* --- NAVBAR IDENTICA A WEBDESIGN --- */
         .navbar {
             background: rgba(0, 0, 0, 0.95);
             border-bottom: 1px solid #111;
@@ -23,46 +23,19 @@
             top: 0;
             z-index: 1000;
         }
-        
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between; /* Spazio tra logo, links e search */
+            justify-content: space-between;
             align-items: center;
             padding: 0 20px;
         }
+        .nav-logo img { height: 40px; display: block; }
+        .nav-links { list-style: none; display: flex; gap: 25px; padding: 0; margin: 0; }
+        .nav-links a { text-decoration: none; color: #aaa; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; }
+        .nav-links a.active-link { color: #fff; font-weight: bold; border-bottom: 2px solid #fff; padding-bottom: 5px; }
 
-        .nav-logo img {
-            height: 40px;
-            display: block;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #aaa;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .nav-links a.active-link {
-            color: #fff;
-            font-weight: bold;
-            border-bottom: 2px solid #fff;
-            padding-bottom: 5px;
-        }
-
-        /* SEARCH BOX (Stesso stile della pagina Webdesign) */
         .search-box {
             display: flex;
             align-items: center;
@@ -71,66 +44,81 @@
             border-radius: 4px;
             padding: 5px 10px;
         }
+        .search-box input { background: transparent; border: none; color: #fff; outline: none; font-size: 0.8rem; width: 100px; }
+        .search-box button { background: transparent; border: none; color: #fff; cursor: pointer; }
 
-        .search-box input {
-            background: transparent;
-            border: none;
-            color: #fff;
-            outline: none;
-            font-size: 0.8rem;
-            width: 100px;
-        }
-
-        .search-box button {
-            background: transparent;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        /* --- HEADER ULTRA-LOGO (Tua struttura originale) --- */
+        /* --- HERO CON LOGO GIGANTE --- */
         .hero-header {
             text-align: center;
-            padding: 20px 0 80px 0;
+            padding: 40px 0 100px 0;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
                         url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;
-            overflow: hidden; 
         }
+        .logo-container { width: 100%; display: flex; justify-content: center; overflow: hidden; margin-bottom: -20px; }
+        .logo-giant { width: 3200px; max-width: 100vw; height: 350px; object-fit: contain; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5)); }
 
-        .logo-container {
-            width: 100%;
+        /* --- SERVIZI CON NUOVI BOTTONI --- */
+        .services-section { padding: 100px 0; background: #000; }
+        .services-grid { display: flex; flex-wrap: wrap; width: 100%; }
+        .service-card {
+            flex: 1 1 33.33%;
+            height: 550px;
+            position: relative;
             display: flex;
-            justify-content: center;
             align-items: center;
-            margin-bottom: -10px;
+            justify-content: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
         }
-
-        .logo-giant {
-            width: 3200px; 
-            max-width: 100vw; 
-            height: 350px; 
-            object-fit: contain;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+        .service-card::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.7); transition: 0.4s; }
+        .service-card:hover::before { background: rgba(0,0,0,0.5); }
+        .service-content { position: relative; z-index: 2; padding: 40px; }
+        .service-content h3 { font-size: 2.2rem; text-transform: uppercase; margin-bottom: 15px; }
+        .service-content p { color: #ccc; font-size: 1.1rem; margin-bottom: 35px; max-width: 300px; }
+        
+        /* BOTTONI PREMIUM */
+        .btn-premium {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: 0.3s ease;
+            letter-spacing: 1px;
         }
+        .btn-premium:hover { background: #ddd; transform: translateY(-3px); }
 
-        /* --- SERVIZI E ALTRI ELEMENTI --- */
-        .services .service { display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; height: 450px; }
-        .service-content { padding: 40px !important; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%; z-index: 2; }
-        .service::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)) !important; z-index: 1; }
-        
-        .solution-section { display: flex; flex-wrap: wrap; background: #000; }
-        .solution-box { flex: 1 1 50%; min-height: 450px; position: relative; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; }
-        .solution-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.75); padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        /* --- FEEDBACKS / PROCESSO --- */
+        .feedback-section { padding: 100px 20px; background: #050505; text-align: center; }
+        .feedback-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1200px; margin: 50px auto 0; }
+        .feedback-item { flex: 1 1 300px; background: #0a0a0a; padding: 40px; border: 1px solid #111; border-radius: 8px; }
+        .feedback-item h4 { color: #fff; font-size: 1.3rem; margin-bottom: 15px; }
+        .feedback-item p { color: #888; line-height: 1.6; }
 
-        .trust-bar { background: #0a0a0a; padding: 25px 20px; text-align: center; border-top: 1px solid #111; border-bottom: 1px solid #111; color: #555; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; }
-        
-        .contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 60px 20px; background: #050505; }
-        .contact-card { text-align: center; color: #fff; flex: 1 1 250px; }
-        .contact-link { color: #ccc; text-decoration: none; transition: 0.3s; }
+        /* --- CONTACT GRID --- */
+        .contact-section { padding: 100px 20px; background: #000; border-top: 1px solid #111; }
+        .contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; max-width: 1100px; margin: 0 auto; }
+        .contact-item { text-align: center; flex: 1 1 250px; }
+        .contact-item span { font-size: 2.5rem; display: block; margin-bottom: 15px; }
+        .contact-item h4 { text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; color: #fff; }
+        .contact-item a { color: #888; text-decoration: none; font-size: 1.1rem; transition: 0.3s; }
+        .contact-item a:hover { color: #fff; }
 
-        .faq-section { background: #000; padding: 80px 20px; color: #fff; }
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { border-bottom: 1px solid #222; padding: 20px 0; }
+        /* --- FINAL CTA --- */
+        .final-cta {
+            padding: 120px 20px;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80') center/cover;
+        }
+        .final-cta h2 { font-size: 3rem; margin-bottom: 20px; text-transform: uppercase; }
+
+        footer { padding: 50px 20px; text-align: center; background: #000; border-top: 1px solid #111; color: #444; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -150,7 +138,7 @@
         </ul>
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="Suchen...">
-            <button onclick="executeSearch()">🔍</button>
+            <button onclick="alert('Suche...')">🔍</button>
         </div>
     </div>
 </nav>
@@ -159,77 +147,85 @@
     <div class="logo-container">
         <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web" class="logo-giant">
     </div>
-    <h1 style="color: #fff; font-size: 2.8rem; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 2px;">Premium Webdesign & SEO</h1>
-    <p style="margin:0 auto; text-align:center; color: #fff; font-size: 1.25rem; max-width: 800px; opacity: 0.85; line-height: 1.6;">
-        Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.
-    </p>
-    <a class="cta-header" href="https://wa.me/436604831451" target="_blank" style="margin-top:35px; display:inline-block; padding: 15px 30px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Kostenlose Demo anfordern 🚀</a>
+    <h1 style="font-size: 3rem; text-transform: uppercase; letter-spacing: 3px; margin-top: 20px;">Premium Web & SEO Graz</h1>
+    <p style="color: #aaa; font-size: 1.2rem; max-width: 700px; margin: 20px auto 40px auto;">Exzellente digitale Lösungen für Unternehmen, die wachsen wollen.</p>
+    <a href="https://wa.me/436604831451" class="btn-premium">Kostenlose Demo 🚀</a>
 </header>
 
-<div class="trust-bar">
-    E-Commerce • Handwerk • Dienstleister • Kanzleien
-</div>
-
-<section style="background: #000; padding: 100px 20px;">
-    <h2 style="text-align: center; margin-bottom: 60px; color: #fff; font-size: 2.5rem;">Wie wir Ihr Business transformieren</h2>
-    <div class="solution-section">
-        <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80');">
-            <div class="solution-overlay">
-                <h3>Sichtbarkeit, die verkauft</h3>
-                <p style="color:#ccc;">Wir bringen Sie auf Seite 1 bei Google. Nicht nur für Klicks, sondern für echte Kunden.</p>
-            </div>
-        </div>
-        <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80');">
-            <div class="solution-overlay">
-                <h3>Design, das überzeugt</h3>
-                <p style="color:#ccc;">Wir gestalten Erlebnisse, die Vertrauen schaffen e qualifizierte Leads generieren.</p>
-            </div>
+<section class="services-grid">
+    <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80');">
+        <div class="service-content">
+            <h3>Webdesign</h3>
+            <p>Landing Pages & Business Websites mit Fokus auf Conversion.</p>
+            <a href="webdesign.html" class="btn-premium">Design ansehen ✨</a>
         </div>
     </div>
+    <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');">
+        <div class="service-content">
+            <h3>SEO & Marketing</h3>
+            <p>Suchmaschinenoptimierung & Ads für maximale Reichweite.</p>
+            <a href="seo-marketing.html" class="btn-premium">Mehr Reichweite 📈</a>
+        </div>
+    </div>
+    <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80');">
+        <div class="service-content">
+            <h3>Support</h3>
+            <p>Wartung, Security e technischer Support rund um die Uhr.</p>
+            <a href="support.html" class="btn-premium">Hilfe anfordern 🛠️</a>
+        </div>
+    </div>
 </section>
 
-<section class="services-section">
-  <h2 style="text-align: center; color: #fff; margin: 40px 0;">Unsere Performance-Bereiche</h2>
-  <div class="services">
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80');">
-      <div class="service-content">
-        <h3 style="color: #fff;">Webdesign</h3>
-        <p style="color: #ccc;">Landing Pages & Business Websites.</p>
-        <a href="webdesign.html" style="color: #fff; text-decoration: underline; font-weight: bold; margin-top: 25px;">Design ansehen ✨</a>
-      </div>
+<section class="feedback-section">
+    <h2 style="font-size: 2.5rem; text-transform: uppercase;">Was unsere Kunden sagen</h2>
+    <div class="feedback-grid">
+        <div class="feedback-item">
+            <h4>"Hervorragendes Design"</h4>
+            <p>Klarity Web hat unsere Online-Präsenz komplett transformiert. Die Anfragen sind um 40% gestiegen.</p>
+            <small style="color:#555; display:block; margin-top:15px;">- KMU aus Graz</small>
+        </div>
+        <div class="feedback-item">
+            <h4>"SEO-Experten"</h4>
+            <p>Endlich auf Seite 1 bei Google. Der Support ist schnell, kompetent e immer erreichbar.</p>
+            <small style="color:#555; display:block; margin-top:15px;">- Dienstleister Steiermark</small>
+        </div>
+        <div class="feedback-item">
+            <h4>"Zuverlässig & Schnell"</h4>
+            <p>Die Umsetzung meiner Landing Page dauerte nur 2 Wochen. Absolute Empfehlung für jeden Unternehmer.</p>
+            <small style="color:#555; display:block; margin-top:15px;">- E-Commerce Shop</small>
+        </div>
     </div>
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');">
-      <div class="service-content">
-        <h3 style="color: #fff;">SEO & Marketing</h3>
-        <p style="color: #ccc;">Suchmaschinenoptimierung & Ads.</p>
-        <a href="seo-marketing.html" style="color: #fff; text-decoration: underline; font-weight: bold; margin-top: 25px;">Mehr Reichweite 📈</a>
-      </div>
-    </div>
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80');">
-      <div class="service-content">
-        <h3 style="color: #fff;">Support</h3>
-        <p style="color: #ccc;">Wartung, Security & Hilfe.</p>
-        <a href="support.html" style="color: #fff; text-decoration: underline; font-weight: bold; margin-top: 25px;">Hilfe anfordern 🛠️</a>
-      </div>
-    </div>
-  </div>
 </section>
 
-<section id="contact" class="contact-grid">
-    <div class="contact-card">📱<h4 style="margin-bottom:10px; color:#fff;">WhatsApp</h4><a href="https://wa.me/436604831451" class="contact-link">+43 660 4831451</a></div>
-    <div class="contact-card">✉️<h4 style="margin-bottom:10px; color:#fff;">E-Mail</h4><a href="mailto:info@klarityweb.at" class="contact-link">info@klarityweb.at</a></div>
-    <div class="contact-card">📍<h4 style="margin-bottom:10px; color:#fff;">Standort</h4><p style="color: #ccc; margin:0;">Graz, Österreich</p></div>
+<section class="contact-section">
+    <div class="contact-grid">
+        <div class="contact-item">
+            <span>📱</span>
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/436604831451">+43 660 4831451</a>
+        </div>
+        <div class="contact-item">
+            <span>✉️</span>
+            <h4>E-Mail</h4>
+            <a href="mailto:info@klarityweb.at">info@klarityweb.at</a>
+        </div>
+        <div class="contact-item">
+            <span>📍</span>
+            <h4>Standort</h4>
+            <a href="#">Graz, Österreich</a>
+        </div>
+    </div>
 </section>
 
-<footer style="background:#000; color:#444; text-align:center; padding: 40px 20px; border-top:1px solid #111;">
-    &copy; 2026 Klarity Web - Alle Rechte vorbehalten
+<section class="final-cta">
+    <h2>Bereit für den nächsten Schritt?</h2>
+    <p style="margin-bottom: 40px; color: #ccc;">Lassen Sie uns gemeinsam Ihre digitale Erfolgsgeschichte schreiben.</p>
+    <a href="https://wa.me/436604831451" class="btn-premium">Jetzt Erstgespräch sichern 💬</a>
+</section>
+
+<footer>
+    &copy; 2026 Klarity Web - Alle Rechte vorbehalten.
 </footer>
-
-<script>
-    function executeSearch() {
-        alert("Suche gestartet: " + document.getElementById('searchInput').value);
-    }
-</script>
 
 </body>
 </html>
