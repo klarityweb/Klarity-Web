@@ -21,39 +21,74 @@
         .nav-links a { text-decoration: none; color: #aaa; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
         .nav-links a.active-link { color: #fff; font-weight: bold; border-bottom: 2px solid #fff; padding-bottom: 5px; }
 
-        /* HERO HEADER - LOGO MONUMENTALE E COMPATTO */
+        /* HERO HEADER - LOGO MONUMENTALE SENZA SPAZI VUOTI */
         .hero-header { 
             text-align: center; 
-            padding: 0 0 100px 0; /* Padding superiore azzerato */
+            padding: 0; 
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
                         url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow: hidden;
         }
 
         .logo-giant-wrapper {
             width: 100%;
             display: flex;
             justify-content: center;
-            overflow: hidden;
-            margin-top: -20px; /* Alza ulteriormente il logo verso la navbar */
+            /* ALZA IL LOGO VERSO LA NAVBAR */
+            margin-top: -80px; 
         }
 
-        /* --- IL RITORNO DEL LOGO GIGANTE --- */
         .logo-giant { 
-            width: 3200px; /* Forza la dimensione reale dell'immagine */
-            max-width: 150vw; /* Lo fa uscire dai bordi per l'effetto cinema */
+            width: 3200px; 
+            max-width: 150vw; 
             height: auto; 
             display: block;
             object-fit: contain; 
             filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
-            margin-bottom: -40px; /* Avvicina drasticamente il titolo sotto */
+            /* AVVICINA IL TITOLO SOTTO AL LOGO */
+            margin-bottom: -100px; 
         }
-        
-        /* TESTI HERO */
-        .hero-header h1 { color: #fff; font-size: 3rem; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 2px; position: relative; z-index: 2; }
-        .hero-header p { margin: 0 auto; text-align: center; color: #fff; font-size: 1.25rem; max-width: 800px; opacity: 0.85; line-height: 1.6; position: relative; z-index: 2; }
+
+        .hero-header h1 { 
+            color: #fff; 
+            font-size: 3rem; 
+            margin: 0 0 15px 0; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            position: relative; 
+            z-index: 2; 
+        }
+
+        .hero-header p { 
+            margin: 0 auto 40px auto; 
+            text-align: center; 
+            color: #fff; 
+            font-size: 1.25rem; 
+            max-width: 800px; 
+            opacity: 0.85; 
+            line-height: 1.6;
+            position: relative; 
+            z-index: 2;
+        }
+
+        .cta-btn-white { 
+            display: inline-block; 
+            padding: 12px 30px; 
+            background: #fff; 
+            color: #000; 
+            text-decoration: none; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            border-radius: 4px; 
+            transition: 0.3s; 
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
+        }
+        .cta-btn-white:hover { background: #ddd; transform: translateY(-3px); }
 
         /* TRUST BAR */
         .trust-bar { background: #0a0a0a; padding: 25px 20px; text-align: center; border-top: 1px solid #111; border-bottom: 1px solid #111; color: #555; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; }
@@ -67,8 +102,6 @@
         .services .service { display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; height: 450px; background-size: cover; background-position: center; }
         .service::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)) !important; z-index: 1; }
         .service-content { position: relative; z-index: 2; padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
-        
-        .cta-btn-white { display: inline-block; margin-top: 25px; padding: 12px 25px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px; transition: 0.3s; }
 
         /* FEEDBACKS */
         .feedback-section { background: #000; padding: 100px 20px; color: #fff; text-align: center; }
@@ -140,13 +173,13 @@
     <h2 style="text-align: center; color: #fff; padding: 40px 0;">Unsere Performance-Bereiche</h2>
     <div class="services">
         <div class="service" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80');">
-            <div class="service-content"><h3>Webdesign</h3><p>Landing Pages & Business Websites.</p><a href="webdesign.html" class="cta-btn-white">Design ansehen ✨</a></div>
+            <div class="service-content"><h3>Webdesign</h3><p>Landing Pages & Business Websites.</p><a href="webdesign.html" class="cta-btn-white" style="margin-bottom:0;">Design ansehen ✨</a></div>
         </div>
         <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');">
-            <div class="service-content"><h3>SEO & Marketing</h3><p>Suchmaschinenoptimierung & Ads.</p><a href="seo-marketing.html" class="cta-btn-white">Mehr Reichweite 📈</a></div>
+            <div class="service-content"><h3>SEO & Marketing</h3><p>Suchmaschinenoptimierung & Ads.</p><a href="seo-marketing.html" class="cta-btn-white" style="margin-bottom:0;">Mehr Reichweite 📈</a></div>
         </div>
         <div class="service" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80');">
-            <div class="service-content"><h3>Support</h3><p>Wartung, Security & Hilfe.</p><a href="support.html" class="cta-btn-white">Hilfe anfordern 🛠️</a></div>
+            <div class="service-content"><h3>Support</h3><p>Wartung, Security & Hilfe.</p><a href="support.html" class="cta-btn-white" style="margin-bottom:0;">Hilfe anfordern 🛠️</a></div>
         </div>
     </div>
 </section>
@@ -196,7 +229,7 @@
 <section class="final-cta-section">
     <h2>Bereit für den nächsten Schritt?</h2>
     <p>Lassen Sie uns gemeinsam Ihre digitale Erfolgsgeschichte schreiben.</p>
-    <a class="cta-btn-white" href="https://wa.me/436604831451" target="_blank">Jetzt Erstgespräch sichern 💬</a>
+    <a class="cta-btn-white" href="https://wa.me/436604831451" target="_blank" style="margin-bottom:0;">Jetzt Erstgespräch sichern 💬</a>
 </section>
 
 <footer>&copy; 2026 Klarity Web - Alle Rechte vorbehalten</footer>
