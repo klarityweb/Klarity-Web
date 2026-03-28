@@ -23,11 +23,11 @@
         }
 
         .service::before {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)) !important;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.92)) !important;
         }
 
         .service h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin-bottom: 15px;
             color: #fff;
             text-transform: uppercase;
@@ -35,13 +35,26 @@
         }
 
         .service p {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             color: #ccc;
-            max-width: 300px;
+            max-width: 280px;
             line-height: 1.6;
         }
 
-        /* FIX CENTRATURA CTA FINALE */
+        /* GRID FIX PER 4 COLONNE */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 1100px) {
+            .services { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 700px) {
+            .services { grid-template-columns: 1fr; }
+        }
+
         .final-cta-container {
             text-align: center;
             display: flex;
@@ -50,11 +63,14 @@
             justify-content: center;
         }
 
-        /* Hover effect per le FAQ cards */
         .service {
             transition: transform 0.3s ease;
             border: 1px solid rgba(255,255,255,0.05);
+            background-size: cover;
+            background-position: center;
+            height: 400px; /* Altezza ottimizzata per 4 colonne */
         }
+        
         .service:hover {
             transform: translateY(-10px);
             border-color: rgba(255,255,255,0.2);
@@ -87,54 +103,68 @@
 <header style="padding: 150px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80') center/cover;">
   <div class="header-content">
     <h1 style="font-size: 3.5rem; line-height: 1.2;">Häufig gestellte Fragen</h1>
-    <p class="header-text" style="max-width: 800px; margin: 20px auto;">Alles, was Sie über unsere Zusammenarbeit, Preise und Prozesse wissen müssen. Transparent und direkt.</p>
-    <a class="cta-header" href="https://wa.me/436604831451" target="_blank">💬 Persönliche Frage stellen</a>
+    <p class="header-text" style="max-width: 800px; margin: 20px auto;">Wir klären Ihre Unsicherheiten. Hier finden Sie alles über unsere Prozesse, Technik und Konditionen.</p>
+    <a class="cta-header" href="https://wa.me/436604831451" target="_blank">💬 Nachricht schreiben</a>
   </div>
 </header>
 
 <section class="services-section">
-  <h2>Antworten sulla collaborazione</h2>
+  <h2>Ihre Fragen, unsere Antworten</h2>
   <div class="services">
     
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1454165833767-027ffea9e7a7?auto=format&fit=crop&w=800&q=80'); height: 450px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80');">
       <div class="service-content">
         <h3>Projektdauer?</h3>
-        <p>Eine Website dauert in der Regel 3 bis 6 Wochen. Wir legen Wert auf Qualität und strategische Planung.</p>
+        <p>In der Regel 3 bis 6 Wochen von der Strategie bis zum Launch Ihrer neuen Website.</p>
       </div>
     </div>
 
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80'); height: 450px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80');">
       <div class="service-content">
         <h3>Preise?</h3>
-        <p>Business-Websites starten ab ca. 1.290 €. Landing Pages sind bereits ab 490 € realisierbar. Alles zum Festpreis.</p>
+        <p>Business-Websites ab € 1.290. Landing Pages ab € 490. Transparente Fixpreise ohne Überraschungen.</p>
       </div>
     </div>
 
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'); height: 450px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');">
       <div class="service-content">
         <h3>Google Ranking?</h3>
-        <p>Ja, jede Seite wird technisch für SEO optimiert. Für Top-Rankings bieten wir gezielte monatliche SEO-Pakete an.</p>
+        <p>Jede Seite erhält eine Basis-SEO. Für Top-Positionen bieten wir intensive SEO-Kampagnen an.</p>
       </div>
     </div>
 
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=800&q=80'); height: 450px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1454165833767-027ffea9e7a7?auto=format&fit=crop&w=800&q=80');">
       <div class="service-content">
         <h3>Wartung?</h3>
-        <p>Wir lassen Sie nicht allein. Wir bieten Support-Pakete für Updates, Backups und Sicherheit an.</p>
+        <p>Wir kümmern uns um Updates, Hosting und Sicherheit, damit Sie sich auf Ihr Business konzentrieren können.</p>
       </div>
     </div>
 
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80'); height: 450px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80');">
       <div class="service-content">
-        <h3>Responsive Design?</h3>
-        <p>Absolut. 100% Mobile-First. Ihre Website sieht auf dem Smartphone genauso perfetto aus wie am Desktop.</p>
+        <h3>Responsive?</h3>
+        <p>100% Mobile-First. Optimale Darstellung auf Smartphones, Tablets und Desktop-PCs.</p>
       </div>
     </div>
 
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2959210?auto=format&fit=crop&w=800&q=80'); height: 450px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2959210?auto=format&fit=crop&w=800&q=80');">
       <div class="service-content">
         <h3>Mein Eigentum?</h3>
-        <p>Nach Abschluss gehört die Website zu 100% Ihnen. Keine monatlichen Lizenzgebühren für das Design.</p>
+        <p>Nach der finalen Zahlung gehören alle Rechte an Design und Inhalten zu 100% Ihnen.</p>
+      </div>
+    </div>
+
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80');">
+      <div class="service-content">
+        <h3>Support?</h3>
+        <p>Wir sind auch nach dem Launch für Sie da. Support via WhatsApp, E-Mail oder Telefon in Graz.</p>
+      </div>
+    </div>
+
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=800&q=80');">
+      <div class="service-content">
+        <h3>Design-Wünsche?</h3>
+        <p>Wir arbeiten eng mit Ihnen zusammen. Ihr Feedback fließt direkt in den Designprozess ein.</p>
       </div>
     </div>
 
@@ -143,8 +173,8 @@
 
 <section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80') center/cover;">
   <div class="final-cta-container">
-    <h2>Immer noch unsicher?</h2>
-    <p style="margin-bottom: 30px;">Lassen Sie uns Ihre Fragen in einem kurzen Telefonat oder via WhatsApp klären.</p>
+    <h2>Bereit für den digitalen Erfolg?</h2>
+    <p style="margin-bottom: 30px;">Lassen Sie uns heute über Ihr Projekt in Graz sprechen.</p>
     <a class="cta-btn" href="https://wa.me/436604831451" target="_blank" style="text-decoration: none; display: inline-block;">🚀 Kostenlose Beratung</a>
   </div>
 </section>
