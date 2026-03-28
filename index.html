@@ -1,265 +1,86 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klarity Web | Home - Premium Webdesign & SEO Graz</title>
+/**
+ * Klarity Web - Custom JavaScript
+ * Ottimizzato per performance e UX
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
     
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    // --- 1. NAVBAR DINAMICA ---
+    const navbar = document.querySelector('.navbar');
     
-    <style>
-        /* --- CORE RESET --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #000; color: #fff; font-family: 'Roboto', sans-serif; overflow-x: hidden; }
-
-        /* --- NAVBAR --- */
-        .navbar {
-            position: fixed;
-            top: 0; width: 100%;
-            background: rgba(0,0,0,0.9);
-            padding: 20px;
-            z-index: 1000;
-            border-bottom: 1px solid #111;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.5)';
+            navbar.style.padding = '10px 0'; // Si restringe leggermente
+        } else {
+            navbar.style.background = 'rgba(0, 0, 0, 0.8)';
+            navbar.style.boxShadow = 'none';
+            navbar.style.padding = '15px 0';
         }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo img { height: 40px; }
-        .nav-links { list-style: none; display: flex; gap: 30px; }
-        .nav-links a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+    });
 
-        /* --- HERO HEADER: LOGO ULTRA-GIANT --- */
-        .hero-header {
-            position: relative;
-            padding: 120px 20px 100px;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), 
-                        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+    // --- 2. SMOOTH SCROLL PER LINK INTERNI ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // --- 3. ANIMAZIONE REVEAL AL SCROLL ---
+    // Fa apparire gli elementi con un fade-in quando entrano nel viewport
+    const revealElements = document.querySelectorAll('.service, .solution-box, .contact-card, .faq-item');
+    
+    const revealOnScroll = () => {
+        const triggerBottom = window.innerHeight * 0.85;
+        
+        revealElements.forEach(el => {
+            const elTop = el.getBoundingClientRect().top;
+            
+            if (elTop < triggerBottom) {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Set iniziale per l'animazione
+    revealElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease-out';
+    });
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Esegui subito al caricamento
+
+    // --- 4. GESTIONE RICERCA (SEARCH BOX) ---
+    window.executeSearch = () => {
+        const query = document.getElementById('searchInput').value.trim();
+        if (query) {
+            // Logica di ricerca base: avvisa l'utente o reindirizza
+            console.log("Ricerca per:", query);
+            alert("Suche nach: " + query + "... (Funktion wird implementiert)");
+        } else {
+            document.getElementById('searchInput').focus();
         }
+    };
 
-        .logo-giant-wrapper {
-            width: 100%;
-            max-width: 100vw;
-            display: flex;
-            justify-content: center;
-            margin-bottom: -20px; /* Avvicina il testo al logo */
+    // Permetti l'invio della ricerca con il tasto "Invio"
+    document.getElementById('searchInput')?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            executeSearch();
         }
+    });
 
-        .logo-giant {
-            width: 6400px; /* Scala estrema richiesta */
-            max-width: 160vw; 
-            height: 400px; 
-            object-fit: contain;
-            filter: drop-shadow(0 0 30px rgba(0,0,0,0.8));
-            pointer-events: none;
-        }
+});
 
-        .hero-header h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-header p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            color: #ccc;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        /* --- BUTTONS --- */
-        .cta-btn-main {
-            background: #fff;
-            color: #000;
-            padding: 20px 50px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .cta-btn-main:hover { background: #bbb; transform: scale(1.05); }
-
-        /* --- TRUST BAR --- */
-        .trust-bar {
-            background: #050505;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 1px solid #111;
-            color: #555;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 0.8rem;
-        }
-
-        /* --- SOLUTIONS GRID --- */
-        .solution-section { display: flex; flex-wrap: wrap; width: 100%; }
-        .solution-box {
-            flex: 1 1 50%;
-            min-height: 500px;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .solution-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.8);
-            padding: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            transition: 0.4s;
-        }
-        .solution-box:hover .solution-overlay { background: rgba(0,0,0,0.6); }
-
-        /* --- SERVICES CARDS --- */
-        .services-container { padding: 100px 20px; display: flex; flex-wrap: wrap; gap: 20px; max-width: 1400px; margin: 0 auto; }
-        .service-card {
-            flex: 1 1 300px;
-            height: 450px;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
-        .service-card::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.7); }
-        .service-content { position: relative; z-index: 2; padding: 30px; }
-        .service-card h3 { font-size: 1.8rem; margin-bottom: 15px; }
-        .cta-small { color: #fff; text-decoration: underline; font-weight: bold; margin-top: 20px; display: block; }
-
-        /* --- CONTACT SECTION PREMIUM --- */
-        .contact-section { padding: 100px 20px; background: #050505; text-align: center; }
-        .contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px; }
-        .contact-card {
-            background: #000;
-            border: 1px solid #222;
-            padding: 60px 40px;
-            flex: 1 1 300px;
-            max-width: 380px;
-            transition: 0.3s;
-        }
-        .contact-card:hover { border-color: #fff; }
-        .contact-card i { font-size: 3rem; margin-bottom: 20px; }
-        .contact-card h4 { margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
-        .contact-card a { color: #aaa; text-decoration: none; font-size: 1.2rem; }
-
-        /* --- FOOTER --- */
-        footer { padding: 60px 20px; border-top: 1px solid #111; text-align: center; color: #444; font-size: 0.8rem; }
-    </style>
-</head>
-<body>
-
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web">
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="webdesign.html">Webdesign</a></li>
-            <li><a href="seo-marketing.html">SEO & Marketing</a></li>
-            <li><a href="support.html">Support</a></li>
-        </ul>
-    </div>
-</nav>
-
-<header class="hero-header">
-    <div class="logo-giant-wrapper">
-        <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" 
-             class="logo-giant" alt="Klarity Web Huge Logo">
-    </div>
-    <h1>Premium Webdesign & SEO</h1>
-    <p>Wir verwandeln Ihre digitale Präsenz in ein Hochleistungs-Marketingtool. High-End Design und messbare SEO-Ergebnisse aus Graz.</p>
-    <a href="https://wa.me/436604831451" class="cta-btn-main" target="_blank">Kostenlose Demo anfordern 🚀</a>
-</header>
-
-<div class="trust-bar">
-    E-Commerce • Handwerk • Dienstleister • Kanzleien
-</div>
-
-<section class="solution-section">
-    <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80');">
-        <div class="solution-overlay">
-            <h3>Sichtbarkeit, die verkauft</h3>
-            <p>Wir bringen Sie auf Seite 1 bei Google. Nicht nur für Klicks, sondern für echte Kunden.</p>
-        </div>
-    </div>
-    <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80');">
-        <div class="solution-overlay">
-            <h3>Design, das überzeugt</h3>
-            <p>Wir gestalten Erlebnisse, die Vertrauen schaffen e qualifizierte Leads generieren.</p>
-        </div>
-    </div>
-</section>
-
-<section class="services-container">
-    <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80');">
-        <div class="service-content">
-            <h3>Webdesign</h3>
-            <p>Landing Pages & Business Websites.</p>
-            <a href="webdesign.html" class="cta-small">Design ansehen ✨</a>
-        </div>
-    </div>
-    <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');">
-        <div class="service-content">
-            <h3>SEO & Marketing</h3>
-            <p>Suchmaschinenoptimierung & Ads.</p>
-            <a href="seo-marketing.html" class="cta-small">Mehr Reichweite 📈</a>
-        </div>
-    </div>
-    <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80');">
-        <div class="service-content">
-            <h3>Support</h3>
-            <p>Wartung, Security & Hilfe.</p>
-            <a href="support.html" class="cta-small">Hilfe anfordern 🛠️</a>
-        </div>
-    </div>
-</section>
-
-<section class="contact-section">
-    <h2>Direkter Kontakt</h2>
-    <div class="contact-grid">
-        <div class="contact-card">
-            <i class="fab fa-whatsapp"></i>
-            <h4>WhatsApp</h4>
-            <a href="https://wa.me/436604831451" target="_blank">+43 660 4831451</a>
-        </div>
-        <div class="contact-card">
-            <i class="far fa-envelope"></i>
-            <h4>E-Mail</h4>
-            <a href="mailto:info@klarityweb.at">info@klarityweb.at</a>
-        </div>
-        <div class="contact-card">
-            <i class="fas fa-location-dot"></i>
-            <h4>Standort</h4>
-            <p style="color: #888;">Graz, Österreich</p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    &copy; 2026 Klarity Web - Premium Digital Solutions Graz
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+// --- 5. LOG PER DEBUG (OPZIONALE) ---
+console.log("Klarity Web JS loaded successfully 🚀");
