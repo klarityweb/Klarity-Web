@@ -7,6 +7,9 @@
     
     <meta name="description" content="Häufig gestellte Fragen zu Webdesign, SEO und technischem Support in Graz. Erfahren Sie mehr über unsere Arbeitsweise und Preise.">
     
+    <link rel="icon" type="image/png" href="https://image2url.com/r2/default/images/1774737436947-28289b1c-112d-4fe7-be45-ac48dc3eebd1.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
@@ -75,6 +78,17 @@
             transform: translateY(-10px);
             border-color: rgba(255,255,255,0.2);
         }
+
+        /* STILI FOOTER (per mappa e struttura) */
+        .legal-footer { background: #050505; padding: 80px 20px 30px; color: #666; font-size: 0.85rem; border-top: 1px solid #111; text-align: left; }
+        .legal-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .legal-box h5 { color: #fff; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #222; padding-bottom: 10px; display: inline-block; }
+        .legal-box p { line-height: 1.6; margin-bottom: 8px; }
+        .footer-links { margin-top: 50px; border-top: 1px solid #111; padding-top: 30px; text-align: center; }
+        .footer-links a { color: #888; text-decoration: none; margin: 0 15px; transition: 0.3s; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
+        .footer-links a:hover { color: #fff; }
+        .map-wrapper { width: 100%; height: 200px; border-radius: 12px; overflow: hidden; filter: grayscale(1) invert(0.92) opacity(0.7); transition: 0.3s; border: 1px solid #222; }
+        .map-wrapper:hover { filter: grayscale(0.4) invert(0.92) opacity(1); }
     </style>
 </head>
 <body>
@@ -83,7 +97,7 @@
     <div class="nav-container">
         <div class="nav-logo">
             <a href="index.html">
-                <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Logo">
+                <img src="https://image2url.com/r2/default/images/1774737436947-28289b1c-112d-4fe7-be45-ac48dc3eebd1.png" alt="Klarity Web Logo" style="height: 45px; border-radius: 4px;">
             </a>
         </div>
         <ul class="nav-links">
@@ -179,8 +193,41 @@
   </div>
 </section>
 
-<footer>
-    &copy; 2026 Klarity Web - Alle Rechte vorbehalten
+<footer class="legal-footer">
+    <div class="legal-container">
+        <div class="legal-box">
+            <h5>Impressum</h5>
+            <p><strong>Klarity Web Solutions</strong></p>
+            <p>Flurgasse 21, 8010 Graz, Österreich</p>
+            <p>Inhaber: Kristian Vino</p>
+            <p>Email: info@klarityweb.at</p>
+            <p>Tel: +43 660 4831451</p>
+        </div>
+        <div class="legal-box">
+            <h5>Erreichbarkeit</h5>
+            <p>Mo - Fr: 09:00 - 18:00 Uhr</p>
+            <p>Wochenende: Notfall-Support</p>
+            <p>Reaktionszeit: < 2 Stunden</p>
+            <p style="margin-top: 15px; color: #444;">Gerichtsstand: Graz</p>
+        </div>
+        <div class="legal-box">
+            <h5>Standort Graz</h5>
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2720.551062026361!2d15.449557676939943!3d47.0686414249826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476e359005085d39%3A0xc3f982193f41539e!2sFlurgasse%2021%2C%208010%20Graz!5e0!3m2!1sde!2sat!4v1715600000000!5m2!1sde!2sat" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+    </div>
+    <div style="text-align: center; margin-top: 30px; color: #333; font-size: 0.75rem;">
+        © 2026 Klarity Web - Alle Rechte vorbehalten
+    </div>
 </footer>
 
 <script src="script.js"></script>
