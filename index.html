@@ -21,11 +21,10 @@
         .nav-links a { text-decoration: none; color: #aaa; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
         .nav-links a.active-link { color: #fff; font-weight: bold; border-bottom: 2px solid #fff; padding-bottom: 5px; }
 
-        /* HERO HEADER MODIFICATO PER POSIZIONAMENTO LOGO */
+        /* HERO HEADER - Ottimizzato per logo ritagliato */
         .hero-header { 
             text-align: center; 
-            /* MODIFICA 1: Azzerato il padding superiore per alzare il logo al massimo */
-            padding: 0 0 80px 0; 
+            padding: 20px 0 80px 0; /* Padding ridotto sopra e sotto */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
                         url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;
             display: flex;
@@ -38,23 +37,21 @@
             display: flex;
             justify-content: center;
             overflow: hidden; /* Evita scroll orizzontale */
-            /* Rimosso margin-bottom negativo qui per pulizia */
+            margin-bottom: 15px; /* Spazio pulito sotto il logo ritagliato */
         }
 
-        /* --- LOGO GIGANTE: MODIFICATO POSIZIONAMENTO --- */
+        /* --- LOGO GIGANTE E RITAGLIATO --- */
         .logo-giant { 
-            /* Immagine image_1.png (2x) */
-            width: 3200px; 
-            max-width: 140vw; 
-            height: auto; 
+            /* Uso la nuova immagine ritagliata */
+            width: 6400px; /* Larghezza virtuale esagerata per l'effetto */
+            max-width: 140vw; /* Si espande oltre i bordi */
+            
+            /* Altezza ridotta poiché l'immagine è ritagliata, 
+               permettendole di stare più in alto */
+            height: 250px; 
+            
             object-fit: contain; 
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
-            
-            /* MODIFICA 2: Margine negativo inferiore per avvicinare il titolo "Premium Webdesign..." */
-            margin-bottom: -50px; 
-            
-            position: relative; /* Necessario per il margine negativo */
-            z-index: 1; /* Assicura che sia sopra l'overlay se necessario */
         }
         
         /* TRUST BAR */
@@ -118,7 +115,7 @@
 
 <header class="hero-header">
     <div class="logo-giant-wrapper">
-        <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Huge Logo" class="logo-giant">
+        <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Cropped Huge Logo" class="logo-giant">
     </div>
     <h1 style="color: #fff; font-size: 3rem; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 2px;">Premium Webdesign & SEO</h1>
     <p style="margin:0 auto; text-align:center; color: #fff; font-size: 1.25rem; max-width: 800px; opacity: 0.85; line-height: 1.6;">Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.</p>
@@ -164,7 +161,7 @@
         </div>
         <div class="feedback">
             <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Endlich eine Agentur, die SEO wirklich versteht. Unsere Anfragen sind massiv gestiegen."</p>
+            <p>"Endlich eine Agentur, die SEO wirklich versteht. Unsere Anfragen sono massiv gestiegen."</p>
             <h4 style="margin-top:15px; color:#fff;">- Julia T., Steiermark</h4>
         </div>
         <div class="feedback">
