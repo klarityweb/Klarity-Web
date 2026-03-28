@@ -20,6 +20,8 @@
             justify-content: center;
             text-align: center;
             height: 100%;
+            position: relative; /* Necessario per il posizionamento z-index */
+            z-index: 2; /* Porta il testo sopra l'immagine */
         }
 
         .service::before {
@@ -69,6 +71,8 @@
             background-size: cover;
             background-position: center;
             height: 400px; /* Altezza ottimizzata per 4 colonne */
+            position: relative; /* Per posizionare l'immagine interna */
+            overflow: hidden; /* Taglia l'immagine se esce dal box */
         }
         
         .service:hover {
@@ -76,19 +80,17 @@
             border-color: rgba(255,255,255,0.2);
         }
 
-        /* STILE SPECIFICO PER BOX WARTUNG (SOLUZIONE DEFINITIVA SENZA IMMAGINE ESTERNA) */
-        .wartung-box {
-            background: linear-gradient(135deg, #111 0%, #000 100%) !important;
-            position: relative;
-        }
-        .wartung-box::after {
-            content: '⚙️';
+        /* STILE SPECIFICO PER L'IMMAGINE GRANDE NEL BOX WARTUNG (SOLUZIONE PREMIUM) */
+        .wartung-img {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
-            font-size: 3rem;
-            opacity: 0.1;
-            filter: grayscale(1);
+            inset: 0; /* Copre tutto il box */
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Mantiene le proporzioni */
+            object-position: center;
+            opacity: 0.15; /* Rende l'immagine molto scura (filigrana) */
+            filter: grayscale(1); /* Rimuove il colore per coerenza dark */
+            z-index: 1; /* Posiziona l'immagine sotto il testo */
         }
     </style>
 </head>
@@ -148,11 +150,13 @@
       </div>
     </div>
 
-    <div class="service wartung-box">
-      <div class="service-content">
-        <h3>Wartung?</h3>
-        <p>Wir kümmern uns um Updates, Hosting und Sicherheit, damit Sie sich auf Ihr Business konzentrieren können.</p>
-      </div>
+    <div class="service">
+        <img src="https://images.unsplash.com/photo-1517077304033-d4074c609335?auto=format&fit=crop&w=1200&q=80" alt="Wartung Background" class="wartung-img">
+        
+        <div class="service-content">
+            <h3>Wartung?</h3>
+            <p>Wir kümmern uns um Updates, Hosting und Sicherheit, damit Sie sich auf Ihr Business konzentrieren können.</p>
+        </div>
     </div>
 
     <div class="service" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80');">
