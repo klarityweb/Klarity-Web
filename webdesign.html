@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO & Online Marketing Graz | Mehr Sichtbarkeit | Klarity Web</title>
+    <title>Webdesign Graz | Moderne Websites & E-Commerce | Klarity Web</title>
     
-    <meta name="description" content="SEO & Marketing Agentur in Graz. Wir bringe Ihre Website auf Seite 1 bei Google und schalten profitable Ads.">
-    <meta name="keywords" content="SEO Graz, Suchmaschinenoptimierung, Google Ads Graz, Online Marketing Steiermark">
+    <meta name="description" content="Professionelles Webdesign in Graz. Wir erstellen responsive, schnelle und verkaufsstarke Websites für Unternehmen. Jetzt kostenlose Beratung anfordern!">
     
     <link rel="icon" type="image/png" href="https://image2url.com/r2/default/images/1774737436947-28289b1c-112d-4fe7-be45-ac48dc3eebd1.png">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* STILI COERENTI CON WEBDESIGN.HTML */
+        /* STILI SPECIFICI PER WEBDESIGN PAGE */
         .service-content {
             padding: 45px 30px !important;
             display: flex;
@@ -26,113 +24,21 @@
             height: 100%;
         }
 
-        .service-list {
-            list-style: none;
-            padding: 0;
-            margin: 25px 0;
-            display: inline-block;
-            text-align: left; 
-        }
-
-        .service-list li {
-            margin-bottom: 12px;
-            font-size: 1rem;
-            color: #eee;
-            display: flex;
-            align-items: center;
-        }
-
-        .service-list li::before {
-            content: '🚀'; 
-            margin-right: 12px;
-            font-size: 0.9rem;
-        }
-
         .service::before {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.85)) !important;
-        }
-
-        .price-tag {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #fff;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)) !important;
         }
 
         .service h3 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 15px;
             color: #fff;
         }
 
         .service p {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #ccc;
             max-width: 280px;
-        }
-
-        /* SEZIONE PROCESSO SEO */
-        .process-feedbacks {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 50px;
-        }
-
-        .process-card {
-            position: relative;
-            flex: 1 1 260px;
-            max-width: 280px;
-            height: 320px;
-            border-radius: 12px;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .process-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.75);
-            z-index: 1;
-        }
-
-        .process-content {
-            position: relative;
-            z-index: 2;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            height: 100%;
-        }
-
-        .process-content h4.step-number {
-            color: #fff;
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
-
-        .process-content h4.step-title {
-            color: #fff;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .process-content p {
-            color: #ccc;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .final-cta-container {
@@ -142,17 +48,15 @@
             align-items: center;
             justify-content: center;
         }
-
-        /* STILI FOOTER (per mappa) */
+        
+        /* FOOTER STRUTTURA */
         .legal-footer { background: #050505; padding: 80px 20px 30px; color: #666; font-size: 0.85rem; border-top: 1px solid #111; text-align: left; }
         .legal-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
         .legal-box h5 { color: #fff; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #222; padding-bottom: 10px; display: inline-block; }
-        .legal-box p { line-height: 1.6; margin-bottom: 8px; }
         .footer-links { margin-top: 50px; border-top: 1px solid #111; padding-top: 30px; text-align: center; }
         .footer-links a { color: #888; text-decoration: none; margin: 0 15px; transition: 0.3s; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
         .footer-links a:hover { color: #fff; }
-        .map-wrapper { width: 100%; height: 200px; border-radius: 12px; overflow: hidden; filter: grayscale(1) invert(0.92) opacity(0.7); transition: 0.3s; border: 1px solid #222; }
-        .map-wrapper:hover { filter: grayscale(0.4) invert(0.92) opacity(1); }
+        .map-wrapper { width: 100%; height: 200px; border-radius: 12px; overflow: hidden; filter: grayscale(1) invert(0.92) opacity(0.7); border: 1px solid #222; }
     </style>
 </head>
 <body>
@@ -166,8 +70,8 @@
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="webdesign.html">Webdesign</a></li>
-            <li><a href="seo-marketing.html" style="color: #fff; font-weight: bold; border-bottom: 2px solid #fff;">SEO & Marketing</a></li>
+            <li><a href="webdesign.html" style="color: #fff; font-weight: bold; border-bottom: 2px solid #fff;">Webdesign</a></li>
+            <li><a href="seo-marketing.html">SEO & Marketing</a></li>
             <li><a href="support.html">Support</a></li>
             <li><a href="faq.html">FAQ</a></li>
         </ul>
@@ -178,129 +82,47 @@
     </div>
 </nav>
 
-<header style="padding: 150px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80') center/cover;">
+<header style="padding: 150px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1600&q=80') center/cover;">
   <div class="header-content">
-    <h1 style="font-size: 3.5rem; line-height: 1.2;">Dominieren Sie die Google-Suche</h1>
-    <p class="header-text" style="max-width: 800px; margin: 20px auto;">Wir bringen Ihr Business in Graz ganz nach oben. Mehr Sichtbarkeit bedeutet mehr Kunden und mehr Umsatz.</p>
-    <a class="cta-header" href="https://wa.me/436604831451?text=Hallo! Ich interessiere mich für SEO und Marketing Beratung." target="_blank">📈 Jetzt Sichtbarkeit steigern</a>
+    <h1 style="font-size: 3.5rem; line-height: 1.2;">Webdesign, das verkauft.</h1>
+    <p class="header-text" style="max-width: 800px; margin: 20px auto;">Wir verwandeln Ihre Vision in eine digitale Realität. Modern, schnell und optimiert für alle Endgeräte.</p>
+    <a class="cta-header" href="https://wa.me/436604831451" target="_blank">🚀 Projekt starten</a>
   </div>
 </header>
 
 <section class="services-section">
-  <h2>SEO & Ads Strategien</h2>
+  <h2>Unsere Design-Lösungen</h2>
   <div class="services">
     
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=800&q=80'); height: 550px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');">
       <div class="service-content">
-        <h3>Local SEO</h3>
-        <p>Dominieren Sie die lokale Suche in Graz und Umgebung. Werden Sie gefunden, wenn Kunden suchen.</p>
-        <ul class="service-list">
-            <li>Google My Business Optimierung</li>
-            <li>Regionale Keywords</li>
-            <li>Lokale Backlinks</li>
-        </ul>
-        <span class="price-tag">Ab € 290,- / Monat</span>
-        <a href="https://wa.me/436604831451?text=Hallo! Ich interessiere mich für Local SEO." target="_blank" class="cta-btn" style="margin-top: 25px; text-decoration: none; display: inline-block;">Jetzt anfragen</a>
+        <h3>Corporate Websites</h3>
+        <p>Professionelle Auftritte für Unternehmen, die Vertrauen schaffen und Kunden gewinnen.</p>
       </div>
     </div>
 
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); height: 550px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80');">
       <div class="service-content">
-        <h3>Search Engine Ads</h3>
-        <p>Sofortige Ergebnisse mit Google Ads. Wir schalten Kampagnen, die wirklich konvertieren.</p>
-        <ul class="service-list">
-            <li>Keyword-Recherche</li>
-            <li>Anzeigentexte Erstellung</li>
-            <li>Laufende Optimierung</li>
-        </ul>
-        <span class="price-tag">Ab € 390,- Setup</span>
-        <a href="https://wa.me/436604831451?text=Hallo! Ich interessiere mich für Google Ads Management." target="_blank" class="cta-btn" style="margin-top: 25px; text-decoration: none; display: inline-block;">Jetzt anfragen</a>
+        <h3>E-Commerce</h3>
+        <p>Leistungsstarke Online-Shops mit Fokus auf User Experience und Conversion-Optimierung.</p>
       </div>
     </div>
 
-    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80'); height: 550px;">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=800&q=80');">
       <div class="service-content">
-        <h3>Content Strategie</h3>
-        <p>Hochwertige Texte, die sowohl Nutzer als auch Suchmaschinen lieben. Langfristiger Erfolg.</p>
-        <ul class="service-list">
-            <li>Blog-Betreuung</li>
-            <li>SEO-optimierte Texte</li>
-            <li>Nutzer-Intent Analyse</li>
-        </ul>
-        <span class="price-tag">Individuell</span>
-        <a href="https://wa.me/436604831451?text=Hallo! Ich interessiere mich für eine Content Strategie." target="_blank" class="cta-btn" style="margin-top: 25px; text-decoration: none; display: inline-block;">Auf Anfrage</a>
+        <h3>Landing Pages</h3>
+        <p>Zielgerichtete Einzelseiten für Kampagnen, die Besucher in messbare Leads verwandeln.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<section class="feedback-section" style="background: #0a0a0a; padding: 100px 20px;">
-    <h2>Unsere Marketing-Strategie</h2>
-    
-    <div class="process-feedbacks">
-        
-        <div class="process-card" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=60');">
-            <div class="process-content">
-                <h4 class="step-number">01</h4>
-                <h4 class="step-title">Audit</h4>
-                <p>Analyse Ihrer aktuellen Seite und Finden von Fehlern.</p>
-            </div>
-        </div>
-
-        <div class="process-card" style="background-image: url('https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=500&q=60');">
-            <div class="process-content">
-                <h4 class="step-number">02</h4>
-                <h4 class="step-title">Keywords</h4>
-                <p>Auswahl der Suchbegriffe mit dem höchsten Potenzial.</p>
-            </div>
-        </div>
-
-        <div class="process-card" style="background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=500&q=60');">
-            <div class="process-content">
-                <h4 class="step-number">03</h4>
-                <h4 class="step-title">On-Page</h4>
-                <p>Technische Umsetzung direkt auf Ihrer Website.</p>
-            </div>
-        </div>
-
-        <div class="process-card" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=500&q=60');">
-            <div class="process-content">
-                <h4 class="step-number">04</h4>
-                <h4 class="step-title">Reporting</h4>
-                <p>Monatliche Berichte über Rankings und Fortschritte.</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<section class="services-section">
-    <h2>Warum SEO bei uns?</h2>
-    <div class="feedbacks">
-        <div class="feedback" style="background: transparent; border: none;">
-            <div style="font-size: 3rem; margin-bottom: 15px;">📊</div>
-            <h4>Datengetrieben</h4>
-            <p>Kein Raten. Wir optimieren basierend auf echten Zahlen.</p>
-        </div>
-        <div class="feedback" style="background: transparent; border: none;">
-            <div style="font-size: 3rem; margin-bottom: 15px;">🔍</div>
-            <h4>Transparent</h4>
-            <p>Sie wissen jederzeit, woran wir gerade arbeiten.</p>
-        </div>
-        <div class="feedback" style="background: transparent; border: none;">
-            <div style="font-size: 3rem; margin-bottom: 15px;">💡</div>
-            <h4>Nachhaltig</h4>
-            <p>Echte Rankings, die auch nach Monaten noch bestehen.</p>
-        </div>
-    </div>
-</section>
-
-<section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80') center/cover;">
+<section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80') center/cover;">
   <div class="final-cta-container">
-    <h2>Bereit für Seite 1?</h2>
-    <p style="margin-bottom: 30px;">Lassen Sie uns Ihre Konkurrenz in Graz hinter uns lassen.</p>
-    <a class="cta-btn" href="https://wa.me/436604831451?text=Hallo! Ich möchte meine Google-Rankings verbessern." target="_blank" style="text-decoration: none; display: inline-block;">💬 Kostenlose SEO-Analyse anfordern</a>
+    <h2>Bereit für ein neues Level?</h2>
+    <p style="margin-bottom: 30px;">Lassen Sie uns gemeinsam Ihre neue Website planen.</p>
+    <a class="cta-btn" href="https://wa.me/436604831451" target="_blank" style="text-decoration: none; display: inline-block;">Jetzt anfragen</a>
   </div>
 </section>
 
@@ -315,18 +137,17 @@
             <p>Tel: +43 660 4831451</p>
         </div>
         <div class="legal-box">
-            <h5>Erreichbarkeit</h5>
+            <h5>Öffnungszeiten</h5>
             <p>Mo - Fr: 09:00 - 18:00 Uhr</p>
-            <p>Wochenende: Notfall-Support</p>
-            <p>Reaktionszeit: < 2 Stunden</p>
-            <p style="margin-top: 15px; color: #444;">Gerichtsstand: Graz</p>
+            <p>Wochenende: Auf Anfrage</p>
+            <p>Ort: Graz & Umgebung</p>
         </div>
         <div class="legal-box">
-            <h5>Standort Graz</h5>
+            <h5>Standort</h5>
             <div class="map-wrapper">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2720.551062026361!2d15.449557676939943!3d47.0686414249826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476e359005085d39%3A0xc3f982193f41539e!2sFlurgasse%2021%2C%208010%20Graz!5e0!3m2!1sde!2sat!4v1715600000000!5m2!1sde!2sat" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2720.5756317282544!2d15.441499099999999!3d47.0678224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476ebe658989b50d%3A0xe21905a59a3ead92!2sFlurgasse%2021%2C%208010%20Graz!5e0!3m2!1sde!2sat!4v1710000000000!5m2!1sde!2sat" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                 </iframe>
             </div>
         </div>
@@ -336,7 +157,7 @@
         <a href="datenschutz.html">Datenschutz</a>
         <a href="agb.html">AGB</a>
     </div>
-    <div style="text-align: center; margin-top: 30px; color: #333; font-size: 0.75rem;">
+    <div style="text-align: center; margin-top: 30px; color: #333;">
         © 2026 Klarity Web - Alle Rechte vorbehalten
     </div>
 </footer>
