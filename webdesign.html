@@ -109,4 +109,196 @@
             z-index: 2;
             padding: 30px;
             display: flex;
-            flex-direction
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+        }
+
+        .process-content h4.step-number {
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .process-content h4.step-title {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .process-content p {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* FIX CENTRATURA CTA FINALE */
+        .final-cta-container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="webdesign.html" style="color: #fff; font-weight: bold; border-bottom: 2px solid #fff;">Webdesign</a></li>
+            <li><a href="seo-marketing.html">SEO & Marketing</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Suchen...">
+            <button onclick="executeSearch()">🔍</button>
+        </div>
+    </div>
+</nav>
+
+<header style="padding: 150px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;">
+  <div class="header-content">
+    <h1 style="font-size: 3.5rem; line-height: 1.2;">Webdesign, das Ergebnisse liefert</h1>
+    <p class="header-text" style="max-width: 800px; margin: 20px auto;">Wir bauen keine digitalen Visitenkarten, sondern psychologisch optimierte Verkaufsmaschinen for Ihr Business in Graz.</p>
+    <a class="cta-header" href="https://wa.me/436604831451?text=Hallo! Ich interessiere mich für ein Webdesign Strategiegespräch." target="_blank">🚀 Jetzt Projekt anfragen</a>
+  </div>
+</header>
+
+<section class="services-section">
+  <h2>Maßgeschneiderte Webdesign-Pakete</h2>
+  <div class="services">
+    
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); height: 550px;">
+      <div class="service-content">
+        <h3>Landing Pages</h3>
+        <p>Einzelseiter, optimiert for eine einzige Aktion (Verkauf, Lead). Perfekt for Google/Social Ads.</p>
+        <ul class="service-list">
+            <li>A/B Testing ready</li>
+            <li>Ultra-schnelle Ladezeit</li>
+            <li>Starker Call-to-Action</li>
+        </ul>
+        <span class="price-tag">Ab € 490,-</span>
+        <a href="https://wa.me/436604831451?text=Hallo! Ich interessiere mich für das Landing Page Paket." target="_blank" class="cta-btn" style="margin-top: 25px; text-decoration: none; display: inline-block;">Jetzt anfragen</a>
+      </div>
+    </div>
+
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80'); height: 550px;">
+      <div class="service-content">
+        <h3>Business Website</h3>
+        <p>Komplette Webpräsenz for KMU. Zeigen Sie Ihre Expertise und gewinnen Sie Vertrauen.</p>
+        <ul class="service-list">
+            <li>Bis zu 10 Unterseiten</li>
+            <li>Basis SEO-Optimierung</li>
+            <li>Kontaktformular Integration</li>
+        </ul>
+        <span class="price-tag">Ab € 1.290,-</span>
+        <a href="https://wa.me/436604831451?text=Hallo! Ich interessiere mich für das Business Website Paket." target="_blank" class="cta-btn" style="margin-top: 25px; text-decoration: none; display: inline-block;">Jetzt anfragen</a>
+      </div>
+    </div>
+
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80'); height: 550px;">
+      <div class="service-content">
+        <h3>E-Commerce Shop</h3>
+        <p>Professioneller Online-Shop. Verkaufen Sie Ihre Produkte 24/7 weltweit.</p>
+        <ul class="service-list">
+            <li>Unbegrenzte Produkte</li>
+            <li>Sichere Zahlungsarten</li>
+            <li>Einfache Verwaltung</li>
+        </ul>
+        <span class="price-tag">Individuell</span>
+        <a href="https://wa.me/436604831451?text=Hallo! Ich interessiere mich für einen E-Commerce Shop." target="_blank" class="cta-btn" style="margin-top: 25px; text-decoration: none; display: inline-block;">Auf Anfrage</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="feedback-section" style="background: #0a0a0a; padding: 100px 20px;">
+    <h2>In 4 Schritten zum Erfolg</h2>
+    
+    <div class="process-feedbacks">
+        
+        <div class="process-card" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=500&q=60');">
+            <div class="process-content">
+                <h4 class="step-number">01</h4>
+                <h4 class="step-title">Strategie</h4>
+                <p>Analyse Ihrer Zielgruppe und Konkurrenz in Graz.</p>
+            </div>
+        </div>
+
+        <div class="process-card" style="background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=500&q=60');">
+            <div class="process-content">
+                <h4 class="step-number">02</h4>
+                <h4 class="step-title">Design</h4>
+                <p>Erstellung eines modernen und responsive Layouts.</p>
+            </div>
+        </div>
+
+        <div class="process-card" style="background-image: url('https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?auto=format&fit=crop&w=500&q=60');">
+            <div class="process-content">
+                <h4 class="step-number">03</h4>
+                <h4 class="step-title">SEO</h4>
+                <p>Technische Optimierung for Google-Sichtbarkeit.</p>
+            </div>
+        </div>
+
+        <div class="process-card" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=60');">
+            <div class="process-content">
+                <h4 class="step-number">04</h4>
+                <h4 class="step-title">Launch</h4>
+                <p>Ihre Seite geht live und wir schulen Ihr Team.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="services-section">
+    <h2>Mehr als nur "schön".</h2>
+    <div class="feedbacks">
+        <div class="feedback" style="background: transparent; border: none;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">⚡</div>
+            <h4>Ladezeit</h4>
+            <p>Websites unter 1 Sekunde for besseres Ranking.</p>
+        </div>
+        <div class="feedback" style="background: transparent; border: none;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">📱</div>
+            <h4>Mobile First</h4>
+            <p>Perfekte Darstellung auf jedem Smartphone.</p>
+        </div>
+        <div class="feedback" style="background: transparent; border: none;">
+            <div style="font-size: 3rem; margin-bottom: 15px;">🎯</div>
+            <h4>Conversion</h4>
+            <p>Elemente platziert for maximale Anfragen.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover;">
+  <div class="final-cta-container">
+    <h2>Lust auf ein neues Design?</h2>
+    <p style="margin-bottom: 30px;">Lassen Sie uns unverbindlich über Ihre Vision sprechen.</p>
+    <a class="cta-btn" href="https://wa.me/436604831451?text=Hallo! Ich hätte gerne eine kostenlose Beratung." target="_blank" style="text-decoration: none; display: inline-block;">💬 Kostenlose Beratung anfordern</a>
+  </div>
+</section>
+
+<footer>
+    &copy; 2026 Klarity Web - Alle Rechte vorbehalten
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
