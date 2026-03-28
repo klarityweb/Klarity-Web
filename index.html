@@ -39,7 +39,8 @@
         .service::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)) !important; z-index: 1; }
         .service-content { position: relative; z-index: 2; padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
         
-        .cta-btn-white { display: inline-block; margin-top: 25px; padding: 12px 25px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px; }
+        .cta-btn-white { display: inline-block; margin-top: 25px; padding: 12px 25px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px; transition: 0.3s; }
+        .cta-btn-white:hover { background: #ddd; transform: translateY(-2px); }
 
         /* FEEDBACKS */
         .feedback-section { background: #000; padding: 100px 20px; color: #fff; text-align: center; }
@@ -47,7 +48,7 @@
         .feedback { background: #050505; padding: 30px; border: 1px solid #111; border-radius: 8px; flex: 1 1 300px; max-width: 350px; }
         .stars { color: #ffcc00; font-size: 1.2rem; margin-bottom: 15px; }
 
-        /* CONTACT SECTION (La tua richiesta) */
+        /* CONTACT SECTION */
         .contact-section { background: #000; padding: 80px 20px; text-align: center; border-top: 1px solid #111; }
         .contact-section h2 { color: #fff; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 2px; }
         .contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; max-width: 1200px; margin: 0 auto; }
@@ -55,7 +56,16 @@
         .contact-card i { font-size: 2.5rem; color: #fff; margin-bottom: 20px; display: block; }
         .contact-card h4 { text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
         .contact-card a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
-        .contact-card a:hover { text-decoration: underline; }
+
+        /* CTA FINALE CON SFONDO (Uniformata alle altre pagine) */
+        .final-cta-section { 
+            padding: 120px 20px; 
+            text-align: center; 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80') center/cover;
+            border-top: 1px solid #111;
+        }
+        .final-cta-section h2 { color: #fff; font-size: 2.5rem; text-transform: uppercase; margin-bottom: 20px; }
+        .final-cta-section p { color: #ccc; font-size: 1.2rem; margin-bottom: 40px; }
 
         footer { background:#000; color:#444; text-align:center; padding: 40px 20px; border-top:1px solid #111; font-size: 0.8rem; }
     </style>
@@ -155,8 +165,9 @@
     </div>
 </section>
 
-<section style="background: #000; padding: 100px 20px; text-align: center; border-top: 1px solid #111;">
-    <h2 style="color: #fff; font-size: 2.2rem;">Bereit, Ihr Unternehmen online zu stärken?</h2>
+<section class="final-cta-section">
+    <h2>Bereit für den nächsten Schritt?</h2>
+    <p>Lassen Sie uns gemeinsam Ihre digitale Erfolgsgeschichte schreiben.</p>
     <a class="cta-btn-white" href="https://wa.me/436604831451" target="_blank">Jetzt Erstgespräch sichern 💬</a>
 </section>
 
