@@ -3,40 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klarity Web | Home - Premium Webdesign & SEO Graz</title>
+    
+    <title>Klarity Web | Webdesign & SEO Graz</title>
+    <meta name="description" content="Klarity Web Graz – High-End Websites, SEO und Support in der Steiermark.">
     
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- HEADER LAYOUT (Identico alle pagine interne) --- */
-        .hero-header {
-            text-align: center;
-            padding: 40px 20px 80px 20px;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), 
-                        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;
-            border-bottom: 1px solid #111;
-            overflow: hidden;
-        }
-
-        /* --- LOGO MONUMENTALE RITAGLIATO --- */
-        .logo-container {
-            width: 100%;
+        /* --- RESET E OTTIMIZZAZIONE LAYOUT --- */
+        body { margin: 0; padding: 0; overflow-x: hidden; }
+        
+        .services .service {
             display: flex;
+            align-items: center;
             justify-content: center;
+            position: relative;
             overflow: hidden;
-            margin-bottom: 20px;
         }
 
-        .logo-giant {
-            width: 6400px;
-            max-width: 140vw;
-            height: 180px; /* Ritaglio orizzontale */
-            object-fit: cover;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+        .service-content {
+            padding: 40px !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            z-index: 2;
         }
 
-        /* --- NAVBAR CENTRATA --- */
+        .service::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)) !important;
+            z-index: 1;
+        }
+
+        /* --- NAVBAR UNIFORMATA (CENTRATA) --- */
         .navbar {
             background: rgba(0, 0, 0, 0.95);
             border-bottom: 1px solid #111;
@@ -50,9 +55,13 @@
             align-items: center;
             gap: 15px;
         }
+        .nav-logo img {
+            height: 40px;
+        }
         .nav-links {
             list-style: none;
             display: flex;
+            justify-content: center;
             gap: 30px;
             padding: 0;
             margin: 0;
@@ -61,97 +70,95 @@
             color: #aaa;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
         .nav-links a.active-link {
             color: #fff;
+            font-weight: bold;
             border-bottom: 2px solid #fff;
             padding-bottom: 5px;
         }
 
-        /* --- SEZIONE SERVIZI (Layout Grid come pagine interne) --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 0;
-            background: #000;
+        /* --- HEADER ULTRA-LOGO --- */
+        .hero-header {
+            text-align: center;
+            padding: 20px 0 80px 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+                        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;
+            overflow: hidden; 
         }
-        .service-item {
-            height: 500px;
+
+        .logo-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: -10px;
+        }
+
+        .logo-giant {
+            width: 3200px; 
+            max-width: 100vw; 
+            height: 350px; 
+            object-fit: contain;
+            object-position: center;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+        }
+
+        /* --- ALTRI ELEMENTI --- */
+        .solution-section { display: flex; flex-wrap: wrap; background: #000; }
+        .solution-box {
+            flex: 1 1 50%;
+            min-height: 450px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             background-size: cover;
             background-position: center;
-            overflow: hidden;
         }
-        .service-item::before {
-            content: "";
+        .solution-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.7);
-            transition: 0.3s;
-        }
-        .service-item:hover::before {
-            background: rgba(0,0,0,0.5);
-        }
-        .service-content {
-            position: relative;
-            z-index: 2;
+            background: rgba(0,0,0,0.75);
             padding: 40px;
-        }
-        .service-content h3 {
-            font-size: 2rem;
-            color: #fff;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        .service-content p {
-            color: #ccc;
-            margin-bottom: 30px; /* SPAZIO PRIMA DEL PULSANTE */
-            line-height: 1.6;
-        }
-        .btn-outline {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-bottom: 2px solid #fff;
-            padding-bottom: 5px;
-            transition: 0.3s;
-        }
-        .btn-outline:hover {
-            color: #aaa;
-            border-color: #aaa;
-        }
-
-        /* --- CONTACT SECTION (Uniformata) --- */
-        .contact-section {
-            padding: 100px 20px;
-            background: #050505;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
+
+        .trust-bar {
+            background: #0a0a0a;
+            padding: 25px 20px;
+            text-align: center;
+            border-top: 1px solid #111;
+            border-bottom: 1px solid #111;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+        }
+
         .contact-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 50px;
-            max-width: 1000px;
-            margin: 50px auto 0;
+            gap: 40px;
+            padding: 60px 20px;
+            background: #050505;
         }
-        .contact-item h4 {
-            color: #fff;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .contact-item a, .contact-item p {
-            color: #888;
-            text-decoration: none;
-        }
+
+        .contact-card { text-align: center; color: #fff; flex: 1 1 250px; }
+        .contact-link { color: #ccc; text-decoration: none; transition: 0.3s; }
+        .contact-link:hover { color: #fff; }
+
+        .faq-section { background: #000; padding: 80px 20px; color: #fff; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid #222; padding: 20px 0; }
     </style>
 </head>
 <body>
@@ -159,7 +166,9 @@
 <nav class="navbar">
     <div class="nav-container">
         <div class="nav-logo">
-            <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web" style="height: 45px;">
+            <a href="index.html">
+                <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Logo">
+            </a>
         </div>
         <ul class="nav-links">
             <li><a href="index.html" class="active-link">Home</a></li>
@@ -173,59 +182,109 @@
 <header class="hero-header">
     <div class="logo-container">
         <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" 
-             class="logo-giant" alt="Logo Gigante">
+             alt="Klarity Web" 
+             class="logo-giant">
     </div>
-    <h1 style="color: #fff; font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px;">Klarity Web Graz</h1>
-    <p style="color: #aaa; font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px auto;">
-        High-End Webdesign, strategisches SEO und technischer Support per eccellenza.
+
+    <h1 style="color: #fff; font-size: 2.8rem; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 2px;">Premium Webdesign & SEO</h1>
+    
+    <p style="margin:0 auto; text-align:center; color: #fff; font-size: 1.25rem; max-width: 800px; opacity: 0.85; line-height: 1.6;">
+        Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.
     </p>
-    <a href="https://wa.me/436604831451" style="display: inline-block; padding: 15px 40px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase;">Kostenlose Beratung</a>
+    
+    <a class="cta-header" href="https://wa.me/436604831451" target="_blank" style="margin-top:35px; display:inline-block;">Kostenlose Demo anfordern 🚀</a>
 </header>
 
-<section class="services-grid">
-    <div class="service-item" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80');">
-        <div class="service-content">
-            <h3>Webdesign</h3>
-            <p>Modernste Layouts, die Ihre Marke in den Fokus rücken.</p>
-            <a href="webdesign.html" class="btn-outline">Design ansehen ✨</a>
+<div class="trust-bar">
+    E-Commerce • Handwerk • Dienstleister • Kanzleien
+</div>
+
+<section style="background: #000; padding: 100px 20px;">
+    <h2 style="text-align: center; margin-bottom: 60px; color: #fff; font-size: 2.5rem;">Wie wir Ihr Business transformieren</h2>
+    <div class="solution-section">
+        <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80');">
+            <div class="solution-overlay">
+                <h3>Sichtbarkeit, die verkauft</h3>
+                <p style="color:#ccc;">Wir bringen Sie auf Seite 1 bei Google. Nicht nur für Klicks, sondern für echte Kunden.</p>
+            </div>
         </div>
-    </div>
-    <div class="service-item" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');">
-        <div class="service-content">
-            <h3>SEO & Marketing</h3>
-            <p>Maximale Sichtbarkeit e Reichweite bei Google.</p>
-            <a href="seo-marketing.html" class="btn-outline">Mehr Reichweite 📈</a>
-        </div>
-    </div>
-    <div class="service-item" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80');">
-        <div class="service-content">
-            <h3>Support</h3>
-            <p>Schnelle Hilfe, Wartung und sicheres Hosting.</p>
-            <a href="support.html" class="btn-outline">Hilfe anfordern 🛠️</a>
+        <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80');">
+            <div class="solution-overlay">
+                <h3>Design, das überzeugt</h3>
+                <p style="color:#ccc;">Wir gestalten Erlebnisse, die Vertrauen schaffen e qualifizierte Leads generieren.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="contact-section">
-    <h2 style="color: #fff; text-transform: uppercase; letter-spacing: 2px;">Direkt Kontaktieren</h2>
-    <div class="contact-grid">
-        <div class="contact-item">
-            <h4>WhatsApp</h4>
-            <a href="https://wa.me/436604831451">+43 660 4831451</a>
+<section class="services-section">
+  <h2 style="text-align: center; color: #fff; margin-bottom: 40px;">Unsere Performance-Bereiche</h2>
+  <div class="services">
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80'); height: 450px;">
+      <div class="service-content">
+        <h3>Webdesign</h3>
+        <p>Landing Pages & Business Websites.</p>
+        <a href="webdesign.html" class="cta-btn">Design ansehen ✨</a>
+      </div>
+    </div>
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); height: 450px;">
+      <div class="service-content">
+        <h3>SEO & Marketing</h3>
+        <p>Suchmaschinenoptimierung & Ads.</p>
+        <a href="seo-marketing.html" class="cta-btn">Mehr Reichweite 📈</a>
+      </div>
+    </div>
+    <div class="service" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80'); height: 450px;">
+      <div class="service-content">
+        <h3>Support</h3>
+        <p>Wartung, Security & Hilfe.</p>
+        <a href="support.html" class="cta-btn">Hilfe anfordern 🛠️</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-grid">
+    <div class="contact-card">
+        <span style="font-size: 2.5rem; display:block; margin-bottom:10px;">📱</span>
+        <h4 style="margin-bottom:10px;">WhatsApp</h4>
+        <a href="https://wa.me/436604831451" class="contact-link">+43 660 4831451</a>
+    </div>
+    <div class="contact-card">
+        <span style="font-size: 2.5rem; display:block; margin-bottom:10px;">✉️</span>
+        <h4 style="margin-bottom:10px;">E-Mail</h4>
+        <a href="mailto:info@klarityweb.at" class="contact-link">info@klarityweb.at</a>
+    </div>
+    <div class="contact-card">
+        <span style="font-size: 2.5rem; display:block; margin-bottom:10px;">📍</span>
+        <h4 style="margin-bottom:10px;">Standort</h4>
+        <p style="color: #ccc; margin:0;">Graz, Österreich</p>
+    </div>
+</section>
+
+<section class="faq-section">
+    <div class="faq-container">
+        <h2 style="text-align: center; margin-bottom: 40px; color: #fff;">Häufig gestellte Fragen</h2>
+        <div class="faq-item">
+            <h4>Wie lange dauert die Erstellung einer Website?</h4>
+            <p>In der Regel benötigen wir für eine professionelle Business-Website zwischen 2 und 4 Wochen.</p>
         </div>
-        <div class="contact-item">
-            <h4>E-Mail</h4>
-            <a href="mailto:info@klarityweb.at">info@klarityweb.at</a>
-        </div>
-        <div class="contact-item">
-            <h4>Standort</h4>
-            <p>Graz, Österreich</p>
+        <div class="faq-item">
+            <h4>Ist SEO im Webdesign enthalten?</h4>
+            <p>Ja, jede Website wird mit einer On-Page-SEO-Struktur ausgeliefert.</p>
         </div>
     </div>
 </section>
 
-<footer style="padding: 50px 20px; background: #000; text-align: center; border-top: 1px solid #111; color: #444; font-size: 0.8rem;">
-    &copy; 2026 Klarity Web - Alle Rechte vorbehalten.
+<section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80') center/cover; padding: 60px 20px; text-align: center;">
+  <div class="final-cta-container">
+    <h2 style="font-size: 2.2rem; color: #fff;">Bereit, Ihr Unternehmen online zu stärken?</h2>
+    <a class="cta-btn" href="https://wa.me/436604831451" target="_blank" style="margin-top:20px; display:inline-block;">Jetzt Erstgespräch sichern 💬</a>
+  </div>
+</section>
+
+<footer style="background:#000; color:#444; text-align:center; padding: 40px 20px; border-top:1px solid #111;">
+    &copy; 2026 Klarity Web - Alle Rechte vorbehalten
 </footer>
 
 </body>
