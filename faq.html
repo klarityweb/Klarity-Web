@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Klarity Web – Webdesign & SEO Experten</title>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Wie lange dauert die Erstellung einer Website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Erstellung einer Website dauert in der Regel 3 bis 6 Wochen, je nach Umfang der Inhalte und Komplexität."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Was kostet eine professionelle Website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wir bieten professionelle Business-Websites ab ca. 1.500 € an, individuell abgestimmt auf Ihre Geschäftsziele."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Sind die Websites für Mobilgeräte optimiert?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolut. Alle unsere Websites werden nach dem Mobile-First-Prinzip entwickelt und funktionieren perfekt auf Smartphones e Tablets."
+        }
+      }]
+    }
+    </script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { margin: 0; padding: 0; overflow-x: hidden; font-family: 'Roboto', sans-serif; background: #000; color: #fff; }
+        
+        /* NAVBAR */
+        .navbar { background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #111; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .nav-logo img { height: 40px; display: block; }
+        .nav-links { list-style: none; display: flex; gap: 25px; padding: 0; margin: 0; }
+        .nav-links a { text-decoration: none; color: #aaa; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        .nav-links a:hover, .nav-links a.active-link { color: #fff; font-weight: bold; border-bottom: 2px solid #fff; padding-bottom: 5px; }
+
+        /* HERO HEADER (Stile Webdesign.html) */
+        .hero-header { 
+            text-align: center; 
+            padding: 120px 20px; 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+                        url('https://images.unsplash.com/photo-1454165833767-027ffea9e7a7?auto=format&fit=crop&w=1600&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero-header h1 { font-size: clamp(2rem, 5vw, 3.5rem); text-transform: uppercase; letter-spacing: 3px; margin: 0 0 15px 0; }
+        .hero-header p { font-size: 1.2rem; color: #ccc; max-width: 700px; margin-bottom: 40px; }
+
+        /* TRUST BAR */
+        .trust-bar { background: #0a0a0a; padding: 25px 20px; text-align: center; border-top: 1px solid #111; border-bottom: 1px solid #111; color: #666; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; }
+
+        /* FAQ SECTIONS (Stile Service Boxes) */
+        .faq-section { background: #000; padding: 80px 20px; }
+        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        
+        .faq-card { 
+            background: #050505; 
+            border: 1px solid #111; 
+            padding: 40px; 
+            border-radius: 4px; 
+            transition: 0.3s ease;
+            text-align: left;
+        }
+        .faq-card:hover { border-color: #333; transform: translateY(-5px); }
+        .faq-card h3 { color: #fff; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 15px; border-left: 3px solid #fff; padding-left: 15px; }
+        .faq-card p { color: #888; line-height: 1.7; font-size: 0.95rem; }
+
+        /* FINAL CTA */
+        .final-cta-section { 
+            padding: 100px 20px; 
+            text-align: center; 
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80') center/cover;
+            border-top: 1px solid #111;
+        }
+        .cta-btn-white { 
+            display: inline-block; 
+            padding: 14px 35px; 
+            background: #fff; 
+            color: #000; 
+            text-decoration: none; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            border-radius: 4px; 
+            transition: 0.3s; 
+        }
+        .cta-btn-white:hover { background: #ddd; transform: translateY(-3px); }
+
+        footer { background:#000; color:#444; text-align:center; padding: 40px 20px; border-top:1px solid #111; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .nav-logo { display: none; }
+            .nav-container { justify-content: center; }
+            .faq-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo"><a href="index.html"><img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Logo"></a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="webdesign.html">Webdesign</a></li>
+            <li><a href="seo-marketing.html">SEO & Marketing</a></li>
+            <li><a href="faq.html" class="active-link">FAQ</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero-header">
+    <h1>Häufig gestellte Fragen</h1>
+    <p>Antworten auf die wichtigsten Fragen zu Webdesign, SEO e digitalem Wachstum.</p>
+    <a href="https://wa.me/436604831451" class="cta-btn-white">Jetzt Chat starten 💬</a>
+</header>
+
+<div class="trust-bar">Expertise • Transparenz • Performance</div>
+
+<section class="faq-section">
+    <div class="faq-grid">
+        <div class="faq-card">
+            <h3>Wie lange dauert ein Projekt?</h3>
+            <p>Die Erstellung einer Website dauert in der Regel 3 bis 6 Wochen. Dies hängt vom Umfang e der Komplexität ab.</p>
+        </div>
+        <div class="faq-card">
+            <h3>Was kostet eine Website?</h3>
+            <p>Professionelle Business-Websites starten bei uns ab ca. 1.500 €. Wir bieten Festpreise ohne versteckte Kosten.</p>
+        </div>
+        <div class="faq-card">
+            <h3>Ist SEO inkludiert?</h3>
+            <p>Ja, jede Website ist technisch für Google optimiert. Für Top-Rankings bieten wir gezielte SEO-Pakete an.</p>
+        </div>
+        <div class="faq-card">
+            <h3>Mobile-Optimierung?</h3>
+            <p>Absolut. Ihre Website wird auf Smartphones, Tablets e Desktops ein perfektes Erlebnis bieten.</p>
+        </div>
+        <div class="faq-card">
+            <h3>Wartung & Support?</h3>
+            <p>Wir lassen Sie nicht allein. Wir kümmern uns um Hosting, Updates e die Sicherheit Ihrer Seite.</p>
+        </div>
+        <div class="faq-card">
+            <h3>Support nach dem Kauf?</h3>
+            <p>Ja, wir sind jederzeit erreichbar für Änderungen o technische Fragen an Ihrer neuen Website.</p>
+        </div>
+    </div>
+</section>
+
+<section class="final-cta-section">
+    <h2 style="font-size: 2rem; margin-bottom: 20px; text-transform: uppercase;">Noch Fragen?</h2>
+    <a class="cta-btn-white" href="https://wa.me/436604831451" target="_blank">Kostenloses Erstgespräch 🚀</a>
+</section>
+
+<footer>&copy; 2026 Klarity Web - Alle Rechte vorbehalten</footer>
+
+</body>
+</html>
