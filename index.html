@@ -53,7 +53,6 @@
             margin-bottom: -30px; 
         }
 
-        /* TITOLO COMPATTO SU UNA RIGA */
         .hero-header h1 { 
             color: #fff; 
             font-size: clamp(1.8rem, 4.2vw, 3.2rem); 
@@ -94,10 +93,8 @@
         }
         .cta-btn-white:hover { background: #ddd; transform: translateY(-3px); }
 
-        /* TRUST BAR */
         .trust-bar { background: #0a0a0a; padding: 25px 20px; text-align: center; border-top: 1px solid #111; border-bottom: 1px solid #111; color: #666; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; }
 
-        /* SEZIONI SOLUZIONI E SERVIZI */
         .solution-section { display: flex; flex-wrap: wrap; background: #000; }
         .solution-box { flex: 1 1 50%; min-height: 450px; position: relative; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; }
         .solution-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.75); padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
@@ -106,7 +103,6 @@
         .service::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)) !important; z-index: 1; }
         .service-content { position: relative; z-index: 2; padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
 
-        /* FEEDBACK E CONTATTI */
         .feedback-section { background: #000; padding: 100px 20px; color: #fff; text-align: center; }
         .feedbacks { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px; }
         .feedback { background: #050505; padding: 30px; border: 1px solid #111; border-radius: 8px; flex: 1 1 300px; max-width: 350px; }
@@ -131,17 +127,11 @@
 
         footer { background:#000; color:#444; text-align:center; padding: 40px 20px; border-top:1px solid #111; font-size: 0.8rem; }
 
-        /* =========================================
-           MOBILE OPTIMIZATION (ONLY FOR MOBILE)
-           ========================================= */
         @media (max-width: 768px) {
-            /* Navbar Mobile Fix */
             .nav-logo, .search-box { display: none !important; }
             .nav-container { justify-content: center; padding: 10px; }
             .nav-links { gap: 12px; }
             .nav-links a { font-size: 0.7rem; letter-spacing: 0.5px; }
-
-            /* FIX PER PAROLE LUNGHE (TRANSFORMIEREN) */
             h2 { 
                 font-size: 1.8rem !important; 
                 overflow-wrap: break-word !important; 
@@ -149,8 +139,6 @@
                 padding: 0 10px;
                 line-height: 1.2;
             }
-
-            /* Hero Section Mobile */
             .logo-giant { 
                 max-width: 100vw; 
                 height: 120px; 
@@ -169,18 +157,10 @@
                 margin-bottom: 30px; 
             }
             .cta-btn-white { width: 85%; margin-bottom: 50px; }
-
-            /* Trust Bar */
             .trust-bar { font-size: 0.65rem; letter-spacing: 1px; padding: 15px 10px; }
-
-            /* Solution Section Mobile */
             .solution-box { flex: 1 1 100%; min-height: 300px; }
-            
-            /* Services Mobile */
             .services .service { height: 400px; }
             .service-content h3 { font-size: 1.8rem; }
-            
-            /* Grid Fixes */
             .contact-grid { gap: 40px; }
             .final-cta-section h2 { font-size: 1.8rem; }
         }
@@ -195,9 +175,8 @@
             <li><a href="index.html" class="active-link">Home</a></li>
             <li><a href="webdesign.html">Webdesign</a></li>
             <li><a href="seo-marketing.html">SEO & Marketing</a></li>
-            <li><a href="faq.html">FAQ</a></li>
             <li><a href="support.html">Support</a></li>
-        </ul>
+            <li><a href="faq.html">FAQ</a></li> </ul>
         <div class="search-box"><input type="text" placeholder="Suchen..."><button>🔍</button></div>
     </div>
 </nav>
