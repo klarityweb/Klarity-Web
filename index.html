@@ -148,7 +148,12 @@
         .legal-footer { background: #050505; padding: 80px 20px 30px; color: #666; font-size: 0.85rem; border-top: 1px solid #111; text-align: left; }
         .legal-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
         .legal-box h5 { color: #fff; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #222; padding-bottom: 10px; display: inline-block; }
-        .map-wrapper { width: 100%; height: 200px; border-radius: 12px; overflow: hidden; filter: grayscale(1) invert(0.92) opacity(0.7); border: 1px solid #222; }
+        .legal-box p { line-height: 1.6; margin-bottom: 8px; }
+        .footer-links { margin-top: 50px; border-top: 1px solid #111; padding-top: 30px; text-align: center; }
+        .footer-links a { color: #888; text-decoration: none; margin: 0 15px; transition: 0.3s; }
+        .footer-links a:hover { color: #fff; }
+        .map-wrapper { width: 100%; height: 200px; border-radius: 12px; overflow: hidden; filter: grayscale(1) invert(0.92) opacity(0.7); transition: 0.3s; border: 1px solid #222; }
+        .map-wrapper:hover { filter: grayscale(0.4) invert(0.92) opacity(1); }
 
         @media (max-width: 768px) {
             .nav-logo, .search-box { display: none !important; }
@@ -163,6 +168,9 @@
             .trust-bar { font-size: 0.65rem; letter-spacing: 1px; padding: 15px 10px; }
             .solution-box { flex: 1 1 100%; min-height: 300px; }
             .services .service { flex: 1 1 100%; height: 400px; }
+            .service-content h3 { font-size: 1.8rem; }
+            .contact-grid { gap: 40px; }
+            .final-cta-section h2 { font-size: 1.8rem; }
             .legal-footer { text-align: center; }
             .legal-box h5 { display: block; }
         }
