@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- RESET E OTTIMIZZAZIONE LAYOUT --- */
+        /* --- RESET E OTTIMIZZAZIONE LAYOUT (Invariati) --- */
         body { margin: 0; padding: 0; overflow-x: hidden; }
         
         .services .service {
@@ -41,10 +41,11 @@
             z-index: 1;
         }
 
-        /* --- HEADER ULTRA-LOGO (MODIFICATO SOLO QUI) --- */
+        /* --- HEADER ULTRA-LOGO CON RITAGLIO ORIZZONTALE (MODIFICATO) --- */
         .hero-header {
             text-align: center;
-            padding: 20px 0 80px 0;
+            /* Padding ridotto per avvicinare il logo ritagliato alla navbar */
+            padding: 10px 0 80px 0;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
                         url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80') center/cover;
             overflow: hidden; 
@@ -56,24 +57,33 @@
             justify-content: center;
             align-items: center;
             margin-bottom: -10px;
-            overflow: hidden; /* Fondamentale per loghi giganti */
+            overflow: hidden;
         }
 
         .logo-giant {
-            /* LOGO 2X RISPETTO AL PRECEDENTE (6400px virtuali) */
+            /* LARGHEZZA MONUMENTALE MANTENUTA */
             width: 6400px; 
             max-width: 140vw; 
-            height: 450px; 
-            object-fit: contain;
+            
+            /* --- RITAGLIO ORIZZONTALE APPLICATO --- */
+            /* Altezza ridotta drasticamente per schiacciare l'immagine */
+            height: 180px; 
+            
+            /* object-fit: cover taglia le parti eccedenti sopra e sotto */
+            object-fit: cover; 
+            
             object-position: center;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+            display: block;
         }
 
-        /* --- NAVBAR UNIFORMATA (STILE WEBDESIGN.HTML) --- */
+        /* --- NAVBAR UNIFORMATA (STILE WEBDESIGN.HTML - Invariata) --- */
         .navbar {
             background: rgba(0, 0, 0, 0.95);
             border-bottom: 1px solid #111;
             padding: 15px 0;
+            position: relative;
+            z-index: 100;
         }
         
         .nav-links li a.active-link {
@@ -82,7 +92,7 @@
             border-bottom: 2px solid #fff;
         }
 
-        /* --- ALTRI ELEMENTI --- */
+        /* --- ALTRI ELEMENTI (Invariati) --- */
         .solution-section { display: flex; flex-wrap: wrap; background: #000; }
         .solution-box {
             flex: 1 1 50%;
@@ -142,7 +152,7 @@
     <div class="nav-container">
         <div class="nav-logo">
             <a href="index.html">
-                <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Logo">
+                <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Logo" style="height: 40px;">
             </a>
         </div>
         <ul class="nav-links">
@@ -167,7 +177,7 @@
         Wir entwickeln Ihren Online-Erfolg. Sehen Sie, wie Ihr Unternehmen online glänzen kann.
     </p>
     
-    <a class="cta-header" href="https://wa.me/436604831451" target="_blank" style="margin-top:35px; display:inline-block;">Kostenlose Demo anfordern 🚀</a>
+    <a class="cta-header" href="https://wa.me/436604831451" target="_blank" style="margin-top:35px; display:inline-block; padding: 15px 30px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Kostenlose Demo anfordern 🚀</a>
 </header>
 
 <div class="trust-bar">
@@ -199,21 +209,21 @@
       <div class="service-content">
         <h3>Webdesign</h3>
         <p>Landing Pages & Business Websites.</p>
-        <a href="webdesign.html" class="cta-btn">Design ansehen ✨</a>
+        <a href="webdesign.html" class="cta-btn" style="color: #fff; text-decoration: underline; font-weight: bold;">Design ansehen ✨</a>
       </div>
     </div>
     <div class="service" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); height: 450px;">
       <div class="service-content">
         <h3>SEO & Marketing</h3>
         <p>Suchmaschinenoptimierung & Ads.</p>
-        <a href="seo-marketing.html" class="cta-btn">Mehr Reichweite 📈</a>
+        <a href="seo-marketing.html" class="cta-btn" style="color: #fff; text-decoration: underline; font-weight: bold;">Mehr Reichweite 📈</a>
       </div>
     </div>
     <div class="service" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80'); height: 450px;">
       <div class="service-content">
         <h3>Support</h3>
         <p>Wartung, Security & Hilfe.</p>
-        <a href="support.html" class="cta-btn">Hilfe anfordern 🛠️</a>
+        <a href="support.html" class="cta-btn" style="color: #fff; text-decoration: underline; font-weight: bold;">Hilfe anfordern 🛠️</a>
       </div>
     </div>
   </div>
@@ -255,7 +265,7 @@
   <div class="final-cta-container">
     <h2 style="font-size: 2.2rem; text-align: center; color: #fff;">Bereit, Ihr Unternehmen online zu stärken?</h2>
     <div style="text-align: center;">
-        <a class="cta-btn" href="https://wa.me/436604831451" target="_blank" style="margin-top:20px; display:inline-block;">Jetzt Erstgespräch sichern 💬</a>
+        <a class="cta-btn" href="https://wa.me/436604831451" target="_blank" style="margin-top:20px; display:inline-block; padding: 15px 35px; background: #fff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px;">Jetzt Erstgespräch sichern 💬</a>
     </div>
   </div>
 </section>
