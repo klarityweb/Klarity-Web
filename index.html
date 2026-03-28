@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klarity Web | Webdesign & SEO Agentur – Graz, Steiermark & Wien</title>
     
-    <link rel="icon" type="image/png" href="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png">
+    <link rel="icon" type="image/png" href="https://image2url.com/r2/default/images/1774736814036-c0c18533-fde6-4831-8955-2a9f459516fa.png">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -22,9 +22,10 @@
         .nav-links a { text-decoration: none; color: #aaa; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; }
         .nav-links a:hover { color: #fff; }
         .nav-links a.active-link { color: #fff; font-weight: bold; border-bottom: 2px solid #fff; padding-bottom: 5px; }
-        .search-box { display: flex; align-items: center; gap: 5px; }
-        .search-box input { background: #111; border: 1px solid #333; color: #fff; padding: 5px 10px; border-radius: 4px; }
-        .search-box button { background: none; border: none; cursor: pointer; color: #fff; }
+        
+        .search-box { display: flex; align-items: center; background: #111; padding: 5px 10px; border-radius: 4px; }
+        .search-box input { background: transparent; border: none; color: #fff; padding: 5px; outline: none; width: 100px; }
+        .search-box button { background: transparent; border: none; cursor: pointer; color: #aaa; }
 
         /* HERO HEADER */
         .hero-header { 
@@ -98,22 +99,27 @@
         }
         .cta-btn-white:hover { background: #ddd; transform: translateY(-3px); }
 
+        /* TRUST BAR */
         .trust-bar { background: #0a0a0a; padding: 25px 20px; text-align: center; border-top: 1px solid #111; border-bottom: 1px solid #111; color: #666; text-transform: uppercase; letter-spacing: 3px; font-size: 0.85rem; }
 
-        /* SOLUTIONS & SERVICES */
+        /* SOLUTIONS */
         .solution-section { display: flex; flex-wrap: wrap; background: #000; }
         .solution-box { flex: 1 1 50%; min-height: 450px; position: relative; display: flex; align-items: center; justify-content: center; background-size: cover; background-position: center; }
         .solution-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.75); padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
+        .solution-overlay h3 { font-size: 1.8rem; margin-bottom: 15px; text-transform: uppercase; }
 
-        .services { display: flex; flex-wrap: wrap; }
+        /* SERVICES GRID */
+        .services-section { background: #000; padding: 60px 0; }
+        .services { display: flex; flex-wrap: wrap; width: 100%; }
         .services .service { flex: 1 1 33.333%; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; height: 450px; background-size: cover; background-position: center; }
         .service::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)) !important; z-index: 1; }
         .service-content { position: relative; z-index: 2; padding: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
+        .service-content h3 { font-size: 1.8rem; margin-bottom: 10px; }
 
         /* FEEDBACK */
         .feedback-section { background: #000; padding: 100px 20px; color: #fff; text-align: center; }
         .feedbacks { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px; }
-        .feedback { background: #050505; padding: 30px; border: 1px solid #111; border-radius: 8px; flex: 1 1 300px; max-width: 350px; }
+        .feedback { background: #050505; padding: 30px; border: 1px solid #111; border-radius: 8px; flex: 1 1 300px; max-width: 350px; text-align: left; }
         .stars { color: #ffcc00; font-size: 1.2rem; margin-bottom: 15px; }
 
         /* CONTACT */
@@ -123,7 +129,8 @@
         .contact-card { flex: 1 1 250px; color: #fff; }
         .contact-card i { font-size: 2.5rem; color: #fff; margin-bottom: 20px; display: block; }
         .contact-card h4 { text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-        .contact-card a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+        .contact-card a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: 0.3s; }
+        .contact-card a:hover { opacity: 0.7; }
 
         /* FINAL CTA */
         .final-cta-section { 
@@ -135,16 +142,16 @@
         .final-cta-section h2 { color: #fff; font-size: 2.5rem; text-transform: uppercase; margin-bottom: 20px; }
         .final-cta-section p { color: #ccc; font-size: 1.2rem; margin-bottom: 40px; }
 
-        /* LEGAL FOOTER */
-        .legal-footer { background: #050505; padding: 60px 20px 20px; color: #666; font-size: 0.85rem; border-top: 1px solid #111; text-align: left; }
+        /* FOOTER AVANZATO */
+        .legal-footer { background: #050505; padding: 80px 20px 30px; color: #666; font-size: 0.85rem; border-top: 1px solid #111; text-align: left; }
         .legal-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-        .legal-box h5 { color: #fff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        .legal-box h5 { color: #fff; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #222; padding-bottom: 10px; display: inline-block; }
         .legal-box p { line-height: 1.6; margin-bottom: 8px; }
-        .footer-links { margin-top: 40px; border-top: 1px solid #111; padding-top: 20px; text-align: center; }
-        .footer-links a { color: #888; text-decoration: none; margin: 0 15px; transition: 0.3s; }
+        .footer-links { margin-top: 50px; border-top: 1px solid #111; padding-top: 30px; text-align: center; }
+        .footer-links a { color: #888; text-decoration: none; margin: 0 15px; transition: 0.3s; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
         .footer-links a:hover { color: #fff; }
-        .map-wrapper { width: 100%; height: 180px; border-radius: 12px; overflow: hidden; filter: grayscale(1) invert(0.92) opacity(0.7); transition: 0.3s; }
-        .map-wrapper:hover { filter: grayscale(0.5) invert(0.92) opacity(0.9); }
+        .map-wrapper { width: 100%; height: 200px; border-radius: 12px; overflow: hidden; filter: grayscale(1) invert(0.92) opacity(0.7); transition: 0.3s; border: 1px solid #222; }
+        .map-wrapper:hover { filter: grayscale(0.4) invert(0.92) opacity(1); }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
@@ -152,17 +159,19 @@
             .nav-container { justify-content: center; padding: 10px; }
             .nav-links { gap: 12px; }
             .nav-links a { font-size: 0.7rem; letter-spacing: 0.5px; }
-            h2 { font-size: 1.8rem !important; text-align: center; padding: 0 10px; line-height: 1.2; }
+            h2 { font-size: 1.8rem !important; overflow-wrap: break-word !important; line-height: 1.2; padding: 0 10px; }
             .logo-giant { max-width: 100vw; height: 120px; margin-top: 20px; }
             .hero-header h1 { white-space: normal !important; font-size: 1.8rem !important; padding: 0 15px; line-height: 1.3; margin-top: 10px; }
             .hero-header p { font-size: 1rem !important; padding: 0 20px; margin-bottom: 30px; }
             .cta-btn-white { width: 85%; margin-bottom: 50px; }
+            .trust-bar { font-size: 0.65rem; letter-spacing: 1px; padding: 15px 10px; }
             .solution-box { flex: 1 1 100%; min-height: 300px; }
             .services .service { flex: 1 1 100%; height: 400px; }
             .service-content h3 { font-size: 1.8rem; }
             .contact-grid { gap: 40px; }
+            .final-cta-section h2 { font-size: 1.8rem; }
             .legal-footer { text-align: center; }
-            .legal-container { grid-template-columns: 1fr; }
+            .legal-box h5 { display: block; }
         }
     </style>
 </head>
@@ -171,16 +180,14 @@
 <nav class="navbar">
     <div class="nav-container">
         <div class="nav-logo">
-            <a href="index.html">
-                <img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Logo">
-            </a>
+            <a href="index.html"><img src="https://image2url.com/r2/default/images/1772948059910-a360c7a8-1e4f-4646-af3f-e9779aea943e.png" alt="Klarity Web Logo"></a>
         </div>
         <ul class="nav-links">
             <li><a href="index.html" class="active-link">Home</a></li>
             <li><a href="webdesign.html">Webdesign</a></li>
             <li><a href="seo-marketing.html">SEO & Marketing</a></li>
             <li><a href="support.html">Support</a></li>
-            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="faq.html">FAQ</a></li> 
         </ul>
         <div class="search-box">
             <input type="text" placeholder="Suchen...">
@@ -201,12 +208,12 @@
 <div class="trust-bar">E-Commerce • Handwerk • Dienstleister • Kanzleien</div>
 
 <section style="background: #000; padding: 100px 20px;">
-    <h2 style="text-align: center; margin-bottom: 60px; text-transform: uppercase; letter-spacing: 2px;">Wie wir Ihr Business transformieren</h2>
+    <h2 style="text-align: center; margin-bottom: 60px; color: #fff; text-transform: uppercase; letter-spacing: 2px;">Wie wir Ihr Business transformieren</h2>
     <div class="solution-section">
         <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80');">
             <div class="solution-overlay">
                 <h3>Sichtbarkeit, die verkauft</h3>
-                <p style="color:#ccc;">Wir bringen Sie auf Seite 1 bei Google. Nicht solo per i click, ma per attirare veri clienti.</p>
+                <p style="color:#ccc;">Wir bringen Sie auf Seite 1 bei Google. Nicht nur für Klicks, sondern für echte Kunden.</p>
             </div>
         </div>
         <div class="solution-box" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80');">
@@ -219,7 +226,7 @@
 </section>
 
 <section class="services-section">
-    <h2 style="text-align: center; padding: 40px 0; text-transform: uppercase; letter-spacing: 2px;">Unsere Performance-Bereiche</h2>
+    <h2 style="text-align: center; color: #fff; padding: 40px 0; text-transform: uppercase; letter-spacing: 2px;">Unsere Performance-Bereiche</h2>
     <div class="services">
         <div class="service" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80');">
             <div class="service-content">
@@ -251,17 +258,17 @@
         <div class="feedback">
             <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>"Hervorragende Zusammenarbeit und ein Design, das unsere Erwartungen weit übertroffen hat."</p>
-            <h4 style="margin-top:15px;">- Markus S., Graz</h4>
+            <h4 style="margin-top:15px; color:#fff;">- Markus S., Graz</h4>
         </div>
         <div class="feedback">
             <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>"Endlich eine Agentur, die SEO wirklich versteht. Unsere Anfragen sono massiv gestiegen."</p>
-            <h4 style="margin-top:15px;">- Julia T., Steiermark</h4>
+            <h4 style="margin-top:15px; color:#fff;">- Julia T., Steiermark</h4>
         </div>
         <div class="feedback">
             <div class="stars">⭐⭐⭐⭐⭐</div>
             <p>"Schnell, zuverlässig und professionell. Die nuova Landing Page konvertiert fantastisch."</p>
-            <h4 style="margin-top:15px;">- Andreas W., Wien</h4>
+            <h4 style="margin-top:15px; color:#fff;">- Andreas W., Wien</h4>
         </div>
     </div>
 </section>
@@ -282,7 +289,7 @@
         <div class="contact-card">
             <i class="fas fa-location-dot"></i>
             <h4>Standort</h4>
-            <p style="color: #888;">Graz & Wien, Österreich</p>
+            <p style="color: #888;">Flurgasse 21, 8010 Graz</p>
         </div>
     </div>
 </section>
@@ -316,7 +323,7 @@
             <h5>Standort Graz</h5>
             <div class="map-wrapper">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2712.123!2d15.441!3d47.070!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476e3575975!2sFlurgasse%2021%2C%208010%20Graz!5e0!3m2!1sde!2sat!4v1700000000" 
+                    src="https://maps.google.com/?cid=9826610135229435547&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ7" 
                     width="100%" 
                     height="100%" 
                     style="border:0;" 
@@ -338,13 +345,6 @@
         © 2026 Klarity Web - Alle Rechte vorbehalten
     </div>
 </footer>
-
-<script>
-    function executeSearch() {
-        const query = document.querySelector('.search-box input').value;
-        if(query) alert('Suche nach: ' + query);
-    }
-</script>
 
 </body>
 </html>
