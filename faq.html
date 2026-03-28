@@ -75,6 +75,21 @@
             transform: translateY(-10px);
             border-color: rgba(255,255,255,0.2);
         }
+
+        /* STILE SPECIFICO PER BOX WARTUNG (SOLUZIONE DEFINITIVA SENZA IMMAGINE ESTERNA) */
+        .wartung-box {
+            background: linear-gradient(135deg, #111 0%, #000 100%) !important;
+            position: relative;
+        }
+        .wartung-box::after {
+            content: '⚙️';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.1;
+            filter: grayscale(1);
+        }
     </style>
 </head>
 <body>
@@ -133,7 +148,7 @@
       </div>
     </div>
 
-    <div class="service" style="background-image: url('https://image2url.com/r2/default/images/1772948313883-9366ec9d-5a89-4b68-8090-e59779aea943.png');">
+    <div class="service wartung-box">
       <div class="service-content">
         <h3>Wartung?</h3>
         <p>Wir kümmern uns um Updates, Hosting und Sicherheit, damit Sie sich auf Ihr Business konzentrieren können.</p>
