@@ -7,6 +7,7 @@
 <title>Portfolio | Klarity Web</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
 <style>
 body{
@@ -16,222 +17,243 @@ body{
     color:#fff;
 }
 
-/* NAVBAR (lasciata invariata) */
-.navbar{
+/* ================= NAVBAR (IDENTICA ALLE ALTRE PAGINE) ================= */
+.navbar {
     background: rgba(0,0,0,0.95);
-    padding:15px 0;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    border-bottom:1px solid #111;
-}
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 20px;
+    border-bottom: 1px solid #111;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* HERO */
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 0 20px;
+}
+
+.nav-logo img {
+    height:45px;
+}
+
+.nav-links {
+    list-style:none;
+    display:flex;
+    gap:25px;
+    margin:0;
+    padding:0;
+}
+
+.nav-links a {
+    text-decoration:none;
+    color:#aaa;
+    font-size:0.85rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.nav-links a:hover {
+    color:#fff;
+}
+
+/* ================= HERO (STESSO STILE INDEX) ================= */
 .portfolio-hero{
     text-align:center;
-    padding:100px 20px 60px;
-    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    padding:120px 20px 60px;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
     url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80') center/cover;
 }
+
 .portfolio-hero h1{
-    font-size:2.6rem;
+    font-size:2.8rem;
+    margin-bottom:15px;
     text-transform:uppercase;
+    letter-spacing:2px;
 }
 
-/* FILTER BUTTONS */
-.filters{
-    text-align:center;
-    margin:40px 0;
-}
-.filters button{
-    background:#111;
-    border:1px solid #222;
-    color:#aaa;
-    padding:10px 15px;
-    margin:5px;
-    cursor:pointer;
-    transition:0.3s;
-    border-radius:6px;
-}
-.filters button:hover,
-.filters button.active{
-    background:#fff;
-    color:#000;
+.portfolio-hero p{
+    color:#ccc;
+    max-width:800px;
+    margin:0 auto;
+    font-size:1.1rem;
+    line-height:1.6;
 }
 
-/* GRID */
+/* ================= GRID PORTFOLIO ================= */
+.portfolio-section{
+    padding:80px 20px;
+}
+
 .portfolio-grid{
     max-width:1200px;
     margin:auto;
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap:20px;
-    padding:0 20px 80px;
 }
 
-/* CARD */
-.portfolio-card{
+.portfolio-item{
     position:relative;
+    height:220px;
+    border-radius:12px;
     overflow:hidden;
-    border-radius:16px;
-    cursor:pointer;
-    transform:translateY(30px);
-    opacity:0;
-    transition:0.6s ease;
+    border:1px solid #111;
+    transition:0.3s;
 }
 
-.portfolio-card img{
+.portfolio-item:hover{
+    transform:scale(1.03);
+    border-color:#444;
+}
+
+.portfolio-item img{
     width:100%;
-    height:300px;
+    height:100%;
     object-fit:cover;
-    transition:0.5s;
 }
 
-/* hover */
-.portfolio-card:hover img{
-    transform:scale(1.08);
-}
-
-.overlay{
+.portfolio-item span{
     position:absolute;
-    inset:0;
-    background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    padding:15px;
-    opacity:0;
-    transition:0.4s;
+    bottom:10px;
+    left:10px;
+    background:rgba(0,0,0,0.7);
+    padding:5px 10px;
+    font-size:0.75rem;
+    border-radius:4px;
 }
 
-.portfolio-card:hover .overlay{
-    opacity:1;
+/* ================= CTA ================= */
+.portfolio-cta{
+    text-align:center;
+    padding:80px 20px;
 }
 
-/* ANIMATION ON SCROLL */
-.show{
-    transform:translateY(0);
-    opacity:1;
+.portfolio-cta h2{
+    font-size:2rem;
+    margin-bottom:15px;
+    text-transform:uppercase;
 }
 
-/* LIGHTBOX */
-.lightbox{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.9);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:9999;
+.portfolio-cta a{
+    display:inline-block;
+    padding:15px 30px;
+    background:#fff;
+    color:#000;
+    font-weight:bold;
+    text-decoration:none;
+    border-radius:5px;
+    transition:0.3s;
 }
 
-.lightbox img{
-    max-width:90%;
-    max-height:90%;
-    border-radius:10px;
+.portfolio-cta a:hover{
+    background:#ddd;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+
+    .portfolio-hero h1{
+        font-size:2rem;
+    }
+
+    .portfolio-hero p{
+        font-size:1rem;
+        padding:0 10px;
+    }
+
+    .portfolio-grid{
+        grid-template-columns:1fr;
+    }
+
+    .portfolio-item{
+        height:200px;
+    }
+
+    .nav-links{
+        gap:12px;
+    }
+
+    .nav-links a{
+        font-size:0.7rem;
+    }
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="nav-container">
-    <div><a href="index.html" style="color:#fff;">Klarity</a></div>
-    <ul style="display:flex;gap:20px;list-style:none;">
-      <li><a href="index.html" style="color:#aaa;">Home</a></li>
-      <li><a href="portfolio.html" style="color:#fff;">Portfolio</a></li>
-    </ul>
-  </div>
+    <div class="nav-container">
+
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="https://image2url.com/r2/default/images/1774737436947-28289b1c-112d-4fe7-be45-ac48dc3eebd1.png">
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="webdesign.html">Webdesign</a></li>
+            <li><a href="seo-marketing.html">SEO & Marketing</a></li>
+            <li><a href="portfolio.html" style="color:#fff; font-weight:bold;">Portfolio</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+
+    </div>
 </nav>
 
 <!-- HERO -->
 <section class="portfolio-hero">
-  <h1>Unser Portfolio</h1>
+    <h1>Unser Portfolio</h1>
+    <p>
+        Eine Auswahl unserer Webdesign- und SEO-Projekte.  
+        Jedes Projekt ist individuell gestaltet, modern entwickelt und für Performance optimiert.
+    </p>
 </section>
 
-<!-- FILTERS -->
-<div class="filters">
-  <button class="active" onclick="filter('all')">All</button>
-  <button onclick="filter('web')">Web</button>
-  <button onclick="filter('seo')">SEO</button>
-  <button onclick="filter('ecom')">E-Commerce</button>
-</div>
+<!-- PORTFOLIO GRID -->
+<section class="portfolio-section">
+    <div class="portfolio-grid">
 
-<!-- GRID -->
-<section class="portfolio-grid">
+        <!-- 20 PLACEHOLDER PROJEKTE -->
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=1"><span>Website 01</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=2"><span>Website 02</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=3"><span>Website 03</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=4"><span>Website 04</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=5"><span>Website 05</span></div>
 
-  <div class="portfolio-card web" onclick="openLightbox(this)">
-    <img src="images/portfolio/01.png">
-    <div class="overlay"><h3>Website 01</h3></div>
-  </div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=6"><span>Website 06</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=7"><span>Website 07</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=8"><span>Website 08</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=9"><span>Website 09</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=10"><span>Website 10</span></div>
 
-  <div class="portfolio-card seo" onclick="openLightbox(this)">
-    <img src="images/portfolio/02.png">
-    <div class="overlay"><h3>Website 02</h3></div>
-  </div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=11"><span>Website 11</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=12"><span>Website 12</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=13"><span>Website 13</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=14"><span>Website 14</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=15"><span>Website 15</span></div>
 
-  <div class="portfolio-card ecom" onclick="openLightbox(this)">
-    <img src="images/portfolio/03.png">
-    <div class="overlay"><h3>Website 03</h3></div>
-  </div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=16"><span>Website 16</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=17"><span>Website 17</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=18"><span>Website 18</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=19"><span>Website 19</span></div>
+        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=20"><span>Website 20</span></div>
 
-  <!-- continua fino a 20 -->
-
+    </div>
 </section>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img">
-</div>
-
-<script>
-
-// scroll animation
-const cards = document.querySelectorAll('.portfolio-card');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-});
-
-cards.forEach(card => observer.observe(card));
-
-// filter
-function filter(category){
-  let items = document.querySelectorAll('.portfolio-card');
-  items.forEach(item => {
-    if(category === 'all'){
-      item.style.display = 'block';
-    } else {
-      item.style.display = item.classList.contains(category) ? 'block' : 'none';
-    }
-  });
-}
-
-// lightbox
-function openLightbox(el){
-  document.getElementById('lightbox').style.display = 'flex';
-  document.getElementById('lightbox-img').src = el.querySelector('img').src;
-}
-
-function closeLightbox(){
-  document.getElementById('lightbox').style.display = 'none';
-}
-
-</script>
+<!-- CTA -->
+<section class="portfolio-cta">
+    <h2>Willst du dein Projekt hier sehen?</h2>
+    <a href="https://wa.me/436604831451">Jetzt Kontakt aufnehmen</a>
+</section>
 
 </body>
 </html>
