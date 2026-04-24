@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Webdesign & SEO Projekte | Klarity Web</title>
+    
+    <meta name="description" content="Entdecken Sie erfolgreiche Webdesign & SEO Projekte von Klarity Web. Conversion-optimierte Websites, die Ergebnisse liefern.">
+    <meta name="keywords" content="Webdesign Portfolio Graz, SEO Projekte Österreich, Landing Pages Beispiele, Website Referenzen">
+    
+    <link rel="icon" type="image/png" href="https://image2url.com/r2/default/images/1774737436947-28289b1c-112d-4fe7-be45-ac48dc3eebd1.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            opacity: 0;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            border: 1px solid #fff;
+            padding: 5px 10px;
+            margin: 5px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="https://image2url.com/r2/default/images/1774737436947-28289b1c-112d-4fe7-be45-ac48dc3eebd1.png">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="webdesign.html">Webdesign</a></li>
+            <li><a href="seo-marketing.html">SEO & Marketing</a></li>
+            <li><a href="portfolio.html" style="color:#fff; border-bottom:2px solid #fff;">Portfolio</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Suchen...">
+            <button onclick="executeSearch()">🔍</button>
+        </div>
+    </div>
+</nav>
+
+<header style="padding:150px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1600&q=80') center/cover;">
+  <div class="header-content">
+    <h1 style="font-size:3.5rem;">Ergebnisse, die überzeugen</h1>
+    <p class="header-text" style="max-width:800px;margin:20px auto;">
+        Sehen Sie echte Beispiele für conversion-optimierte Websites, die Traffic, Leads und Umsatz steigern.
+    </p>
+    <a class="cta-header" href="https://wa.me/436604831451" target="_blank">
+        🚀 Kostenloses Audit anfordern
+    </a>
+  </div>
+</header>
+
+<section class="services-section">
+    <h2>Ausgewählte Projekte</h2>
+
+    <div class="portfolio-grid">
+
+        <!-- ITEM 1 -->
+        <div class="portfolio-item">
+            <img src="images/project1.png">
+            <div class="portfolio-overlay">
+                <h3>Restaurant Landing Page</h3>
+                <p>Optimiert für Reservierungen</p>
+                <div>
+                    <span class="tag">CTA</span>
+                    <span class="tag">UX</span>
+                    <span class="tag">Conversion</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="portfolio-item">
+            <img src="images/project2.png">
+            <div class="portfolio-overlay">
+                <h3>Hotel Website</h3>
+                <p>Mehr Direktbuchungen</p>
+                <div>
+                    <span class="tag">SEO</span>
+                    <span class="tag">Mobile</span>
+                    <span class="tag">Speed</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="portfolio-item">
+            <img src="images/project3.png">
+            <div class="portfolio-overlay">
+                <h3>E-Commerce Shop</h3>
+                <p>Optimiert für Sales</p>
+                <div>
+                    <span class="tag">UX</span>
+                    <span class="tag">Checkout</span>
+                    <span class="tag">Trust</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="feedback-section" style="background:#0a0a0a;">
+    <h2>Warum unser Design funktioniert</h2>
+    <div class="feedbacks">
+        <div class="feedback" style="background:transparent;border:none;">
+            <div style="font-size:3rem;">🎯</div>
+            <h4>Strategisch</h4>
+            <p>Jede Seite ist auf Conversion ausgelegt.</p>
+        </div>
+        <div class="feedback" style="background:transparent;border:none;">
+            <div style="font-size:3rem;">⚡</div>
+            <h4>Schnell</h4>
+            <p>Optimiert für Ladezeit & SEO.</p>
+        </div>
+        <div class="feedback" style="background:transparent;border:none;">
+            <div style="font-size:3rem;">📈</div>
+            <h4>Messbar</h4>
+            <p>Fokus auf echte Ergebnisse.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section" style="background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80') center/cover;">
+  <div class="final-cta-container">
+    <h2>Ihr Projekt könnte das nächste sein</h2>
+    <p style="margin-bottom:30px;">Lassen Sie uns Ihre Website auf das nächste Level bringen.</p>
+    <a class="cta-btn" href="https://wa.me/436604831451" target="_blank">
+        💬 Jetzt kostenlos beraten lassen
+    </a>
+  </div>
+</section>
+
+<footer class="legal-footer">
+    <div class="legal-container">
+        <div class="legal-box">
+            <h5>Impressum</h5>
+            <p><strong>Klarity Web Solutions</strong></p>
+            <p>Graz, Österreich</p>
+            <p>Email: info@klarityweb.at</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
