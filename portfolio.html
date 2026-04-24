@@ -3,256 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Portfolio | Klarity Web</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 
 <style>
 body{
     margin:0;
-    font-family:'Roboto', sans-serif;
+    font-family:Arial;
     background:#000;
     color:#fff;
 }
 
-/* ================= NAVBAR (IDENTICA ALLE ALTRE PAGINE) ================= */
-.navbar {
-    background: rgba(0,0,0,0.95);
-    border-bottom: 1px solid #111;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    padding: 0 20px;
-}
-
-.nav-logo img {
-    height:45px;
-}
-
-.nav-links {
-    list-style:none;
-    display:flex;
-    gap:25px;
-    margin:0;
-    padding:0;
-}
-
-.nav-links a {
-    text-decoration:none;
-    color:#aaa;
-    font-size:0.85rem;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
-
-.nav-links a:hover {
-    color:#fff;
-}
-
-/* ================= HERO (STESSO STILE INDEX) ================= */
 .portfolio-hero{
     text-align:center;
-    padding:120px 20px 60px;
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
-    url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80') center/cover;
-}
-
-.portfolio-hero h1{
-    font-size:2.8rem;
-    margin-bottom:15px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-}
-
-.portfolio-hero p{
-    color:#ccc;
-    max-width:800px;
-    margin:0 auto;
-    font-size:1.1rem;
-    line-height:1.6;
-}
-
-/* ================= GRID PORTFOLIO ================= */
-.portfolio-section{
-    padding:80px 20px;
+    padding:100px 20px;
 }
 
 .portfolio-grid{
     max-width:1200px;
     margin:auto;
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:20px;
+    padding:0 20px 80px;
 }
 
-.portfolio-item{
+.card{
     position:relative;
-    height:220px;
-    border-radius:12px;
     overflow:hidden;
-    border:1px solid #111;
+    border-radius:14px;
     transition:0.3s;
 }
 
-.portfolio-item:hover{
-    transform:scale(1.03);
-    border-color:#444;
-}
-
-.portfolio-item img{
+.card img{
     width:100%;
-    height:100%;
+    height:300px;
     object-fit:cover;
+    transition:0.4s;
 }
 
-.portfolio-item span{
+.card:hover img{
+    transform:scale(1.08);
+}
+
+.card span{
     position:absolute;
     bottom:10px;
     left:10px;
-    background:rgba(0,0,0,0.7);
+    background:rgba(0,0,0,0.6);
     padding:5px 10px;
-    font-size:0.75rem;
-    border-radius:4px;
-}
-
-/* ================= CTA ================= */
-.portfolio-cta{
-    text-align:center;
-    padding:80px 20px;
-}
-
-.portfolio-cta h2{
-    font-size:2rem;
-    margin-bottom:15px;
-    text-transform:uppercase;
-}
-
-.portfolio-cta a{
-    display:inline-block;
-    padding:15px 30px;
-    background:#fff;
-    color:#000;
-    font-weight:bold;
-    text-decoration:none;
-    border-radius:5px;
-    transition:0.3s;
-}
-
-.portfolio-cta a:hover{
-    background:#ddd;
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-
-    .portfolio-hero h1{
-        font-size:2rem;
-    }
-
-    .portfolio-hero p{
-        font-size:1rem;
-        padding:0 10px;
-    }
-
-    .portfolio-grid{
-        grid-template-columns:1fr;
-    }
-
-    .portfolio-item{
-        height:200px;
-    }
-
-    .nav-links{
-        gap:12px;
-    }
-
-    .nav-links a{
-        font-size:0.7rem;
-    }
+    font-size:12px;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="nav-container">
-
-        <div class="nav-logo">
-            <a href="index.html">
-                <img src="https://image2url.com/r2/default/images/1774737436947-28289b1c-112d-4fe7-be45-ac48dc3eebd1.png">
-            </a>
-        </div>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="webdesign.html">Webdesign</a></li>
-            <li><a href="seo-marketing.html">SEO & Marketing</a></li>
-            <li><a href="portfolio.html" style="color:#fff; font-weight:bold;">Portfolio</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-        </ul>
-
-    </div>
-</nav>
-
-<!-- HERO -->
 <section class="portfolio-hero">
-    <h1>Unser Portfolio</h1>
-    <p>
-        Eine Auswahl unserer Webdesign- und SEO-Projekte.  
-        Jedes Projekt ist individuell gestaltet, modern entwickelt und für Performance optimiert.
-    </p>
+<h1>Unser Portfolio</h1>
 </section>
 
-<!-- PORTFOLIO GRID -->
-<section class="portfolio-section">
-    <div class="portfolio-grid">
+<section class="portfolio-grid">
 
-        <!-- 20 PLACEHOLDER PROJEKTE -->
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=1"><span>Website 01</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=2"><span>Website 02</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=3"><span>Website 03</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=4"><span>Website 04</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=5"><span>Website 05</span></div>
+<div class="card"><img src="images/portfolio/01.png"><span>Website 01</span></div>
+<div class="card"><img src="images/portfolio/02.png"><span>Website 02</span></div>
+<div class="card"><img src="images/portfolio/03.png"><span>Website 03</span></div>
+<div class="card"><img src="images/portfolio/04.png"><span>Website 04</span></div>
+<div class="card"><img src="images/portfolio/05.png"><span>Website 05</span></div>
 
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=6"><span>Website 06</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=7"><span>Website 07</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=8"><span>Website 08</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=9"><span>Website 09</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=10"><span>Website 10</span></div>
+<div class="card"><img src="images/portfolio/06.png"><span>Website 06</span></div>
+<div class="card"><img src="images/portfolio/07.png"><span>Website 07</span></div>
+<div class="card"><img src="images/portfolio/08.png"><span>Website 08</span></div>
+<div class="card"><img src="images/portfolio/09.png"><span>Website 09</span></div>
+<div class="card"><img src="images/portfolio/10.png"><span>Website 10</span></div>
 
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=11"><span>Website 11</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=12"><span>Website 12</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=13"><span>Website 13</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=14"><span>Website 14</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=15"><span>Website 15</span></div>
+<div class="card"><img src="images/portfolio/11.png"><span>Website 11</span></div>
+<div class="card"><img src="images/portfolio/12.png"><span>Website 12</span></div>
+<div class="card"><img src="images/portfolio/13.png"><span>Website 13</span></div>
+<div class="card"><img src="images/portfolio/14.png"><span>Website 14</span></div>
+<div class="card"><img src="images/portfolio/15.png"><span>Website 15</span></div>
 
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=16"><span>Website 16</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=17"><span>Website 17</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=18"><span>Website 18</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=19"><span>Website 19</span></div>
-        <div class="portfolio-item"><img src="https://picsum.photos/800/600?random=20"><span>Website 20</span></div>
+<div class="card"><img src="images/portfolio/16.png"><span>Website 16</span></div>
+<div class="card"><img src="images/portfolio/17.png"><span>Website 17</span></div>
+<div class="card"><img src="images/portfolio/18.png"><span>Website 18</span></div>
+<div class="card"><img src="images/portfolio/19.png"><span>Website 19</span></div>
+<div class="card"><img src="images/portfolio/20.png"><span>Website 20</span></div>
 
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="portfolio-cta">
-    <h2>Willst du dein Projekt hier sehen?</h2>
-    <a href="https://wa.me/436604831451">Jetzt Kontakt aufnehmen</a>
 </section>
 
 </body>
